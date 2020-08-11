@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1082
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyPhongNet", "..\..\..\QuanLyPhongNet\QuanLyPhongNet - Server\QuanLyPhongNet\QuanLyPhongNet.csproj", "{376726DE-9801-4743-824D-59BB6233CB31}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyPhongNet", "QuanLyPhongNet\QuanLyPhongNet.csproj", "{376726DE-9801-4743-824D-59BB6233CB31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyPhongNet.DTO", "..\..\..\QuanLyPhongNet\QuanLyPhongNet - Server\QuanLyPhongNet.DTO\QuanLyPhongNet.DTO.csproj", "{5E497F82-D93D-44A6-A6B1-FBB263F1A08A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyPhongNet.DTO", "QuanLyPhongNet.DTO\QuanLyPhongNet.DTO.csproj", "{5E497F82-D93D-44A6-A6B1-FBB263F1A08A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
