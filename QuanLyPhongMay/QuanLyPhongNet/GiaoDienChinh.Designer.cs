@@ -1,6 +1,6 @@
 ﻿namespace QuanLyPhongNet
 {
-    partial class HomeGUI
+    partial class GiaoDienChinh
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeGUI));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GiaoDienChinh));
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabClient = new System.Windows.Forms.TabPage();
             this.txtTotalPrice = new System.Windows.Forms.TextBox();
@@ -117,7 +116,6 @@
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.drgvUserGroup = new System.Windows.Forms.DataGridView();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.timerHome = new System.Windows.Forms.Timer(this.components);
             this.tabControl.SuspendLayout();
             this.tabClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShutdownClient)).BeginInit();
@@ -179,11 +177,11 @@
             this.tabControl.Controls.Add(this.tabService);
             this.tabControl.Controls.Add(this.tabGroupUsers);
             this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl.Location = new System.Drawing.Point(12, 12);
+            this.tabControl.Location = new System.Drawing.Point(12, 41);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(1181, 676);
-            this.tabControl.TabIndex = 0;
+            this.tabControl.TabIndex = 1;
             // 
             // tabClient
             // 
@@ -210,7 +208,7 @@
             // txtTotalPrice
             // 
             this.txtTotalPrice.Enabled = false;
-            this.txtTotalPrice.Location = new System.Drawing.Point(973, 53);
+            this.txtTotalPrice.Location = new System.Drawing.Point(962, 53);
             this.txtTotalPrice.Name = "txtTotalPrice";
             this.txtTotalPrice.Size = new System.Drawing.Size(205, 24);
             this.txtTotalPrice.TabIndex = 12;
@@ -264,20 +262,15 @@
             this.picLockClient.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLockClient.TabIndex = 7;
             this.picLockClient.TabStop = false;
-            this.picLockClient.Click += new System.EventHandler(this.PicLockClientClickEventHandler);
             // 
             // picCalculateMoney
             // 
-            this.picCalculateMoney.Image = global::QuanLyPhongNet.Properties.Resources._512_icon;
             this.picCalculateMoney.Location = new System.Drawing.Point(145, 3);
             this.picCalculateMoney.Name = "picCalculateMoney";
             this.picCalculateMoney.Size = new System.Drawing.Size(71, 63);
             this.picCalculateMoney.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picCalculateMoney.TabIndex = 6;
             this.picCalculateMoney.TabStop = false;
-            this.picCalculateMoney.Click += new System.EventHandler(this.PicCalculateMoneyEventhandler);
-            this.picCalculateMoney.MouseLeave += new System.EventHandler(this.PicCalculateMoneyMouseLeaveEventHandler);
-            this.picCalculateMoney.MouseHover += new System.EventHandler(this.PicCalculateMoneyMouseHoverEventHandler);
             // 
             // label6
             // 
@@ -291,16 +284,12 @@
             // 
             // picOpenClient
             // 
-            this.picOpenClient.Image = global::QuanLyPhongNet.Properties.Resources.máy_tính;
             this.picOpenClient.Location = new System.Drawing.Point(25, 6);
             this.picOpenClient.Name = "picOpenClient";
             this.picOpenClient.Size = new System.Drawing.Size(71, 63);
             this.picOpenClient.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picOpenClient.TabIndex = 4;
             this.picOpenClient.TabStop = false;
-            this.picOpenClient.Click += new System.EventHandler(this.PicOpenClientEventHandler);
-            this.picOpenClient.MouseLeave += new System.EventHandler(this.PicOpenClientMouseLeaveEventHandler);
-            this.picOpenClient.MouseHover += new System.EventHandler(this.PicOpenClientMouseHoverEventHandler);
             // 
             // label5
             // 
@@ -378,24 +367,18 @@
             this.drgvMember.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.drgvMember.Size = new System.Drawing.Size(1129, 525);
             this.drgvMember.TabIndex = 7;
-            this.drgvMember.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.drgvMember_CellDoubleClick);
             // 
             // picAddMember
             // 
-            this.picAddMember.Image = global::QuanLyPhongNet.Properties.Resources.add_file;
             this.picAddMember.Location = new System.Drawing.Point(11, 11);
             this.picAddMember.Name = "picAddMember";
             this.picAddMember.Size = new System.Drawing.Size(65, 53);
             this.picAddMember.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picAddMember.TabIndex = 1;
             this.picAddMember.TabStop = false;
-            this.picAddMember.Click += new System.EventHandler(this.picAddMember_Click);
-            this.picAddMember.MouseLeave += new System.EventHandler(this.picAddMember_MouseLeave);
-            this.picAddMember.MouseHover += new System.EventHandler(this.picAddMember_MouseHover);
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::QuanLyPhongNet.Properties.Resources.View;
             this.pictureBox3.Location = new System.Drawing.Point(878, 20);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(51, 44);
@@ -405,29 +388,21 @@
             // 
             // picDeleteMember
             // 
-            this.picDeleteMember.Image = global::QuanLyPhongNet.Properties.Resources.Delete1;
             this.picDeleteMember.Location = new System.Drawing.Point(102, 11);
             this.picDeleteMember.Name = "picDeleteMember";
             this.picDeleteMember.Size = new System.Drawing.Size(65, 53);
             this.picDeleteMember.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picDeleteMember.TabIndex = 2;
             this.picDeleteMember.TabStop = false;
-            this.picDeleteMember.Click += new System.EventHandler(this.picDeletememberEventHandler);
-            this.picDeleteMember.MouseLeave += new System.EventHandler(this.picDeleteMember_MouseLeave);
-            this.picDeleteMember.MouseHover += new System.EventHandler(this.picDeleteMember_MouseHover);
             // 
             // picUpdateMember
             // 
-            this.picUpdateMember.Image = global::QuanLyPhongNet.Properties.Resources.Sync;
             this.picUpdateMember.Location = new System.Drawing.Point(190, 11);
             this.picUpdateMember.Name = "picUpdateMember";
             this.picUpdateMember.Size = new System.Drawing.Size(65, 53);
             this.picUpdateMember.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picUpdateMember.TabIndex = 3;
             this.picUpdateMember.TabStop = false;
-            this.picUpdateMember.Click += new System.EventHandler(this.picUpdateMember_Click);
-            this.picUpdateMember.MouseLeave += new System.EventHandler(this.picUpdateMember_MouseLeave);
-            this.picUpdateMember.MouseHover += new System.EventHandler(this.picUpdateMember_MouseHover);
             // 
             // textBox1
             // 
@@ -460,7 +435,7 @@
             this.tabStaff.ForeColor = System.Drawing.Color.Blue;
             this.tabStaff.Location = new System.Drawing.Point(4, 4);
             this.tabStaff.Name = "tabStaff";
-            this.tabStaff.Size = new System.Drawing.Size(1153, 598);
+            this.tabStaff.Size = new System.Drawing.Size(1153, 605);
             this.tabStaff.TabIndex = 1;
             this.tabStaff.Text = "Nhân Viên";
             // 
@@ -497,7 +472,6 @@
             // 
             // pictureBox18
             // 
-            this.pictureBox18.Image = global::QuanLyPhongNet.Properties.Resources.View;
             this.pictureBox18.Location = new System.Drawing.Point(1123, 15);
             this.pictureBox18.Name = "pictureBox18";
             this.pictureBox18.Size = new System.Drawing.Size(43, 37);
@@ -621,7 +595,6 @@
             // 
             // pictureBox17
             // 
-            this.pictureBox17.Image = global::QuanLyPhongNet.Properties.Resources.delete_button_png_27;
             this.pictureBox17.Location = new System.Drawing.Point(656, 11);
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.Size = new System.Drawing.Size(47, 41);
@@ -631,7 +604,6 @@
             // 
             // pictureBox16
             // 
-            this.pictureBox16.Image = global::QuanLyPhongNet.Properties.Resources.Calendar1;
             this.pictureBox16.Location = new System.Drawing.Point(317, 11);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(47, 41);
@@ -641,7 +613,6 @@
             // 
             // pictureBox15
             // 
-            this.pictureBox15.Image = global::QuanLyPhongNet.Properties.Resources.Calendar;
             this.pictureBox15.Location = new System.Drawing.Point(12, 11);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(49, 41);
@@ -785,7 +756,6 @@
             // 
             // pictureBox19
             // 
-            this.pictureBox19.Image = global::QuanLyPhongNet.Properties.Resources.View;
             this.pictureBox19.Location = new System.Drawing.Point(1125, 9);
             this.pictureBox19.Name = "pictureBox19";
             this.pictureBox19.Size = new System.Drawing.Size(43, 37);
@@ -795,7 +765,6 @@
             // 
             // pictureBox20
             // 
-            this.pictureBox20.Image = global::QuanLyPhongNet.Properties.Resources.delete_button_png_27;
             this.pictureBox20.Location = new System.Drawing.Point(658, 3);
             this.pictureBox20.Name = "pictureBox20";
             this.pictureBox20.Size = new System.Drawing.Size(47, 41);
@@ -805,7 +774,6 @@
             // 
             // pictureBox21
             // 
-            this.pictureBox21.Image = global::QuanLyPhongNet.Properties.Resources.Calendar1;
             this.pictureBox21.Location = new System.Drawing.Point(319, 3);
             this.pictureBox21.Name = "pictureBox21";
             this.pictureBox21.Size = new System.Drawing.Size(47, 41);
@@ -815,7 +783,6 @@
             // 
             // pictureBox22
             // 
-            this.pictureBox22.Image = global::QuanLyPhongNet.Properties.Resources.Calendar;
             this.pictureBox22.Location = new System.Drawing.Point(14, 3);
             this.pictureBox22.Name = "pictureBox22";
             this.pictureBox22.Size = new System.Drawing.Size(49, 41);
@@ -839,7 +806,6 @@
             // 
             // pictureBox7
             // 
-            this.pictureBox7.Image = global::QuanLyPhongNet.Properties.Resources.delete_button_png_27;
             this.pictureBox7.Location = new System.Drawing.Point(163, 6);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(52, 50);
@@ -849,7 +815,6 @@
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Image = global::QuanLyPhongNet.Properties.Resources._1392495957;
             this.pictureBox6.Location = new System.Drawing.Point(86, 6);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(52, 50);
@@ -859,7 +824,6 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = global::QuanLyPhongNet.Properties.Resources.add1;
             this.pictureBox5.Location = new System.Drawing.Point(14, 6);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(52, 50);
@@ -942,7 +906,6 @@
             this.drgvFood.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.drgvFood.Size = new System.Drawing.Size(1100, 536);
             this.drgvFood.TabIndex = 0;
-            this.drgvFood.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.drgvFood_CellDoubleClick);
             // 
             // tabDrink
             // 
@@ -953,7 +916,7 @@
             this.tabDrink.Location = new System.Drawing.Point(4, 4);
             this.tabDrink.Name = "tabDrink";
             this.tabDrink.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDrink.Size = new System.Drawing.Size(1140, 548);
+            this.tabDrink.Size = new System.Drawing.Size(1140, 555);
             this.tabDrink.TabIndex = 1;
             this.tabDrink.Text = "Nước Uống";
             // 
@@ -968,7 +931,6 @@
             this.drgvDrink.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.drgvDrink.Size = new System.Drawing.Size(1109, 536);
             this.drgvDrink.TabIndex = 1;
-            this.drgvDrink.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.drgvDrink_CellDoubleClick);
             // 
             // tabCard
             // 
@@ -978,7 +940,7 @@
             this.tabCard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.tabCard.Location = new System.Drawing.Point(4, 4);
             this.tabCard.Name = "tabCard";
-            this.tabCard.Size = new System.Drawing.Size(1140, 548);
+            this.tabCard.Size = new System.Drawing.Size(1140, 555);
             this.tabCard.TabIndex = 2;
             this.tabCard.Text = "Thẻ Cào";
             // 
@@ -993,7 +955,6 @@
             this.drgvCard.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.drgvCard.Size = new System.Drawing.Size(1113, 542);
             this.drgvCard.TabIndex = 1;
-            this.drgvCard.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.drgvCard_CellDoubleClick_1);
             // 
             // txtSearchService
             // 
@@ -1020,7 +981,6 @@
             // 
             // pictureBox11
             // 
-            this.pictureBox11.Image = global::QuanLyPhongNet.Properties.Resources.View;
             this.pictureBox11.Location = new System.Drawing.Point(909, 9);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(51, 44);
@@ -1038,9 +998,6 @@
             this.picOrder.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picOrder.TabIndex = 4;
             this.picOrder.TabStop = false;
-            this.picOrder.Click += new System.EventHandler(this.picOrderEventHandler);
-            this.picOrder.MouseLeave += new System.EventHandler(this.picOrder_MouseLeave);
-            this.picOrder.MouseHover += new System.EventHandler(this.picOrder_MouseHover);
             // 
             // tabGroupUsers
             // 
@@ -1058,7 +1015,6 @@
             // 
             // pictureBox12
             // 
-            this.pictureBox12.Image = global::QuanLyPhongNet.Properties.Resources.delete_button_png_27;
             this.pictureBox12.Location = new System.Drawing.Point(163, 4);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(52, 50);
@@ -1068,7 +1024,6 @@
             // 
             // pictureBox13
             // 
-            this.pictureBox13.Image = global::QuanLyPhongNet.Properties.Resources._1392495957;
             this.pictureBox13.Location = new System.Drawing.Point(86, 4);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(52, 50);
@@ -1078,7 +1033,6 @@
             // 
             // pictureBox14
             // 
-            this.pictureBox14.Image = global::QuanLyPhongNet.Properties.Resources.add1;
             this.pictureBox14.Location = new System.Drawing.Point(15, 4);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(52, 50);
@@ -1103,30 +1057,23 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.Red;
-            this.linkLabel1.Location = new System.Drawing.Point(1020, 2);
+            this.linkLabel1.Location = new System.Drawing.Point(1058, 9);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(125, 29);
-            this.linkLabel1.TabIndex = 1;
+            this.linkLabel1.TabIndex = 2;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Đăng Xuất";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabelLinkClickedEventHandler);
             // 
-            // timerHome
-            // 
-            this.timerHome.Tick += new System.EventHandler(this.TimeHomeTickEventHandler);
-            // 
-            // HomeGUI
+            // GiaoDienChinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.ClientSize = new System.Drawing.Size(1203, 700);
+            this.BackColor = System.Drawing.Color.PowderBlue;
+            this.ClientSize = new System.Drawing.Size(1205, 723);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.tabControl);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "HomeGUI";
-            this.Text = "Giao Diện Chính";
-            this.Load += new System.EventHandler(this.HomeGUILoadEventHandler);
+            this.Name = "GiaoDienChinh";
+            this.Text = "GiaoDienChinh";
             this.tabControl.ResumeLayout(false);
             this.tabClient.ResumeLayout(false);
             this.tabClient.PerformLayout();
@@ -1190,47 +1137,38 @@
 
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabClient;
+        private System.Windows.Forms.TextBox txtTotalPrice;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.PictureBox picShutdownClient;
+        private System.Windows.Forms.PictureBox picLockClient;
+        private System.Windows.Forms.PictureBox picCalculateMoney;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox picOpenClient;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView drgvClient;
         private System.Windows.Forms.TabPage tabAccount;
-        private System.Windows.Forms.TabPage tabSystemDiary;
-        private System.Windows.Forms.TabPage tabTransactionDiary;
-        private System.Windows.Forms.TabPage tabGroupClient;
-        private System.Windows.Forms.TabPage tabService;
-        private System.Windows.Forms.TabPage tabGroupUsers;
-        private System.Windows.Forms.PictureBox picUpdateMember;
-        private System.Windows.Forms.PictureBox picDeleteMember;
-        private System.Windows.Forms.PictureBox picAddMember;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox cboSearchType;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabMember;
         private System.Windows.Forms.DataGridView drgvMember;
+        private System.Windows.Forms.PictureBox picAddMember;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox picDeleteMember;
+        private System.Windows.Forms.PictureBox picUpdateMember;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cboSearchType;
         private System.Windows.Forms.TabPage tabStaff;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.DataGridView drgvClientGroup;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.DataGridView drgvFood;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.TextBox txtSearchService;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.PictureBox picOrder;
-        private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.PictureBox pictureBox13;
-        private System.Windows.Forms.PictureBox pictureBox14;
-        private System.Windows.Forms.DataGridView drgvUserGroup;
-        private System.Windows.Forms.PictureBox pictureBox17;
+        private System.Windows.Forms.DataGridView drgvStaff;
+        private System.Windows.Forms.TabPage tabSystemDiary;
+        private System.Windows.Forms.PictureBox pictureBox18;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox16;
-        private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.PictureBox pictureBox18;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -1238,17 +1176,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.PictureBox pictureBox17;
+        private System.Windows.Forms.PictureBox pictureBox16;
+        private System.Windows.Forms.PictureBox pictureBox15;
+        private System.Windows.Forms.TabPage tabTransactionDiary;
         private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.PictureBox pictureBox19;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.PictureBox pictureBox20;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox21;
-        private System.Windows.Forms.PictureBox pictureBox22;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
@@ -1256,25 +1188,39 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Timer timerHome;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.DateTimePicker dateTimePicker4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox19;
+        private System.Windows.Forms.PictureBox pictureBox20;
+        private System.Windows.Forms.PictureBox pictureBox21;
+        private System.Windows.Forms.PictureBox pictureBox22;
+        private System.Windows.Forms.TabPage tabGroupClient;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.DataGridView drgvClientGroup;
+        private System.Windows.Forms.TabPage tabService;
+        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TabControl tabCategory;
         private System.Windows.Forms.TabPage tabFood;
+        private System.Windows.Forms.DataGridView drgvFood;
         private System.Windows.Forms.TabPage tabDrink;
-        private System.Windows.Forms.PictureBox picOpenClient;
-        private System.Windows.Forms.PictureBox picCalculateMoney;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TabPage tabCard;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView drgvDrink;
+        private System.Windows.Forms.TabPage tabCard;
         private System.Windows.Forms.DataGridView drgvCard;
-        private System.Windows.Forms.DataGridView drgvStaff;
-        private System.Windows.Forms.PictureBox picLockClient;
-        private System.Windows.Forms.PictureBox picShutdownClient;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtTotalPrice;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtSearchService;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.PictureBox picOrder;
+        private System.Windows.Forms.TabPage tabGroupUsers;
+        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.PictureBox pictureBox14;
+        private System.Windows.Forms.DataGridView drgvUserGroup;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

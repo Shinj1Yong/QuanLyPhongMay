@@ -1,12 +1,11 @@
-﻿namespace QuanLyPhongNet
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
-    using System.Windows.Forms;
-    using QuanLyPhongNet.Common;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
+namespace QuanLyPhongNet
+{
     static class Program
     {
         /// <summary>
@@ -15,18 +14,9 @@
         [STAThread]
         static void Main()
         {
-            QuanLyPhongNet.Common.Properties.Settings.Default.strConnect = "";
-            QuanLyPhongNet.Common.Properties.Settings.Default.Save();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            if (string.IsNullOrEmpty(QuanLyPhongNet.Common.Properties.Settings.Default.strConnect) || !new SqlData().TestConnection())
-            {
-                Application.Run(new DatabaseConfigurationGUI());
-            }
-            else
-            {
-                Application.Run(new OptionGUI());
-            }
+            Application.Run(new Form1());
         }
     }
 }

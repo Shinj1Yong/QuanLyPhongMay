@@ -1,6 +1,6 @@
 ﻿namespace QuanLyPhongNet
 {
-    partial class AddTimeMemberGUI
+    partial class ThemThanhVien
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddTimeMemberGUI));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThemThanhVien));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
@@ -51,7 +51,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.PeachPuff;
+            this.groupBox2.BackColor = System.Drawing.Color.PowderBlue;
             this.groupBox2.Controls.Add(this.btnCancel);
             this.groupBox2.Controls.Add(this.btnOK);
             this.groupBox2.Controls.Add(this.grbTimeManager);
@@ -64,7 +64,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(370, 308);
+            this.groupBox2.Size = new System.Drawing.Size(370, 316);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tài Khoản";
@@ -78,14 +78,13 @@
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(216, 258);
+            this.btnCancel.Location = new System.Drawing.Point(221, 258);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(95, 32);
+            this.btnCancel.Size = new System.Drawing.Size(90, 32);
             this.btnCancel.TabIndex = 28;
             this.btnCancel.Text = "Hủy Bỏ";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.CancelClickEventHandler);
             // 
             // btnOK
             // 
@@ -95,14 +94,13 @@
             this.btnOK.ForeColor = System.Drawing.Color.White;
             this.btnOK.Image = ((System.Drawing.Image)(resources.GetObject("btnOK.Image")));
             this.btnOK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOK.Location = new System.Drawing.Point(79, 258);
+            this.btnOK.Location = new System.Drawing.Point(85, 258);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(110, 32);
+            this.btnOK.Size = new System.Drawing.Size(95, 32);
             this.btnOK.TabIndex = 27;
-            this.btnOK.Text = "Nạp Thêm";
+            this.btnOK.Text = "Đồng Ý";
             this.btnOK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnOK.UseVisualStyleBackColor = false;
-            this.btnOK.Click += new System.EventHandler(this.OKClickEventHandler);
             // 
             // grbTimeManager
             // 
@@ -110,6 +108,7 @@
             this.grbTimeManager.Controls.Add(this.label5);
             this.grbTimeManager.Controls.Add(this.label4);
             this.grbTimeManager.Controls.Add(this.textBox5);
+            this.grbTimeManager.Enabled = false;
             this.grbTimeManager.Location = new System.Drawing.Point(21, 131);
             this.grbTimeManager.Name = "grbTimeManager";
             this.grbTimeManager.Size = new System.Drawing.Size(328, 107);
@@ -216,18 +215,14 @@
             this.lblName.TabIndex = 16;
             this.lblName.Text = "Tên tài khoản";
             // 
-            // AddTimeMemberGUI
+            // ThemThanhVien
             // 
-            this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Bisque;
-            this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(397, 333);
+            this.ClientSize = new System.Drawing.Size(401, 340);
             this.Controls.Add(this.groupBox2);
-            this.Name = "AddTimeMemberGUI";
-            this.Text = "Thêm Giờ Sử Dụng";
-            this.Load += new System.EventHandler(this.AddTimeMemberGUILoadEventHandler);
+            this.Name = "ThemThanhVien";
+            this.Text = "ThemThanhVien";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.grbTimeManager.ResumeLayout(false);

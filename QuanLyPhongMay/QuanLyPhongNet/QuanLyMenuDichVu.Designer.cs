@@ -1,6 +1,6 @@
 ﻿namespace QuanLyPhongNet
 {
-    partial class CategoryManageGUI
+    partial class QuanLyMenuDichVu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CategoryManageGUI));
             this.tab = new System.Windows.Forms.TabControl();
             this.tadFoods = new System.Windows.Forms.TabPage();
             this.label50 = new System.Windows.Forms.Label();
@@ -78,21 +77,21 @@
             this.label38 = new System.Windows.Forms.Label();
             this.txtCategoryName = new System.Windows.Forms.TextBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.grbInformation = new System.Windows.Forms.GroupBox();
-            this.drgvInformation = new System.Windows.Forms.DataGridView();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.picSearch = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.cboSearch = new System.Windows.Forms.ComboBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
             this.picExit = new System.Windows.Forms.PictureBox();
             this.picDelete = new System.Windows.Forms.PictureBox();
             this.picUpdate = new System.Windows.Forms.PictureBox();
             this.picAdd = new System.Windows.Forms.PictureBox();
+            this.grbInformation = new System.Windows.Forms.GroupBox();
+            this.drgvInformation = new System.Windows.Forms.DataGridView();
             this.tab.SuspendLayout();
             this.tadFoods.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -102,14 +101,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabCategory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            this.grbInformation.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.drgvInformation)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUpdate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAdd)).BeginInit();
+            this.grbInformation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.drgvInformation)).BeginInit();
             this.SuspendLayout();
             // 
             // tab
@@ -124,8 +123,7 @@
             this.tab.Name = "tab";
             this.tab.SelectedIndex = 0;
             this.tab.Size = new System.Drawing.Size(1215, 274);
-            this.tab.TabIndex = 1;
-            this.tab.SelectedIndexChanged += new System.EventHandler(this.TabSelectedIndexChangedEventHandler);
+            this.tab.TabIndex = 2;
             // 
             // tadFoods
             // 
@@ -179,7 +177,6 @@
             this.txtUnitLotOfFood.Name = "txtUnitLotOfFood";
             this.txtUnitLotOfFood.Size = new System.Drawing.Size(250, 26);
             this.txtUnitLotOfFood.TabIndex = 42;
-//            this.txtUnitLotOfFood.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnitLotOfFood_KeyPress);
             // 
             // label48
             // 
@@ -209,7 +206,6 @@
             this.txtInventoryNumberOfFood.Name = "txtInventoryNumberOfFood";
             this.txtInventoryNumberOfFood.Size = new System.Drawing.Size(250, 26);
             this.txtInventoryNumberOfFood.TabIndex = 39;
-            this.txtInventoryNumberOfFood.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.InventoryNumberOfFoodKeyPressEventHandler);
             // 
             // cboFoodCategory
             // 
@@ -227,7 +223,6 @@
             this.txtPriceUnitOfFood.Name = "txtPriceUnitOfFood";
             this.txtPriceUnitOfFood.Size = new System.Drawing.Size(250, 26);
             this.txtPriceUnitOfFood.TabIndex = 37;
-            this.txtPriceUnitOfFood.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PriceUnitOfFoodKeyPressEventHandler);
             // 
             // txtFoodName
             // 
@@ -281,7 +276,6 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::QuanLyPhongNet.Properties.Resources.fast_food_icon_1;
             this.pictureBox3.Location = new System.Drawing.Point(57, 15);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(244, 207);
@@ -313,7 +307,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::QuanLyPhongNet.Properties.Resources._28_512;
             this.pictureBox1.Location = new System.Drawing.Point(69, 15);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(244, 207);
@@ -458,7 +451,6 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::QuanLyPhongNet.Properties.Resources._2015101183320;
             this.pictureBox2.Location = new System.Drawing.Point(35, 16);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(310, 207);
@@ -625,92 +617,12 @@
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Image = global::QuanLyPhongNet.Properties.Resources.app_type_catalog_512px_GREY1;
             this.pictureBox8.Location = new System.Drawing.Point(83, 12);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(281, 217);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 33;
             this.pictureBox8.TabStop = false;
-            // 
-            // grbInformation
-            // 
-            this.grbInformation.BackColor = System.Drawing.Color.Transparent;
-            this.grbInformation.Controls.Add(this.drgvInformation);
-            this.grbInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbInformation.ForeColor = System.Drawing.Color.Red;
-            this.grbInformation.Location = new System.Drawing.Point(12, 392);
-            this.grbInformation.Name = "grbInformation";
-            this.grbInformation.Size = new System.Drawing.Size(1215, 517);
-            this.grbInformation.TabIndex = 61;
-            this.grbInformation.TabStop = false;
-            this.grbInformation.Text = "Thông Tin Chi Tiết";
-            // 
-            // drgvInformation
-            // 
-            this.drgvInformation.AllowUserToAddRows = false;
-            this.drgvInformation.AllowUserToDeleteRows = false;
-            this.drgvInformation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.drgvInformation.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.drgvInformation.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.drgvInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.drgvInformation.Location = new System.Drawing.Point(6, 28);
-            this.drgvInformation.MultiSelect = false;
-            this.drgvInformation.Name = "drgvInformation";
-            this.drgvInformation.ReadOnly = true;
-            this.drgvInformation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.drgvInformation.Size = new System.Drawing.Size(1195, 301);
-            this.drgvInformation.TabIndex = 1;
-            this.drgvInformation.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvInformationCellClickEventHandler);
-            this.drgvInformation.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvInformationCellDoubleClickEventHandler);
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.BackColor = System.Drawing.Color.Transparent;
-            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label37.Location = new System.Drawing.Point(1155, 366);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(58, 24);
-            this.label37.TabIndex = 60;
-            this.label37.Text = "Thoát";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.BackColor = System.Drawing.Color.Transparent;
-            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label36.Location = new System.Drawing.Point(1014, 366);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(45, 24);
-            this.label36.TabIndex = 59;
-            this.label36.Text = "Xóa";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.BackColor = System.Drawing.Color.Transparent;
-            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label35.Location = new System.Drawing.Point(832, 366);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(92, 24);
-            this.label35.TabIndex = 58;
-            this.label35.Text = "Cập nhập";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.BackColor = System.Drawing.Color.Transparent;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.ForeColor = System.Drawing.Color.Red;
-            this.label34.Location = new System.Drawing.Point(689, 365);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(60, 24);
-            this.label34.TabIndex = 53;
-            this.label34.Text = "Thêm";
             // 
             // groupBox1
             // 
@@ -720,10 +632,10 @@
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.cboSearch);
             this.groupBox1.ForeColor = System.Drawing.Color.Blue;
-            this.groupBox1.Location = new System.Drawing.Point(16, 288);
+            this.groupBox1.Location = new System.Drawing.Point(16, 292);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(566, 88);
-            this.groupBox1.TabIndex = 52;
+            this.groupBox1.TabIndex = 53;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm";
             // 
@@ -739,16 +651,12 @@
             // picSearch
             // 
             this.picSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picSearch.Image = global::QuanLyPhongNet.Properties.Resources.search_b;
             this.picSearch.Location = new System.Drawing.Point(442, 19);
             this.picSearch.Name = "picSearch";
             this.picSearch.Size = new System.Drawing.Size(79, 63);
             this.picSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picSearch.TabIndex = 27;
             this.picSearch.TabStop = false;
-            this.picSearch.Click += new System.EventHandler(this.SearchEventHandler);
-            this.picSearch.MouseLeave += new System.EventHandler(this.SearchMouseLeaveEventHandler);
-            this.picSearch.MouseHover += new System.EventHandler(this.SearchMouseHoverEventHandler);
             // 
             // label10
             // 
@@ -775,72 +683,133 @@
             this.cboSearch.TabIndex = 10;
             this.cboSearch.Text = "Tên Sản Phẩm";
             // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.BackColor = System.Drawing.Color.Transparent;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label37.Location = new System.Drawing.Point(1118, 383);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(58, 24);
+            this.label37.TabIndex = 68;
+            this.label37.Text = "Thoát";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.BackColor = System.Drawing.Color.Transparent;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label36.Location = new System.Drawing.Point(977, 383);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(45, 24);
+            this.label36.TabIndex = 67;
+            this.label36.Text = "Xóa";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.BackColor = System.Drawing.Color.Transparent;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label35.Location = new System.Drawing.Point(795, 383);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(92, 24);
+            this.label35.TabIndex = 66;
+            this.label35.Text = "Cập nhập";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.BackColor = System.Drawing.Color.Transparent;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.ForeColor = System.Drawing.Color.Red;
+            this.label34.Location = new System.Drawing.Point(652, 382);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(60, 24);
+            this.label34.TabIndex = 61;
+            this.label34.Text = "Thêm";
+            // 
             // picExit
             // 
             this.picExit.BackColor = System.Drawing.Color.Transparent;
             this.picExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picExit.Image = global::QuanLyPhongNet.Properties.Resources.icon_seta1;
-            this.picExit.Location = new System.Drawing.Point(1141, 289);
+            this.picExit.Location = new System.Drawing.Point(1104, 306);
             this.picExit.Name = "picExit";
             this.picExit.Size = new System.Drawing.Size(82, 74);
             this.picExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picExit.TabIndex = 57;
+            this.picExit.TabIndex = 65;
             this.picExit.TabStop = false;
-            this.picExit.Click += new System.EventHandler(this.ExitEventHandler);
-            this.picExit.MouseLeave += new System.EventHandler(this.ExitMouseLeaveEventHandler);
-            this.picExit.MouseHover += new System.EventHandler(this.ExitMouseHoverEventHandler);
             // 
             // picDelete
             // 
             this.picDelete.BackColor = System.Drawing.Color.Transparent;
             this.picDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picDelete.Image = global::QuanLyPhongNet.Properties.Resources.delete_button_png_271;
-            this.picDelete.Location = new System.Drawing.Point(994, 289);
+            this.picDelete.Location = new System.Drawing.Point(957, 306);
             this.picDelete.Name = "picDelete";
             this.picDelete.Size = new System.Drawing.Size(82, 74);
             this.picDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picDelete.TabIndex = 56;
+            this.picDelete.TabIndex = 64;
             this.picDelete.TabStop = false;
-            this.picDelete.Click += new System.EventHandler(this.DeleteEventHandler);
-            this.picDelete.MouseLeave += new System.EventHandler(this.DeleteMouseLeaveEventHandler);
-            this.picDelete.MouseHover += new System.EventHandler(this.DeleteMouseHoverEventHandler);
             // 
             // picUpdate
             // 
             this.picUpdate.BackColor = System.Drawing.Color.Transparent;
             this.picUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picUpdate.Image = global::QuanLyPhongNet.Properties.Resources._13924959571;
-            this.picUpdate.Location = new System.Drawing.Point(836, 289);
+            this.picUpdate.Location = new System.Drawing.Point(799, 306);
             this.picUpdate.Name = "picUpdate";
             this.picUpdate.Size = new System.Drawing.Size(82, 74);
             this.picUpdate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picUpdate.TabIndex = 55;
+            this.picUpdate.TabIndex = 63;
             this.picUpdate.TabStop = false;
-            this.picUpdate.Click += new System.EventHandler(this.UpdateEventHandler);
-            this.picUpdate.MouseLeave += new System.EventHandler(this.UpdateMouseLeaveEventHandler);
-            this.picUpdate.MouseHover += new System.EventHandler(this.UpdateMouseHoverEventHandler);
             // 
             // picAdd
             // 
             this.picAdd.BackColor = System.Drawing.Color.Transparent;
             this.picAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picAdd.Image = global::QuanLyPhongNet.Properties.Resources.add11;
-            this.picAdd.Location = new System.Drawing.Point(678, 289);
+            this.picAdd.Location = new System.Drawing.Point(641, 306);
             this.picAdd.Name = "picAdd";
             this.picAdd.Size = new System.Drawing.Size(82, 74);
             this.picAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picAdd.TabIndex = 54;
+            this.picAdd.TabIndex = 62;
             this.picAdd.TabStop = false;
-            this.picAdd.Click += new System.EventHandler(this.AddEventHandler);
-            this.picAdd.MouseLeave += new System.EventHandler(this.AddMouseLeaveEventHandler);
-            this.picAdd.MouseHover += new System.EventHandler(this.AddMouseHoverEventHandler);
             // 
-            // CategoryManageGUI
+            // grbInformation
+            // 
+            this.grbInformation.BackColor = System.Drawing.Color.Transparent;
+            this.grbInformation.Controls.Add(this.drgvInformation);
+            this.grbInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbInformation.ForeColor = System.Drawing.Color.Red;
+            this.grbInformation.Location = new System.Drawing.Point(10, 410);
+            this.grbInformation.Name = "grbInformation";
+            this.grbInformation.Size = new System.Drawing.Size(1211, 354);
+            this.grbInformation.TabIndex = 69;
+            this.grbInformation.TabStop = false;
+            this.grbInformation.Text = "Thông Tin Chi Tiết";
+            // 
+            // drgvInformation
+            // 
+            this.drgvInformation.AllowUserToAddRows = false;
+            this.drgvInformation.AllowUserToDeleteRows = false;
+            this.drgvInformation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.drgvInformation.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.drgvInformation.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.drgvInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.drgvInformation.Location = new System.Drawing.Point(6, 28);
+            this.drgvInformation.MultiSelect = false;
+            this.drgvInformation.Name = "drgvInformation";
+            this.drgvInformation.ReadOnly = true;
+            this.drgvInformation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.drgvInformation.Size = new System.Drawing.Size(1195, 301);
+            this.drgvInformation.TabIndex = 1;
+            // 
+            // QuanLyMenuMonAn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
-            this.ClientSize = new System.Drawing.Size(1239, 733);
+            this.ClientSize = new System.Drawing.Size(1218, 745);
             this.Controls.Add(this.grbInformation);
             this.Controls.Add(this.label37);
             this.Controls.Add(this.label36);
@@ -852,10 +821,8 @@
             this.Controls.Add(this.picAdd);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tab);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "CategoryManageGUI";
-            this.Text = "Quản Lý Danh Mục";
-            this.Load += new System.EventHandler(this.CategoryManageGUILoadEventHandler);
+            this.Name = "QuanLyMenuMonAn";
+            this.Text = "QuanLyMenuMonAn";
             this.tab.ResumeLayout(false);
             this.tadFoods.ResumeLayout(false);
             this.tadFoods.PerformLayout();
@@ -869,8 +836,6 @@
             this.tabCategory.ResumeLayout(false);
             this.tabCategory.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            this.grbInformation.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.drgvInformation)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSearch)).EndInit();
@@ -878,6 +843,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUpdate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAdd)).EndInit();
+            this.grbInformation.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.drgvInformation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -888,6 +855,7 @@
         private System.Windows.Forms.TabControl tab;
         private System.Windows.Forms.TabPage tadFoods;
         private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label label49;
         private System.Windows.Forms.TextBox txtUnitLotOfFood;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label47;
@@ -901,22 +869,6 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TabPage tabDinks;
-        private System.Windows.Forms.TabPage tabCards;
-        private System.Windows.Forms.GroupBox grbInformation;
-        private System.Windows.Forms.DataGridView drgvInformation;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.PictureBox picExit;
-        private System.Windows.Forms.PictureBox picDelete;
-        private System.Windows.Forms.PictureBox picUpdate;
-        private System.Windows.Forms.PictureBox picAdd;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.PictureBox picSearch;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox cboSearch;
-        private System.Windows.Forms.Label label49;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -930,6 +882,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TabPage tabCards;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -943,11 +896,25 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.TabPage tabCategory;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.TextBox txtCategoryName;
         private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.PictureBox picSearch;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cboSearch;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.PictureBox picExit;
+        private System.Windows.Forms.PictureBox picDelete;
+        private System.Windows.Forms.PictureBox picUpdate;
+        private System.Windows.Forms.PictureBox picAdd;
+        private System.Windows.Forms.GroupBox grbInformation;
+        private System.Windows.Forms.DataGridView drgvInformation;
     }
 }

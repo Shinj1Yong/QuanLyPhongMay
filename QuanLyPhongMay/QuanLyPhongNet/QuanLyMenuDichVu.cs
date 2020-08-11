@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace QuanLyPhongNet
 {
-    public partial class ReportGUI : Form
+    public partial class QuanLyMenuDichVu : Form
     {
-        public ReportGUI()
+        public QuanLyMenuDichVu()
         {
             InitializeComponent();
-        }
-
-        private void ExitClickEventHandler(object sender, EventArgs e)
-        {
-            OptionGUI frmOption = new OptionGUI();
-            frmOption.ShowDialog();
-            this.Close();
         }
     }
 }
