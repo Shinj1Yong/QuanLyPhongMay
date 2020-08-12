@@ -11,7 +11,7 @@
         private int foodID;
         private string name;
         private string categoryName;
-        private float priceUnit;
+        private int priceUnit;
         private string unitLot;
         private int inventoryNumber;
 
@@ -54,7 +54,7 @@
             }
         }
 
-        public float PriceUnit
+        public int PriceUnit
         {
             get
             {

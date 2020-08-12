@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tab = new System.Windows.Forms.TabControl();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuanLyMenuDichVu));
+            this.tabMenu = new System.Windows.Forms.TabControl();
             this.tadFoods = new System.Windows.Forms.TabPage();
             this.label50 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
@@ -92,7 +93,7 @@
             this.picAdd = new System.Windows.Forms.PictureBox();
             this.grbInformation = new System.Windows.Forms.GroupBox();
             this.drgvInformation = new System.Windows.Forms.DataGridView();
-            this.tab.SuspendLayout();
+            this.tabMenu.SuspendLayout();
             this.tadFoods.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabDinks.SuspendLayout();
@@ -111,19 +112,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.drgvInformation)).BeginInit();
             this.SuspendLayout();
             // 
-            // tab
+            // tabMenu
             // 
-            this.tab.Controls.Add(this.tadFoods);
-            this.tab.Controls.Add(this.tabDinks);
-            this.tab.Controls.Add(this.tabCards);
-            this.tab.Controls.Add(this.tabCategory);
-            this.tab.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tab.Location = new System.Drawing.Point(12, 12);
-            this.tab.Name = "tab";
-            this.tab.SelectedIndex = 0;
-            this.tab.Size = new System.Drawing.Size(1215, 274);
-            this.tab.TabIndex = 2;
+            this.tabMenu.Controls.Add(this.tadFoods);
+            this.tabMenu.Controls.Add(this.tabDinks);
+            this.tabMenu.Controls.Add(this.tabCards);
+            this.tabMenu.Controls.Add(this.tabCategory);
+            this.tabMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tabMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabMenu.Location = new System.Drawing.Point(12, 12);
+            this.tabMenu.Name = "tabMenu";
+            this.tabMenu.SelectedIndex = 0;
+            this.tabMenu.Size = new System.Drawing.Size(1194, 274);
+            this.tabMenu.TabIndex = 2;
+            this.tabMenu.SelectedIndexChanged += new System.EventHandler(this.tabMenu_SelectedIndexChanged);
             // 
             // tadFoods
             // 
@@ -145,7 +147,7 @@
             this.tadFoods.ForeColor = System.Drawing.Color.Red;
             this.tadFoods.Location = new System.Drawing.Point(4, 29);
             this.tadFoods.Name = "tadFoods";
-            this.tadFoods.Size = new System.Drawing.Size(1207, 241);
+            this.tadFoods.Size = new System.Drawing.Size(1186, 241);
             this.tadFoods.TabIndex = 3;
             this.tadFoods.Text = "Thức Ăn";
             // 
@@ -276,6 +278,7 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(57, 15);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(244, 207);
@@ -301,12 +304,13 @@
             this.tabDinks.Controls.Add(this.label7);
             this.tabDinks.Location = new System.Drawing.Point(4, 29);
             this.tabDinks.Name = "tabDinks";
-            this.tabDinks.Size = new System.Drawing.Size(1207, 241);
+            this.tabDinks.Size = new System.Drawing.Size(1186, 241);
             this.tabDinks.TabIndex = 9;
             this.tabDinks.Text = "Nước Uống";
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(69, 15);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(244, 207);
@@ -445,12 +449,13 @@
             this.tabCards.Controls.Add(this.label15);
             this.tabCards.Location = new System.Drawing.Point(4, 29);
             this.tabCards.Name = "tabCards";
-            this.tabCards.Size = new System.Drawing.Size(1207, 241);
+            this.tabCards.Size = new System.Drawing.Size(1186, 241);
             this.tabCards.TabIndex = 10;
             this.tabCards.Text = "Các Loại Thẻ";
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(35, 16);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(310, 207);
@@ -580,7 +585,7 @@
             this.tabCategory.Controls.Add(this.pictureBox8);
             this.tabCategory.Location = new System.Drawing.Point(4, 29);
             this.tabCategory.Name = "tabCategory";
-            this.tabCategory.Size = new System.Drawing.Size(1207, 241);
+            this.tabCategory.Size = new System.Drawing.Size(1186, 241);
             this.tabCategory.TabIndex = 11;
             this.tabCategory.Text = "Danh Mục";
             // 
@@ -617,6 +622,7 @@
             // 
             // pictureBox8
             // 
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
             this.pictureBox8.Location = new System.Drawing.Point(83, 12);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(281, 217);
@@ -651,12 +657,14 @@
             // picSearch
             // 
             this.picSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picSearch.Image = ((System.Drawing.Image)(resources.GetObject("picSearch.Image")));
             this.picSearch.Location = new System.Drawing.Point(442, 19);
             this.picSearch.Name = "picSearch";
             this.picSearch.Size = new System.Drawing.Size(79, 63);
             this.picSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picSearch.TabIndex = 27;
             this.picSearch.TabStop = false;
+            this.picSearch.Click += new System.EventHandler(this.picSearch_Click);
             // 
             // label10
             // 
@@ -735,6 +743,7 @@
             // 
             this.picExit.BackColor = System.Drawing.Color.Transparent;
             this.picExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picExit.Image = ((System.Drawing.Image)(resources.GetObject("picExit.Image")));
             this.picExit.Location = new System.Drawing.Point(1104, 306);
             this.picExit.Name = "picExit";
             this.picExit.Size = new System.Drawing.Size(82, 74);
@@ -746,6 +755,7 @@
             // 
             this.picDelete.BackColor = System.Drawing.Color.Transparent;
             this.picDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picDelete.Image = ((System.Drawing.Image)(resources.GetObject("picDelete.Image")));
             this.picDelete.Location = new System.Drawing.Point(957, 306);
             this.picDelete.Name = "picDelete";
             this.picDelete.Size = new System.Drawing.Size(82, 74);
@@ -757,6 +767,7 @@
             // 
             this.picUpdate.BackColor = System.Drawing.Color.Transparent;
             this.picUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picUpdate.Image = ((System.Drawing.Image)(resources.GetObject("picUpdate.Image")));
             this.picUpdate.Location = new System.Drawing.Point(799, 306);
             this.picUpdate.Name = "picUpdate";
             this.picUpdate.Size = new System.Drawing.Size(82, 74);
@@ -768,6 +779,7 @@
             // 
             this.picAdd.BackColor = System.Drawing.Color.Transparent;
             this.picAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picAdd.Image = ((System.Drawing.Image)(resources.GetObject("picAdd.Image")));
             this.picAdd.Location = new System.Drawing.Point(641, 306);
             this.picAdd.Name = "picAdd";
             this.picAdd.Size = new System.Drawing.Size(82, 74);
@@ -804,7 +816,7 @@
             this.drgvInformation.Size = new System.Drawing.Size(1195, 301);
             this.drgvInformation.TabIndex = 1;
             // 
-            // QuanLyMenuMonAn
+            // QuanLyMenuDichVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -820,10 +832,11 @@
             this.Controls.Add(this.picUpdate);
             this.Controls.Add(this.picAdd);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.tab);
-            this.Name = "QuanLyMenuMonAn";
+            this.Controls.Add(this.tabMenu);
+            this.Name = "QuanLyMenuDichVu";
             this.Text = "QuanLyMenuMonAn";
-            this.tab.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.QuanLyMenuDichVu_Load);
+            this.tabMenu.ResumeLayout(false);
             this.tadFoods.ResumeLayout(false);
             this.tadFoods.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -852,7 +865,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tab;
+        private System.Windows.Forms.TabControl tabMenu;
         private System.Windows.Forms.TabPage tadFoods;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.Label label49;

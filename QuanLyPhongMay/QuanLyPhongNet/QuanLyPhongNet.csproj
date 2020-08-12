@@ -32,6 +32,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="QuanLyPhongNet.BLL">
+      <HintPath>..\QuanLyPhongNet.BLL\bin\Debug\QuanLyPhongNet.BLL.dll</HintPath>
+    </Reference>
+    <Reference Include="QuanLyPhongNet.DAL">
+      <HintPath>..\QuanLyPhongNet.BLL\bin\Debug\QuanLyPhongNet.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="QuanLyPhongNet.DTO">
+      <HintPath>..\QuanLyPhongNet.BLL\bin\Debug\QuanLyPhongNet.DTO.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,14 +54,83 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChinhSuaDataBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChinhSuaDataBase.Designer.cs">
+      <DependentUpon>ChinhSuaDataBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GiaoDienChinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaoDienChinh.Designer.cs">
+      <DependentUpon>GiaoDienChinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GiaoDienDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaoDienDangNhap.Designer.cs">
+      <DependentUpon>GiaoDienDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GiaoDienGoiDichVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaoDienGoiDichVu.Designer.cs">
+      <DependentUpon>GiaoDienGoiDichVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GiaoDienTuyChon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaoDienTuyChon.Designer.cs">
+      <DependentUpon>GiaoDienTuyChon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NapTienThanhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NapTienThanhVien.Designer.cs">
+      <DependentUpon>NapTienThanhVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLyMenuDichVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyMenuDichVu.Designer.cs">
+      <DependentUpon>QuanLyMenuDichVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemThanhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemThanhVien.Designer.cs">
+      <DependentUpon>ThemThanhVien.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ChinhSuaDataBase.resx">
+      <DependentUpon>ChinhSuaDataBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiaoDienChinh.resx">
+      <DependentUpon>GiaoDienChinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiaoDienDangNhap.resx">
+      <DependentUpon>GiaoDienDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiaoDienGoiDichVu.resx">
+      <DependentUpon>GiaoDienGoiDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiaoDienTuyChon.resx">
+      <DependentUpon>GiaoDienTuyChon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NapTienThanhVien.resx">
+      <DependentUpon>NapTienThanhVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,6 +140,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="QuanLyMenuDichVu.resx">
+      <DependentUpon>QuanLyMenuDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemThanhVien.resx">
+      <DependentUpon>ThemThanhVien.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -74,6 +158,60 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\1392495957.png" />
+    <Content Include="Resources\13924959571.png" />
+    <Content Include="Resources\2015101183320.jpg" />
+    <Content Include="Resources\20151011833201.jpg" />
+    <Content Include="Resources\28-512.png" />
+    <Content Include="Resources\28-5121.png" />
+    <Content Include="Resources\512_icon.png" />
+    <Content Include="Resources\add-file.png" />
+    <Content Include="Resources\Add.png" />
+    <Content Include="Resources\add1.png" />
+    <Content Include="Resources\add11.png" />
+    <Content Include="Resources\Apply.png" />
+    <Content Include="Resources\app_type_catalog_512px_GREY.png" />
+    <Content Include="Resources\app_type_catalog_512px_GREY1.png" />
+    <Content Include="Resources\blog.jpg" />
+    <Content Include="Resources\Calendar.png" />
+    <Content Include="Resources\Calendar1.png" />
+    <Content Include="Resources\Cancel.png" />
+    <Content Include="Resources\dangnhap.jpg" />
+    <Content Include="Resources\dangnhap1.jpg" />
+    <Content Include="Resources\delete-button-png-27.png" />
+    <Content Include="Resources\delete-button-png-271.png" />
+    <Content Include="Resources\Delete.png" />
+    <Content Include="Resources\Delete1.png" />
+    <Content Include="Resources\disc_256.png" />
+    <Content Include="Resources\doimk.png" />
+    <Content Include="Resources\doimk1.png" />
+    <Content Include="Resources\fast-food-icon-1.png" />
+    <Content Include="Resources\fast-food-icon-11.png" />
+    <Content Include="Resources\google-sites-icon-large.png" />
+    <Content Include="Resources\google-sites-icon-large1.png" />
+    <Content Include="Resources\Home.jpg" />
+    <Content Include="Resources\icon-seta1.png" />
+    <Content Include="Resources\internet-startup-icon.png" />
+    <Content Include="Resources\Key.png" />
+    <Content Include="Resources\máy tính.png" />
+    <Content Include="Resources\nhanvien.png" />
+    <Content Include="Resources\nhanvien1.png" />
+    <Content Include="Resources\order-icon-21627 %281%29.png" />
+    <Content Include="Resources\sa_three.jpg" />
+    <Content Include="Resources\search_b.png" />
+    <Content Include="Resources\Sync.png" />
+    <Content Include="Resources\systemcpl_dll_01_14.png" />
+    <Content Include="Resources\trangchu.png" />
+    <Content Include="Resources\Tune.png" />
+    <Content Include="Resources\uc_shikamaru-mj_hardware.png" />
+    <Content Include="Resources\Unlock.png" />
+    <Content Include="Resources\User group.png" />
+    <Content Include="Resources\user_cards-512.png" />
+    <Content Include="Resources\vector_285_14-01-512.png" />
+    <Content Include="Resources\View.png" />
+    <Content Include="Resources\wsecedit_dll_05_13.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
