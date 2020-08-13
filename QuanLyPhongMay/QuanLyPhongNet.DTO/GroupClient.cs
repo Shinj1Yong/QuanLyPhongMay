@@ -8,33 +8,12 @@
 
     public class GroupClient
     {
-        private string groupClientName;
-        private string description;
+        private string _groupClientID;
+        private string _groupClientName;
+        private string _description;
 
-        public string GroupClientName
-        {
-            get
-            {
-                return groupClientName;
-            }
-
-            set
-            {
-                groupClientName = value;
-            }
-        }
-
-        public string Description
-        {
-            get
-            {
-                return description;
-            }
-
-            set
-            {
-                description = value;
-            }
-        }
+        public string GroupClientID { get => _groupClientID; set => _groupClientID = value; }
+        public string GroupClientName { get => _groupClientName; set => _groupClientName = value; }
+        public string Description { get => _description; set => _description = value; }
     }
 }

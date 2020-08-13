@@ -8,89 +8,20 @@
 
     public class Member
     {
-        private string accountName;
-        private string password;
-        private string groupUserName;
-        private TimeSpan timeInAccount;
-        private float currentMoney;
-        private string status;
+        private string _phoneNumber;
+        private string _accountName;
+        private string _password;
+        private string _groupUserID;
+        private TimeSpan _currentTime;
+        private double _currentMoney;
+        private bool _statusAccount;
 
-        public string AccountName
-        {
-            get
-            {
-                return accountName;
-            }
-
-            set
-            {
-                accountName = value;
-            }
-        }
-
-        public string Password
-        {
-            get
-            {
-                return password;
-            }
-
-            set
-            {
-                password = value;
-            }
-        }
-
-        public string GroupUserName
-        {
-            get
-            {
-                return groupUserName;
-            }
-
-            set
-            {
-                groupUserName = value;
-            }
-        }
-
-        public TimeSpan TimeInAccount
-        {
-            get
-            {
-                return timeInAccount;
-            }
-
-            set
-            {
-                timeInAccount = value;
-            }
-        }
-
-        public float CurrentMoney
-        {
-            get
-            {
-                return currentMoney;
-            }
-
-            set
-            {
-                currentMoney = value;
-            }
-        }
-
-        public string Status
-        {
-            get
-            {
-                return status;
-            }
-
-            set
-            {
-                status = value;
-            }
-        }
+        public string PhoneNumber { get => _phoneNumber; set => _phoneNumber = value; }
+        public string AccountName { get => _accountName; set => _accountName = value; }
+        public string Password { get => _password; set => _password = value; }
+        public string GroupUserID { get => _groupUserID; set => _groupUserID = value; }
+        public TimeSpan CurrentTime { get => _currentTime; set => _currentTime = value; }
+        public double CurrentMoney { get => _currentMoney; set => _currentMoney = value; }
+        public bool StatusAccount { get => _statusAccount; set => _statusAccount = value; }
     }
 }

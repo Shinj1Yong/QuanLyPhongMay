@@ -17,9 +17,6 @@ namespace QuanLyPhongNet.BLL
         {
             return theCao.getTheCao();
         }
-        public List<QuanLyPhongNet.DTO.Card> getCategoryTheCao()
-        {
-            return theCao.getCategoryTheCao();
-        }
+       
     }
 }

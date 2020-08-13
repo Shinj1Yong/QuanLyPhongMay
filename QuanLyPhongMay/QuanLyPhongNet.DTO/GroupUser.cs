@@ -8,33 +8,10 @@
 
     public class GroupUser
     {
+        private string _groupUserID;
         private string groupUserName;
-        private string typeName;
 
-        public string GroupUserName
-        {
-            get
-            {
-                return groupUserName;
-            }
-
-            set
-            {
-                groupUserName = value;
-            }
-        }
-
-        public string TypeName
-        {
-            get
-            {
-                return typeName;
-            }
-
-            set
-            {
-                typeName = value;
-            }
-        }
+        public string GroupUserID { get => _groupUserID; set => _groupUserID = value; }
+        public string GroupUserName { get => groupUserName; set => groupUserName = value; }
     }
 }

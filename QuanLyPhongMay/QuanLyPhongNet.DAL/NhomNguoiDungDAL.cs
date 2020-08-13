@@ -18,8 +18,8 @@ namespace QuanLyPhongNet.DAL
             return (from kh in qlpn.GroupUsers
                     select new QuanLyPhongNet.DTO.GroupUser
                     {
-                        GroupUserName = kh.GroupName,
-                        TypeName = kh.TypeName
+                        GroupUserID = kh.GroupUserID,
+                        GroupUserName = kh.GroupUserName
                     }
                     ).ToList();
         }

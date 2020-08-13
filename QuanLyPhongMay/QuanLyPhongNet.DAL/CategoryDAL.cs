@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using QuanLyPhongNet.DTO;
+
 namespace QuanLyPhongNet.DAL
 {
     public class CategoryDAL
@@ -15,7 +15,7 @@ namespace QuanLyPhongNet.DAL
         }
         public List<QuanLyPhongNet.DTO.Category> getCategory()
         {
-            return (from kh in qlpn.Categories select new QuanLyPhongNet.DTO.Category {CategoryName=kh.CategoryName}).ToList();
+            return (from category in qlpn.Categories select new QuanLyPhongNet.DTO.Category { CategoryName = category.CategoryName }).ToList();
         }
     }
 }

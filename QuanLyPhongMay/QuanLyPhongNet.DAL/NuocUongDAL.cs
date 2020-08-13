@@ -13,13 +13,40 @@ namespace QuanLyPhongNet.DAL
         {
 
         }
+
+        public string MaTuDong()
+        {
+            List<QuanLyPhongNet.DTO.Drink> dr = getNuocUong();
+            int dem = 1;
+            string ma = "DRINK0" + dem;
+            foreach (DTO.Drink it in dr)
+            {
+                
+                if (it.DrinkID.Trim() == ma)
+                {
+                    
+                    dem++;
+                    if(dem<10)
+                    {
+                        ma = "DRINK0" + dem;
+                    }
+                    else
+                    {
+                        ma = "DRINK" + dem;
+                    }
+                }
+            }
+            if(dem<10)
+            {
+                return "DRINK0" + dem;
+            }
+            return "DRINK" + dem;
+            
+        }
         public List<QuanLyPhongNet.DTO.Drink> getNuocUong()
         {
-            return (from kh in qlpn.Drinks select new QuanLyPhongNet.DTO.Drink {DrinkID=kh.DrinkID, Name=kh.DrinkName,CategoryName=kh.CategoryName,PriceUnit=(float)kh.PriceUnit.GetValueOrDefault(),UnitLot=kh.UnitLot,InventoryNumber=kh.InventoryNumber.GetValueOrDefault() }).ToList();
+            return (from drink in qlpn.Drinks select new QuanLyPhongNet.DTO.Drink {DrinkID=drink.DrinkID, DrinkName=drink.DrinkName,CategoryName=drink.CategoryName,PriceUnit=(double)drink.PriceUnit.GetValueOrDefault(),UnitLot=drink.UnitLot,InventoryNumber=drink.InventoryNumber.GetValueOrDefault() }).ToList();
         }
-        public List<QuanLyPhongNet.DTO.Drink> getCategoryNuocUong()
-        {
-            return (from kh in qlpn.Drinks select new QuanLyPhongNet.DTO.Drink { CategoryName = kh.CategoryName.First().ToString() }).ToList();
-        }
+        
     }
 }

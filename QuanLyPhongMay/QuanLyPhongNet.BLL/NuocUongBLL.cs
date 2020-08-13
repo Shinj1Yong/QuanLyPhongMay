@@ -17,9 +17,10 @@ namespace QuanLyPhongNet.BLL
         {
             return drink.getNuocUong();
         }
-        public List<QuanLyPhongNet.DTO.Drink> getCategoryNuocUong()
+        
+        public string getMa()
         {
-            return drink.getCategoryNuocUong();
+            return drink.MaTuDong();
         }
     }
 }

@@ -22,7 +22,7 @@ namespace QuanLyPhongNet.DAL
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="QuanLyPhongNet")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="QuanLyPhongMay")]
 	public partial class QuanLyPhongNetDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -30,9 +30,6 @@ namespace QuanLyPhongNet.DAL
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertAfterPayClient(AfterPayClient instance);
-    partial void UpdateAfterPayClient(AfterPayClient instance);
-    partial void DeleteAfterPayClient(AfterPayClient instance);
     partial void InsertBeforePayClient(BeforePayClient instance);
     partial void UpdateBeforePayClient(BeforePayClient instance);
     partial void DeleteBeforePayClient(BeforePayClient instance);
@@ -78,6 +75,12 @@ namespace QuanLyPhongNet.DAL
     partial void InsertOrderFood(OrderFood instance);
     partial void UpdateOrderFood(OrderFood instance);
     partial void DeleteOrderFood(OrderFood instance);
+    partial void InsertRoom(Room instance);
+    partial void UpdateRoom(Room instance);
+    partial void DeleteRoom(Room instance);
+    partial void InsertStatusClient(StatusClient instance);
+    partial void UpdateStatusClient(StatusClient instance);
+    partial void DeleteStatusClient(StatusClient instance);
     partial void InsertTheCard(TheCard instance);
     partial void UpdateTheCard(TheCard instance);
     partial void DeleteTheCard(TheCard instance);
@@ -87,7 +90,7 @@ namespace QuanLyPhongNet.DAL
     #endregion
 		
 		public QuanLyPhongNetDataContext() : 
-				base(global::QuanLyPhongNet.DAL.Properties.Settings.Default.QuanLyPhongNetConnectionString, mappingSource)
+				base(global::QuanLyPhongNet.DAL.Properties.Settings.Default.QuanLyPhongMayConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -116,11 +119,11 @@ namespace QuanLyPhongNet.DAL
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<AfterPayClient> AfterPayClients
+		public System.Data.Linq.Table<BeforePayClient> BeforePayClients
 		{
 			get
 			{
-				return this.GetTable<AfterPayClient>();
+				return this.GetTable<BeforePayClient>();
 			}
 		}
 		
@@ -129,14 +132,6 @@ namespace QuanLyPhongNet.DAL
 			get
 			{
 				return this.GetTable<TransactionDiary>();
-			}
-		}
-		
-		public System.Data.Linq.Table<BeforePayClient> BeforePayClients
-		{
-			get
-			{
-				return this.GetTable<BeforePayClient>();
 			}
 		}
 		
@@ -252,6 +247,22 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
+		public System.Data.Linq.Table<Room> Rooms
+		{
+			get
+			{
+				return this.GetTable<Room>();
+			}
+		}
+		
+		public System.Data.Linq.Table<StatusClient> StatusClients
+		{
+			get
+			{
+				return this.GetTable<StatusClient>();
+			}
+		}
+		
 		public System.Data.Linq.Table<TheCard> TheCards
 		{
 			get
@@ -269,414 +280,15 @@ namespace QuanLyPhongNet.DAL
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AfterPayClient")]
-	public partial class AfterPayClient : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _ClientName;
-		
-		private int _BillID;
-		
-		private System.Nullable<System.TimeSpan> _StartTime;
-		
-		private System.Nullable<System.TimeSpan> _UseTime;
-		
-		private System.Nullable<double> _PriceUnit;
-		
-		private System.Nullable<double> _TotalMoney;
-		
-		private EntityRef<Bill> _Bill;
-		
-		private EntityRef<Client> _Client;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnClientNameChanging(string value);
-    partial void OnClientNameChanged();
-    partial void OnBillIDChanging(int value);
-    partial void OnBillIDChanged();
-    partial void OnStartTimeChanging(System.Nullable<System.TimeSpan> value);
-    partial void OnStartTimeChanged();
-    partial void OnUseTimeChanging(System.Nullable<System.TimeSpan> value);
-    partial void OnUseTimeChanged();
-    partial void OnPriceUnitChanging(System.Nullable<double> value);
-    partial void OnPriceUnitChanged();
-    partial void OnTotalMoneyChanging(System.Nullable<double> value);
-    partial void OnTotalMoneyChanged();
-    #endregion
-		
-		public AfterPayClient()
-		{
-			this._Bill = default(EntityRef<Bill>);
-			this._Client = default(EntityRef<Client>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClientName", DbType="VarChar(30) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string ClientName
-		{
-			get
-			{
-				return this._ClientName;
-			}
-			set
-			{
-				if ((this._ClientName != value))
-				{
-					if (this._Client.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnClientNameChanging(value);
-					this.SendPropertyChanging();
-					this._ClientName = value;
-					this.SendPropertyChanged("ClientName");
-					this.OnClientNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BillID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int BillID
-		{
-			get
-			{
-				return this._BillID;
-			}
-			set
-			{
-				if ((this._BillID != value))
-				{
-					if (this._Bill.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnBillIDChanging(value);
-					this.SendPropertyChanging();
-					this._BillID = value;
-					this.SendPropertyChanged("BillID");
-					this.OnBillIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartTime", DbType="Time")]
-		public System.Nullable<System.TimeSpan> StartTime
-		{
-			get
-			{
-				return this._StartTime;
-			}
-			set
-			{
-				if ((this._StartTime != value))
-				{
-					this.OnStartTimeChanging(value);
-					this.SendPropertyChanging();
-					this._StartTime = value;
-					this.SendPropertyChanged("StartTime");
-					this.OnStartTimeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UseTime", DbType="Time")]
-		public System.Nullable<System.TimeSpan> UseTime
-		{
-			get
-			{
-				return this._UseTime;
-			}
-			set
-			{
-				if ((this._UseTime != value))
-				{
-					this.OnUseTimeChanging(value);
-					this.SendPropertyChanging();
-					this._UseTime = value;
-					this.SendPropertyChanged("UseTime");
-					this.OnUseTimeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceUnit", DbType="Float")]
-		public System.Nullable<double> PriceUnit
-		{
-			get
-			{
-				return this._PriceUnit;
-			}
-			set
-			{
-				if ((this._PriceUnit != value))
-				{
-					this.OnPriceUnitChanging(value);
-					this.SendPropertyChanging();
-					this._PriceUnit = value;
-					this.SendPropertyChanged("PriceUnit");
-					this.OnPriceUnitChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalMoney", DbType="Float")]
-		public System.Nullable<double> TotalMoney
-		{
-			get
-			{
-				return this._TotalMoney;
-			}
-			set
-			{
-				if ((this._TotalMoney != value))
-				{
-					this.OnTotalMoneyChanging(value);
-					this.SendPropertyChanging();
-					this._TotalMoney = value;
-					this.SendPropertyChanged("TotalMoney");
-					this.OnTotalMoneyChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Bill_AfterPayClient", Storage="_Bill", ThisKey="BillID", OtherKey="BillID", IsForeignKey=true)]
-		public Bill Bill
-		{
-			get
-			{
-				return this._Bill.Entity;
-			}
-			set
-			{
-				Bill previousValue = this._Bill.Entity;
-				if (((previousValue != value) 
-							|| (this._Bill.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Bill.Entity = null;
-						previousValue.AfterPayClients.Remove(this);
-					}
-					this._Bill.Entity = value;
-					if ((value != null))
-					{
-						value.AfterPayClients.Add(this);
-						this._BillID = value.BillID;
-					}
-					else
-					{
-						this._BillID = default(int);
-					}
-					this.SendPropertyChanged("Bill");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_AfterPayClient", Storage="_Client", ThisKey="ClientName", OtherKey="ClientName", IsForeignKey=true)]
-		public Client Client
-		{
-			get
-			{
-				return this._Client.Entity;
-			}
-			set
-			{
-				Client previousValue = this._Client.Entity;
-				if (((previousValue != value) 
-							|| (this._Client.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Client.Entity = null;
-						previousValue.AfterPayClients.Remove(this);
-					}
-					this._Client.Entity = value;
-					if ((value != null))
-					{
-						value.AfterPayClients.Add(this);
-						this._ClientName = value.ClientName;
-					}
-					else
-					{
-						this._ClientName = default(string);
-					}
-					this.SendPropertyChanged("Client");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TransactionDiary")]
-	public partial class TransactionDiary
-	{
-		
-		private string _UserName;
-		
-		private System.Nullable<int> _memberID;
-		
-		private System.Nullable<System.DateTime> _TransacDate;
-		
-		private System.Nullable<System.TimeSpan> _AddTime;
-		
-		private System.Nullable<double> _AddMoney;
-		
-		private System.Nullable<System.TimeSpan> _UseTime;
-		
-		private string _Note;
-		
-		public TransactionDiary()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(60)")]
-		public string UserName
-		{
-			get
-			{
-				return this._UserName;
-			}
-			set
-			{
-				if ((this._UserName != value))
-				{
-					this._UserName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_memberID", DbType="Int")]
-		public System.Nullable<int> memberID
-		{
-			get
-			{
-				return this._memberID;
-			}
-			set
-			{
-				if ((this._memberID != value))
-				{
-					this._memberID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TransacDate", DbType="Date")]
-		public System.Nullable<System.DateTime> TransacDate
-		{
-			get
-			{
-				return this._TransacDate;
-			}
-			set
-			{
-				if ((this._TransacDate != value))
-				{
-					this._TransacDate = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddTime", DbType="Time")]
-		public System.Nullable<System.TimeSpan> AddTime
-		{
-			get
-			{
-				return this._AddTime;
-			}
-			set
-			{
-				if ((this._AddTime != value))
-				{
-					this._AddTime = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddMoney", DbType="Float")]
-		public System.Nullable<double> AddMoney
-		{
-			get
-			{
-				return this._AddMoney;
-			}
-			set
-			{
-				if ((this._AddMoney != value))
-				{
-					this._AddMoney = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UseTime", DbType="Time")]
-		public System.Nullable<System.TimeSpan> UseTime
-		{
-			get
-			{
-				return this._UseTime;
-			}
-			set
-			{
-				if ((this._UseTime != value))
-				{
-					this._UseTime = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(120)")]
-		public string Note
-		{
-			get
-			{
-				return this._Note;
-			}
-			set
-			{
-				if ((this._Note != value))
-				{
-					this._Note = value;
-				}
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BeforePayClient")]
 	public partial class BeforePayClient : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _ClientName;
+		private string _ClientID;
 		
-		private int _BillID;
+		private string _BillID;
 		
 		private System.Nullable<System.TimeSpan> _StartTime;
 		
@@ -692,9 +304,9 @@ namespace QuanLyPhongNet.DAL
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnClientNameChanging(string value);
-    partial void OnClientNameChanged();
-    partial void OnBillIDChanging(int value);
+    partial void OnClientIDChanging(string value);
+    partial void OnClientIDChanged();
+    partial void OnBillIDChanging(string value);
     partial void OnBillIDChanged();
     partial void OnStartTimeChanging(System.Nullable<System.TimeSpan> value);
     partial void OnStartTimeChanged();
@@ -711,32 +323,32 @@ namespace QuanLyPhongNet.DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClientName", DbType="VarChar(30) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string ClientName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClientID", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string ClientID
 		{
 			get
 			{
-				return this._ClientName;
+				return this._ClientID;
 			}
 			set
 			{
-				if ((this._ClientName != value))
+				if ((this._ClientID != value))
 				{
 					if (this._Client.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnClientNameChanging(value);
+					this.OnClientIDChanging(value);
 					this.SendPropertyChanging();
-					this._ClientName = value;
-					this.SendPropertyChanged("ClientName");
-					this.OnClientNameChanged();
+					this._ClientID = value;
+					this.SendPropertyChanged("ClientID");
+					this.OnClientIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BillID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int BillID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BillID", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string BillID
 		{
 			get
 			{
@@ -846,14 +458,14 @@ namespace QuanLyPhongNet.DAL
 					}
 					else
 					{
-						this._BillID = default(int);
+						this._BillID = default(string);
 					}
 					this.SendPropertyChanged("Bill");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_BeforePayClient", Storage="_Client", ThisKey="ClientName", OtherKey="ClientName", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_BeforePayClient", Storage="_Client", ThisKey="ClientID", OtherKey="ClientID", IsForeignKey=true)]
 		public Client Client
 		{
 			get
@@ -876,11 +488,11 @@ namespace QuanLyPhongNet.DAL
 					if ((value != null))
 					{
 						value.BeforePayClients.Add(this);
-						this._ClientName = value.ClientName;
+						this._ClientID = value.ClientID;
 					}
 					else
 					{
-						this._ClientName = default(string);
+						this._ClientID = default(string);
 					}
 					this.SendPropertyChanged("Client");
 				}
@@ -908,21 +520,154 @@ namespace QuanLyPhongNet.DAL
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TransactionDiary")]
+	public partial class TransactionDiary
+	{
+		
+		private string _UserID;
+		
+		private string _MemberID;
+		
+		private System.Nullable<System.DateTime> _TransacDate;
+		
+		private System.Nullable<System.TimeSpan> _AddTime;
+		
+		private System.Nullable<double> _AddMoney;
+		
+		private System.Nullable<System.TimeSpan> _UseTime;
+		
+		private string _Note;
+		
+		public TransactionDiary()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="NChar(10)")]
+		public string UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this._UserID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MemberID", DbType="NChar(10)")]
+		public string MemberID
+		{
+			get
+			{
+				return this._MemberID;
+			}
+			set
+			{
+				if ((this._MemberID != value))
+				{
+					this._MemberID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TransacDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> TransacDate
+		{
+			get
+			{
+				return this._TransacDate;
+			}
+			set
+			{
+				if ((this._TransacDate != value))
+				{
+					this._TransacDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddTime", DbType="Time")]
+		public System.Nullable<System.TimeSpan> AddTime
+		{
+			get
+			{
+				return this._AddTime;
+			}
+			set
+			{
+				if ((this._AddTime != value))
+				{
+					this._AddTime = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddMoney", DbType="Float")]
+		public System.Nullable<double> AddMoney
+		{
+			get
+			{
+				return this._AddMoney;
+			}
+			set
+			{
+				if ((this._AddMoney != value))
+				{
+					this._AddMoney = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UseTime", DbType="Time")]
+		public System.Nullable<System.TimeSpan> UseTime
+		{
+			get
+			{
+				return this._UseTime;
+			}
+			set
+			{
+				if ((this._UseTime != value))
+				{
+					this._UseTime = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(120)")]
+		public string Note
+		{
+			get
+			{
+				return this._Note;
+			}
+			set
+			{
+				if ((this._Note != value))
+				{
+					this._Note = value;
+				}
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Bill")]
 	public partial class Bill : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _BillID;
+		private string _BillID;
 		
-		private string _FoundedUser;
+		private string _FoundedUserID;
 		
 		private System.Nullable<System.DateTime> _FoundedDate;
 		
 		private System.Nullable<double> _PriceTotal;
-		
-		private EntitySet<AfterPayClient> _AfterPayClients;
 		
 		private EntitySet<BeforePayClient> _BeforePayClients;
 		
@@ -932,10 +677,10 @@ namespace QuanLyPhongNet.DAL
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnBillIDChanging(int value);
+    partial void OnBillIDChanging(string value);
     partial void OnBillIDChanged();
-    partial void OnFoundedUserChanging(string value);
-    partial void OnFoundedUserChanged();
+    partial void OnFoundedUserIDChanging(string value);
+    partial void OnFoundedUserIDChanged();
     partial void OnFoundedDateChanging(System.Nullable<System.DateTime> value);
     partial void OnFoundedDateChanged();
     partial void OnPriceTotalChanging(System.Nullable<double> value);
@@ -944,14 +689,13 @@ namespace QuanLyPhongNet.DAL
 		
 		public Bill()
 		{
-			this._AfterPayClients = new EntitySet<AfterPayClient>(new Action<AfterPayClient>(this.attach_AfterPayClients), new Action<AfterPayClient>(this.detach_AfterPayClients));
 			this._BeforePayClients = new EntitySet<BeforePayClient>(new Action<BeforePayClient>(this.attach_BeforePayClients), new Action<BeforePayClient>(this.detach_BeforePayClients));
 			this._TheUser = default(EntityRef<TheUser>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BillID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int BillID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BillID", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string BillID
 		{
 			get
 			{
@@ -970,26 +714,26 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FoundedUser", DbType="NVarChar(60)")]
-		public string FoundedUser
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FoundedUserID", DbType="NChar(10)")]
+		public string FoundedUserID
 		{
 			get
 			{
-				return this._FoundedUser;
+				return this._FoundedUserID;
 			}
 			set
 			{
-				if ((this._FoundedUser != value))
+				if ((this._FoundedUserID != value))
 				{
 					if (this._TheUser.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnFoundedUserChanging(value);
+					this.OnFoundedUserIDChanging(value);
 					this.SendPropertyChanging();
-					this._FoundedUser = value;
-					this.SendPropertyChanged("FoundedUser");
-					this.OnFoundedUserChanged();
+					this._FoundedUserID = value;
+					this.SendPropertyChanged("FoundedUserID");
+					this.OnFoundedUserIDChanged();
 				}
 			}
 		}
@@ -1034,19 +778,6 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Bill_AfterPayClient", Storage="_AfterPayClients", ThisKey="BillID", OtherKey="BillID")]
-		public EntitySet<AfterPayClient> AfterPayClients
-		{
-			get
-			{
-				return this._AfterPayClients;
-			}
-			set
-			{
-				this._AfterPayClients.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Bill_BeforePayClient", Storage="_BeforePayClients", ThisKey="BillID", OtherKey="BillID")]
 		public EntitySet<BeforePayClient> BeforePayClients
 		{
@@ -1060,7 +791,7 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TheUser_Bill", Storage="_TheUser", ThisKey="FoundedUser", OtherKey="UserName", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TheUser_Bill", Storage="_TheUser", ThisKey="FoundedUserID", OtherKey="UserID", IsForeignKey=true)]
 		public TheUser TheUser
 		{
 			get
@@ -1083,11 +814,11 @@ namespace QuanLyPhongNet.DAL
 					if ((value != null))
 					{
 						value.Bills.Add(this);
-						this._FoundedUser = value.UserName;
+						this._FoundedUserID = value.UserID;
 					}
 					else
 					{
-						this._FoundedUser = default(string);
+						this._FoundedUserID = default(string);
 					}
 					this.SendPropertyChanged("TheUser");
 				}
@@ -1112,18 +843,6 @@ namespace QuanLyPhongNet.DAL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_AfterPayClients(AfterPayClient entity)
-		{
-			this.SendPropertyChanging();
-			entity.Bill = this;
-		}
-		
-		private void detach_AfterPayClients(AfterPayClient entity)
-		{
-			this.SendPropertyChanging();
-			entity.Bill = null;
 		}
 		
 		private void attach_BeforePayClients(BeforePayClient entity)
@@ -1169,7 +888,7 @@ namespace QuanLyPhongNet.DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryName", DbType="NVarChar(60) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryName", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string CategoryName
 		{
 			get
@@ -1291,15 +1010,11 @@ namespace QuanLyPhongNet.DAL
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _ClientName;
-		
-		private string _GroupClientName;
+		private string _ClientID;
 		
 		private string _StatusClient;
 		
-		private string _Note;
-		
-		private EntitySet<AfterPayClient> _AfterPayClients;
+		private string _RoomID;
 		
 		private EntitySet<BeforePayClient> _BeforePayClients;
 		
@@ -1311,79 +1026,55 @@ namespace QuanLyPhongNet.DAL
 		
 		private EntitySet<OrderFood> _OrderFoods;
 		
-		private EntityRef<GroupClient> _GroupClient;
+		private EntityRef<Room> _Room;
+		
+		private EntityRef<StatusClient> _StatusClient1;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnClientNameChanging(string value);
-    partial void OnClientNameChanged();
-    partial void OnGroupClientNameChanging(string value);
-    partial void OnGroupClientNameChanged();
+    partial void OnClientIDChanging(string value);
+    partial void OnClientIDChanged();
     partial void OnStatusClientChanging(string value);
     partial void OnStatusClientChanged();
-    partial void OnNoteChanging(string value);
-    partial void OnNoteChanged();
+    partial void OnRoomIDChanging(string value);
+    partial void OnRoomIDChanged();
     #endregion
 		
 		public Client()
 		{
-			this._AfterPayClients = new EntitySet<AfterPayClient>(new Action<AfterPayClient>(this.attach_AfterPayClients), new Action<AfterPayClient>(this.detach_AfterPayClients));
 			this._BeforePayClients = new EntitySet<BeforePayClient>(new Action<BeforePayClient>(this.attach_BeforePayClients), new Action<BeforePayClient>(this.detach_BeforePayClients));
 			this._LoginMembers = new EntitySet<LoginMember>(new Action<LoginMember>(this.attach_LoginMembers), new Action<LoginMember>(this.detach_LoginMembers));
 			this._OrderCards = new EntitySet<OrderCard>(new Action<OrderCard>(this.attach_OrderCards), new Action<OrderCard>(this.detach_OrderCards));
 			this._OrderDrinks = new EntitySet<OrderDrink>(new Action<OrderDrink>(this.attach_OrderDrinks), new Action<OrderDrink>(this.detach_OrderDrinks));
 			this._OrderFoods = new EntitySet<OrderFood>(new Action<OrderFood>(this.attach_OrderFoods), new Action<OrderFood>(this.detach_OrderFoods));
-			this._GroupClient = default(EntityRef<GroupClient>);
+			this._Room = default(EntityRef<Room>);
+			this._StatusClient1 = default(EntityRef<StatusClient>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClientName", DbType="VarChar(30) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string ClientName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClientID", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string ClientID
 		{
 			get
 			{
-				return this._ClientName;
+				return this._ClientID;
 			}
 			set
 			{
-				if ((this._ClientName != value))
+				if ((this._ClientID != value))
 				{
-					this.OnClientNameChanging(value);
+					this.OnClientIDChanging(value);
 					this.SendPropertyChanging();
-					this._ClientName = value;
-					this.SendPropertyChanged("ClientName");
-					this.OnClientNameChanged();
+					this._ClientID = value;
+					this.SendPropertyChanged("ClientID");
+					this.OnClientIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GroupClientName", DbType="NVarChar(30)")]
-		public string GroupClientName
-		{
-			get
-			{
-				return this._GroupClientName;
-			}
-			set
-			{
-				if ((this._GroupClientName != value))
-				{
-					if (this._GroupClient.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnGroupClientNameChanging(value);
-					this.SendPropertyChanging();
-					this._GroupClientName = value;
-					this.SendPropertyChanged("GroupClientName");
-					this.OnGroupClientNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StatusClient", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StatusClient", DbType="NVarChar(50)")]
 		public string StatusClient
 		{
 			get
@@ -1394,6 +1085,10 @@ namespace QuanLyPhongNet.DAL
 			{
 				if ((this._StatusClient != value))
 				{
+					if (this._StatusClient1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnStatusClientChanging(value);
 					this.SendPropertyChanging();
 					this._StatusClient = value;
@@ -1403,40 +1098,31 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(100)")]
-		public string Note
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoomID", DbType="NChar(10)")]
+		public string RoomID
 		{
 			get
 			{
-				return this._Note;
+				return this._RoomID;
 			}
 			set
 			{
-				if ((this._Note != value))
+				if ((this._RoomID != value))
 				{
-					this.OnNoteChanging(value);
+					if (this._Room.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnRoomIDChanging(value);
 					this.SendPropertyChanging();
-					this._Note = value;
-					this.SendPropertyChanged("Note");
-					this.OnNoteChanged();
+					this._RoomID = value;
+					this.SendPropertyChanged("RoomID");
+					this.OnRoomIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_AfterPayClient", Storage="_AfterPayClients", ThisKey="ClientName", OtherKey="ClientName")]
-		public EntitySet<AfterPayClient> AfterPayClients
-		{
-			get
-			{
-				return this._AfterPayClients;
-			}
-			set
-			{
-				this._AfterPayClients.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_BeforePayClient", Storage="_BeforePayClients", ThisKey="ClientName", OtherKey="ClientName")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_BeforePayClient", Storage="_BeforePayClients", ThisKey="ClientID", OtherKey="ClientID")]
 		public EntitySet<BeforePayClient> BeforePayClients
 		{
 			get
@@ -1449,7 +1135,7 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_LoginMember", Storage="_LoginMembers", ThisKey="ClientName", OtherKey="ClientName")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_LoginMember", Storage="_LoginMembers", ThisKey="ClientID", OtherKey="ClientID")]
 		public EntitySet<LoginMember> LoginMembers
 		{
 			get
@@ -1462,7 +1148,7 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_OrderCard", Storage="_OrderCards", ThisKey="ClientName", OtherKey="ClientName")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_OrderCard", Storage="_OrderCards", ThisKey="ClientID", OtherKey="Clientid")]
 		public EntitySet<OrderCard> OrderCards
 		{
 			get
@@ -1475,7 +1161,7 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_OrderDrink", Storage="_OrderDrinks", ThisKey="ClientName", OtherKey="ClientName")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_OrderDrink", Storage="_OrderDrinks", ThisKey="ClientID", OtherKey="ClientID")]
 		public EntitySet<OrderDrink> OrderDrinks
 		{
 			get
@@ -1488,7 +1174,7 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_OrderFood", Storage="_OrderFoods", ThisKey="ClientName", OtherKey="ClientName")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_OrderFood", Storage="_OrderFoods", ThisKey="ClientID", OtherKey="ClientID")]
 		public EntitySet<OrderFood> OrderFoods
 		{
 			get
@@ -1501,36 +1187,70 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GroupClient_Client", Storage="_GroupClient", ThisKey="GroupClientName", OtherKey="GroupName", IsForeignKey=true)]
-		public GroupClient GroupClient
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Room_Client", Storage="_Room", ThisKey="RoomID", OtherKey="RoomID", IsForeignKey=true)]
+		public Room Room
 		{
 			get
 			{
-				return this._GroupClient.Entity;
+				return this._Room.Entity;
 			}
 			set
 			{
-				GroupClient previousValue = this._GroupClient.Entity;
+				Room previousValue = this._Room.Entity;
 				if (((previousValue != value) 
-							|| (this._GroupClient.HasLoadedOrAssignedValue == false)))
+							|| (this._Room.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._GroupClient.Entity = null;
+						this._Room.Entity = null;
 						previousValue.Clients.Remove(this);
 					}
-					this._GroupClient.Entity = value;
+					this._Room.Entity = value;
 					if ((value != null))
 					{
 						value.Clients.Add(this);
-						this._GroupClientName = value.GroupName;
+						this._RoomID = value.RoomID;
 					}
 					else
 					{
-						this._GroupClientName = default(string);
+						this._RoomID = default(string);
 					}
-					this.SendPropertyChanged("GroupClient");
+					this.SendPropertyChanged("Room");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="StatusClient_Client", Storage="_StatusClient1", ThisKey="StatusClient", OtherKey="StatusClient1", IsForeignKey=true)]
+		public StatusClient StatusClient1
+		{
+			get
+			{
+				return this._StatusClient1.Entity;
+			}
+			set
+			{
+				StatusClient previousValue = this._StatusClient1.Entity;
+				if (((previousValue != value) 
+							|| (this._StatusClient1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._StatusClient1.Entity = null;
+						previousValue.Clients.Remove(this);
+					}
+					this._StatusClient1.Entity = value;
+					if ((value != null))
+					{
+						value.Clients.Add(this);
+						this._StatusClient = value.StatusClient1;
+					}
+					else
+					{
+						this._StatusClient = default(string);
+					}
+					this.SendPropertyChanged("StatusClient1");
 				}
 			}
 		}
@@ -1553,18 +1273,6 @@ namespace QuanLyPhongNet.DAL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_AfterPayClients(AfterPayClient entity)
-		{
-			this.SendPropertyChanging();
-			entity.Client = this;
-		}
-		
-		private void detach_AfterPayClients(AfterPayClient entity)
-		{
-			this.SendPropertyChanging();
-			entity.Client = null;
 		}
 		
 		private void attach_BeforePayClients(BeforePayClient entity)
@@ -1634,7 +1342,7 @@ namespace QuanLyPhongNet.DAL
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _DrinkID;
+		private string _DrinkID;
 		
 		private string _DrinkName;
 		
@@ -1654,7 +1362,7 @@ namespace QuanLyPhongNet.DAL
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnDrinkIDChanging(int value);
+    partial void OnDrinkIDChanging(string value);
     partial void OnDrinkIDChanged();
     partial void OnDrinkNameChanging(string value);
     partial void OnDrinkNameChanged();
@@ -1675,8 +1383,8 @@ namespace QuanLyPhongNet.DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DrinkID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int DrinkID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DrinkID", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string DrinkID
 		{
 			get
 			{
@@ -1715,7 +1423,7 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryName", DbType="NVarChar(60)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryName", DbType="NVarChar(50)")]
 		public string CategoryName
 		{
 			get
@@ -1885,13 +1593,13 @@ namespace QuanLyPhongNet.DAL
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _FoodID;
+		private string _FoodID;
 		
 		private string _FoodName;
 		
 		private string _CategoryName;
 		
-		private System.Nullable<int> _PriceUnit;
+		private System.Nullable<double> _PriceUnit;
 		
 		private string _UnitLot;
 		
@@ -1905,13 +1613,13 @@ namespace QuanLyPhongNet.DAL
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnFoodIDChanging(int value);
+    partial void OnFoodIDChanging(string value);
     partial void OnFoodIDChanged();
     partial void OnFoodNameChanging(string value);
     partial void OnFoodNameChanged();
     partial void OnCategoryNameChanging(string value);
     partial void OnCategoryNameChanged();
-    partial void OnPriceUnitChanging(System.Nullable<int> value);
+    partial void OnPriceUnitChanging(System.Nullable<double> value);
     partial void OnPriceUnitChanged();
     partial void OnUnitLotChanging(string value);
     partial void OnUnitLotChanged();
@@ -1926,8 +1634,8 @@ namespace QuanLyPhongNet.DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FoodID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int FoodID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FoodID", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string FoodID
 		{
 			get
 			{
@@ -1966,7 +1674,7 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryName", DbType="NVarChar(60)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryName", DbType="NVarChar(50)")]
 		public string CategoryName
 		{
 			get
@@ -1990,8 +1698,8 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceUnit", DbType="Int")]
-		public System.Nullable<int> PriceUnit
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceUnit", DbType="Float")]
+		public System.Nullable<double> PriceUnit
 		{
 			get
 			{
@@ -2136,52 +1844,76 @@ namespace QuanLyPhongNet.DAL
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _GroupName;
+		private string _GroupClientID;
+		
+		private string _GroupClientName;
 		
 		private string _Discription;
 		
-		private EntitySet<Client> _Clients;
-		
 		private EntitySet<GroupClientAndGroupUser> _GroupClientAndGroupUsers;
+		
+		private EntitySet<Room> _Rooms;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnGroupNameChanging(string value);
-    partial void OnGroupNameChanged();
+    partial void OnGroupClientIDChanging(string value);
+    partial void OnGroupClientIDChanged();
+    partial void OnGroupClientNameChanging(string value);
+    partial void OnGroupClientNameChanged();
     partial void OnDiscriptionChanging(string value);
     partial void OnDiscriptionChanged();
     #endregion
 		
 		public GroupClient()
 		{
-			this._Clients = new EntitySet<Client>(new Action<Client>(this.attach_Clients), new Action<Client>(this.detach_Clients));
 			this._GroupClientAndGroupUsers = new EntitySet<GroupClientAndGroupUser>(new Action<GroupClientAndGroupUser>(this.attach_GroupClientAndGroupUsers), new Action<GroupClientAndGroupUser>(this.detach_GroupClientAndGroupUsers));
+			this._Rooms = new EntitySet<Room>(new Action<Room>(this.attach_Rooms), new Action<Room>(this.detach_Rooms));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GroupName", DbType="NVarChar(30) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string GroupName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GroupClientID", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string GroupClientID
 		{
 			get
 			{
-				return this._GroupName;
+				return this._GroupClientID;
 			}
 			set
 			{
-				if ((this._GroupName != value))
+				if ((this._GroupClientID != value))
 				{
-					this.OnGroupNameChanging(value);
+					this.OnGroupClientIDChanging(value);
 					this.SendPropertyChanging();
-					this._GroupName = value;
-					this.SendPropertyChanged("GroupName");
-					this.OnGroupNameChanged();
+					this._GroupClientID = value;
+					this.SendPropertyChanged("GroupClientID");
+					this.OnGroupClientIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Discription", DbType="NVarChar(120)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GroupClientName", DbType="NVarChar(50)")]
+		public string GroupClientName
+		{
+			get
+			{
+				return this._GroupClientName;
+			}
+			set
+			{
+				if ((this._GroupClientName != value))
+				{
+					this.OnGroupClientNameChanging(value);
+					this.SendPropertyChanging();
+					this._GroupClientName = value;
+					this.SendPropertyChanged("GroupClientName");
+					this.OnGroupClientNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Discription", DbType="NVarChar(100)")]
 		public string Discription
 		{
 			get
@@ -2201,20 +1933,7 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GroupClient_Client", Storage="_Clients", ThisKey="GroupName", OtherKey="GroupClientName")]
-		public EntitySet<Client> Clients
-		{
-			get
-			{
-				return this._Clients;
-			}
-			set
-			{
-				this._Clients.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GroupClient_GroupClientAndGroupUser", Storage="_GroupClientAndGroupUsers", ThisKey="GroupName", OtherKey="GroupClientName")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GroupClient_GroupClientAndGroupUser", Storage="_GroupClientAndGroupUsers", ThisKey="GroupClientID", OtherKey="GroupClientID")]
 		public EntitySet<GroupClientAndGroupUser> GroupClientAndGroupUsers
 		{
 			get
@@ -2224,6 +1943,19 @@ namespace QuanLyPhongNet.DAL
 			set
 			{
 				this._GroupClientAndGroupUsers.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GroupClient_Room", Storage="_Rooms", ThisKey="GroupClientID", OtherKey="GroupClientID")]
+		public EntitySet<Room> Rooms
+		{
+			get
+			{
+				return this._Rooms;
+			}
+			set
+			{
+				this._Rooms.Assign(value);
 			}
 		}
 		
@@ -2247,18 +1979,6 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		private void attach_Clients(Client entity)
-		{
-			this.SendPropertyChanging();
-			entity.GroupClient = this;
-		}
-		
-		private void detach_Clients(Client entity)
-		{
-			this.SendPropertyChanging();
-			entity.GroupClient = null;
-		}
-		
 		private void attach_GroupClientAndGroupUsers(GroupClientAndGroupUser entity)
 		{
 			this.SendPropertyChanging();
@@ -2266,6 +1986,18 @@ namespace QuanLyPhongNet.DAL
 		}
 		
 		private void detach_GroupClientAndGroupUsers(GroupClientAndGroupUser entity)
+		{
+			this.SendPropertyChanging();
+			entity.GroupClient = null;
+		}
+		
+		private void attach_Rooms(Room entity)
+		{
+			this.SendPropertyChanging();
+			entity.GroupClient = this;
+		}
+		
+		private void detach_Rooms(Room entity)
 		{
 			this.SendPropertyChanging();
 			entity.GroupClient = null;
@@ -2278,9 +2010,9 @@ namespace QuanLyPhongNet.DAL
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _GroupUserName;
+		private string _GroupUserID;
 		
-		private string _GroupClientName;
+		private string _GroupClientID;
 		
 		private System.Nullable<double> _GiaDichVu;
 		
@@ -2292,10 +2024,10 @@ namespace QuanLyPhongNet.DAL
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnGroupUserNameChanging(string value);
-    partial void OnGroupUserNameChanged();
-    partial void OnGroupClientNameChanging(string value);
-    partial void OnGroupClientNameChanged();
+    partial void OnGroupUserIDChanging(string value);
+    partial void OnGroupUserIDChanged();
+    partial void OnGroupClientIDChanging(string value);
+    partial void OnGroupClientIDChanged();
     partial void OnGiaDichVuChanging(System.Nullable<double> value);
     partial void OnGiaDichVuChanged();
     #endregion
@@ -2307,50 +2039,50 @@ namespace QuanLyPhongNet.DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GroupUserName", DbType="NVarChar(30) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string GroupUserName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GroupUserID", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string GroupUserID
 		{
 			get
 			{
-				return this._GroupUserName;
+				return this._GroupUserID;
 			}
 			set
 			{
-				if ((this._GroupUserName != value))
+				if ((this._GroupUserID != value))
 				{
 					if (this._GroupUser.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnGroupUserNameChanging(value);
+					this.OnGroupUserIDChanging(value);
 					this.SendPropertyChanging();
-					this._GroupUserName = value;
-					this.SendPropertyChanged("GroupUserName");
-					this.OnGroupUserNameChanged();
+					this._GroupUserID = value;
+					this.SendPropertyChanged("GroupUserID");
+					this.OnGroupUserIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GroupClientName", DbType="NVarChar(30) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string GroupClientName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GroupClientID", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string GroupClientID
 		{
 			get
 			{
-				return this._GroupClientName;
+				return this._GroupClientID;
 			}
 			set
 			{
-				if ((this._GroupClientName != value))
+				if ((this._GroupClientID != value))
 				{
 					if (this._GroupClient.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnGroupClientNameChanging(value);
+					this.OnGroupClientIDChanging(value);
 					this.SendPropertyChanging();
-					this._GroupClientName = value;
-					this.SendPropertyChanged("GroupClientName");
-					this.OnGroupClientNameChanged();
+					this._GroupClientID = value;
+					this.SendPropertyChanged("GroupClientID");
+					this.OnGroupClientIDChanged();
 				}
 			}
 		}
@@ -2375,7 +2107,7 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GroupClient_GroupClientAndGroupUser", Storage="_GroupClient", ThisKey="GroupClientName", OtherKey="GroupName", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GroupClient_GroupClientAndGroupUser", Storage="_GroupClient", ThisKey="GroupClientID", OtherKey="GroupClientID", IsForeignKey=true)]
 		public GroupClient GroupClient
 		{
 			get
@@ -2398,18 +2130,18 @@ namespace QuanLyPhongNet.DAL
 					if ((value != null))
 					{
 						value.GroupClientAndGroupUsers.Add(this);
-						this._GroupClientName = value.GroupName;
+						this._GroupClientID = value.GroupClientID;
 					}
 					else
 					{
-						this._GroupClientName = default(string);
+						this._GroupClientID = default(string);
 					}
 					this.SendPropertyChanged("GroupClient");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GroupUser_GroupClientAndGroupUser", Storage="_GroupUser", ThisKey="GroupUserName", OtherKey="GroupName", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GroupUser_GroupClientAndGroupUser", Storage="_GroupUser", ThisKey="GroupUserID", OtherKey="GroupUserID", IsForeignKey=true)]
 		public GroupUser GroupUser
 		{
 			get
@@ -2432,11 +2164,11 @@ namespace QuanLyPhongNet.DAL
 					if ((value != null))
 					{
 						value.GroupClientAndGroupUsers.Add(this);
-						this._GroupUserName = value.GroupName;
+						this._GroupUserID = value.GroupUserID;
 					}
 					else
 					{
-						this._GroupUserName = default(string);
+						this._GroupUserID = default(string);
 					}
 					this.SendPropertyChanged("GroupUser");
 				}
@@ -2470,9 +2202,9 @@ namespace QuanLyPhongNet.DAL
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _GroupName;
+		private string _GroupUserID;
 		
-		private string _TypeName;
+		private string _GroupUserName;
 		
 		private EntitySet<GroupClientAndGroupUser> _GroupClientAndGroupUsers;
 		
@@ -2484,10 +2216,10 @@ namespace QuanLyPhongNet.DAL
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnGroupNameChanging(string value);
-    partial void OnGroupNameChanged();
-    partial void OnTypeNameChanging(string value);
-    partial void OnTypeNameChanged();
+    partial void OnGroupUserIDChanging(string value);
+    partial void OnGroupUserIDChanged();
+    partial void OnGroupUserNameChanging(string value);
+    partial void OnGroupUserNameChanged();
     #endregion
 		
 		public GroupUser()
@@ -2498,47 +2230,47 @@ namespace QuanLyPhongNet.DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GroupName", DbType="NVarChar(30) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string GroupName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GroupUserID", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string GroupUserID
 		{
 			get
 			{
-				return this._GroupName;
+				return this._GroupUserID;
 			}
 			set
 			{
-				if ((this._GroupName != value))
+				if ((this._GroupUserID != value))
 				{
-					this.OnGroupNameChanging(value);
+					this.OnGroupUserIDChanging(value);
 					this.SendPropertyChanging();
-					this._GroupName = value;
-					this.SendPropertyChanged("GroupName");
-					this.OnGroupNameChanged();
+					this._GroupUserID = value;
+					this.SendPropertyChanged("GroupUserID");
+					this.OnGroupUserIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TypeName", DbType="VarChar(30)")]
-		public string TypeName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GroupUserName", DbType="NVarChar(50)")]
+		public string GroupUserName
 		{
 			get
 			{
-				return this._TypeName;
+				return this._GroupUserName;
 			}
 			set
 			{
-				if ((this._TypeName != value))
+				if ((this._GroupUserName != value))
 				{
-					this.OnTypeNameChanging(value);
+					this.OnGroupUserNameChanging(value);
 					this.SendPropertyChanging();
-					this._TypeName = value;
-					this.SendPropertyChanged("TypeName");
-					this.OnTypeNameChanged();
+					this._GroupUserName = value;
+					this.SendPropertyChanged("GroupUserName");
+					this.OnGroupUserNameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GroupUser_GroupClientAndGroupUser", Storage="_GroupClientAndGroupUsers", ThisKey="GroupName", OtherKey="GroupUserName")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GroupUser_GroupClientAndGroupUser", Storage="_GroupClientAndGroupUsers", ThisKey="GroupUserID", OtherKey="GroupUserID")]
 		public EntitySet<GroupClientAndGroupUser> GroupClientAndGroupUsers
 		{
 			get
@@ -2551,7 +2283,7 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GroupUser_Member", Storage="_Members", ThisKey="GroupName", OtherKey="GroupUser")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GroupUser_Member", Storage="_Members", ThisKey="GroupUserID", OtherKey="GroupUserID")]
 		public EntitySet<Member> Members
 		{
 			get
@@ -2564,7 +2296,7 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GroupUser_TheUser", Storage="_TheUsers", ThisKey="GroupName", OtherKey="GroupUser")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GroupUser_TheUser", Storage="_TheUsers", ThisKey="GroupUserID", OtherKey="GroupUserID")]
 		public EntitySet<TheUser> TheUsers
 		{
 			get
@@ -2612,25 +2344,25 @@ namespace QuanLyPhongNet.DAL
 		private void attach_Members(Member entity)
 		{
 			this.SendPropertyChanging();
-			entity.GroupUser1 = this;
+			entity.GroupUser = this;
 		}
 		
 		private void detach_Members(Member entity)
 		{
 			this.SendPropertyChanging();
-			entity.GroupUser1 = null;
+			entity.GroupUser = null;
 		}
 		
 		private void attach_TheUsers(TheUser entity)
 		{
 			this.SendPropertyChanging();
-			entity.GroupUser1 = this;
+			entity.GroupUser = this;
 		}
 		
 		private void detach_TheUsers(TheUser entity)
 		{
 			this.SendPropertyChanging();
-			entity.GroupUser1 = null;
+			entity.GroupUser = null;
 		}
 	}
 	
@@ -2640,9 +2372,9 @@ namespace QuanLyPhongNet.DAL
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _memberID;
+		private string _MemberID;
 		
-		private string _ClientName;
+		private string _ClientID;
 		
 		private System.Nullable<System.TimeSpan> _StartTime;
 		
@@ -2658,10 +2390,10 @@ namespace QuanLyPhongNet.DAL
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnmemberIDChanging(int value);
-    partial void OnmemberIDChanged();
-    partial void OnClientNameChanging(string value);
-    partial void OnClientNameChanged();
+    partial void OnMemberIDChanging(string value);
+    partial void OnMemberIDChanged();
+    partial void OnClientIDChanging(string value);
+    partial void OnClientIDChanged();
     partial void OnStartTimeChanging(System.Nullable<System.TimeSpan> value);
     partial void OnStartTimeChanged();
     partial void OnUseTimeChanging(System.Nullable<System.TimeSpan> value);
@@ -2677,50 +2409,50 @@ namespace QuanLyPhongNet.DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_memberID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int memberID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MemberID", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MemberID
 		{
 			get
 			{
-				return this._memberID;
+				return this._MemberID;
 			}
 			set
 			{
-				if ((this._memberID != value))
+				if ((this._MemberID != value))
 				{
 					if (this._Member.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnmemberIDChanging(value);
+					this.OnMemberIDChanging(value);
 					this.SendPropertyChanging();
-					this._memberID = value;
-					this.SendPropertyChanged("memberID");
-					this.OnmemberIDChanged();
+					this._MemberID = value;
+					this.SendPropertyChanged("MemberID");
+					this.OnMemberIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClientName", DbType="VarChar(30) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string ClientName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClientID", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string ClientID
 		{
 			get
 			{
-				return this._ClientName;
+				return this._ClientID;
 			}
 			set
 			{
-				if ((this._ClientName != value))
+				if ((this._ClientID != value))
 				{
 					if (this._Client.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnClientNameChanging(value);
+					this.OnClientIDChanging(value);
 					this.SendPropertyChanging();
-					this._ClientName = value;
-					this.SendPropertyChanged("ClientName");
-					this.OnClientNameChanged();
+					this._ClientID = value;
+					this.SendPropertyChanged("ClientID");
+					this.OnClientIDChanged();
 				}
 			}
 		}
@@ -2785,7 +2517,7 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_LoginMember", Storage="_Client", ThisKey="ClientName", OtherKey="ClientName", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_LoginMember", Storage="_Client", ThisKey="ClientID", OtherKey="ClientID", IsForeignKey=true)]
 		public Client Client
 		{
 			get
@@ -2808,18 +2540,18 @@ namespace QuanLyPhongNet.DAL
 					if ((value != null))
 					{
 						value.LoginMembers.Add(this);
-						this._ClientName = value.ClientName;
+						this._ClientID = value.ClientID;
 					}
 					else
 					{
-						this._ClientName = default(string);
+						this._ClientID = default(string);
 					}
 					this.SendPropertyChanged("Client");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Member_LoginMember", Storage="_Member", ThisKey="memberID", OtherKey="MemberID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Member_LoginMember", Storage="_Member", ThisKey="MemberID", OtherKey="PhoneNumber", IsForeignKey=true)]
 		public Member Member
 		{
 			get
@@ -2842,11 +2574,11 @@ namespace QuanLyPhongNet.DAL
 					if ((value != null))
 					{
 						value.LoginMembers.Add(this);
-						this._memberID = value.MemberID;
+						this._MemberID = value.PhoneNumber;
 					}
 					else
 					{
-						this._memberID = default(int);
+						this._MemberID = default(string);
 					}
 					this.SendPropertyChanged("Member");
 				}
@@ -2880,43 +2612,43 @@ namespace QuanLyPhongNet.DAL
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _MemberID;
+		private string _PhoneNumber;
 		
 		private string _AccountName;
 		
 		private string _Password;
 		
-		private string _GroupUser;
+		private string _GroupUserID;
 		
 		private System.Nullable<System.TimeSpan> _CurrentTime;
 		
 		private System.Nullable<double> _CurrentMoney;
 		
-		private string _StatusAccount;
+		private System.Nullable<bool> _StatusAccount;
 		
 		private EntitySet<LoginMember> _LoginMembers;
 		
 		private EntityRef<MemberInformation> _MemberInformation;
 		
-		private EntityRef<GroupUser> _GroupUser1;
+		private EntityRef<GroupUser> _GroupUser;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnMemberIDChanging(int value);
-    partial void OnMemberIDChanged();
+    partial void OnPhoneNumberChanging(string value);
+    partial void OnPhoneNumberChanged();
     partial void OnAccountNameChanging(string value);
     partial void OnAccountNameChanged();
     partial void OnPasswordChanging(string value);
     partial void OnPasswordChanged();
-    partial void OnGroupUserChanging(string value);
-    partial void OnGroupUserChanged();
+    partial void OnGroupUserIDChanging(string value);
+    partial void OnGroupUserIDChanged();
     partial void OnCurrentTimeChanging(System.Nullable<System.TimeSpan> value);
     partial void OnCurrentTimeChanged();
     partial void OnCurrentMoneyChanging(System.Nullable<double> value);
     partial void OnCurrentMoneyChanged();
-    partial void OnStatusAccountChanging(string value);
+    partial void OnStatusAccountChanging(System.Nullable<bool> value);
     partial void OnStatusAccountChanged();
     #endregion
 		
@@ -2924,31 +2656,31 @@ namespace QuanLyPhongNet.DAL
 		{
 			this._LoginMembers = new EntitySet<LoginMember>(new Action<LoginMember>(this.attach_LoginMembers), new Action<LoginMember>(this.detach_LoginMembers));
 			this._MemberInformation = default(EntityRef<MemberInformation>);
-			this._GroupUser1 = default(EntityRef<GroupUser>);
+			this._GroupUser = default(EntityRef<GroupUser>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MemberID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MemberID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string PhoneNumber
 		{
 			get
 			{
-				return this._MemberID;
+				return this._PhoneNumber;
 			}
 			set
 			{
-				if ((this._MemberID != value))
+				if ((this._PhoneNumber != value))
 				{
-					this.OnMemberIDChanging(value);
+					this.OnPhoneNumberChanging(value);
 					this.SendPropertyChanging();
-					this._MemberID = value;
-					this.SendPropertyChanged("MemberID");
-					this.OnMemberIDChanged();
+					this._PhoneNumber = value;
+					this.SendPropertyChanged("PhoneNumber");
+					this.OnPhoneNumberChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountName", DbType="VarChar(30)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountName", DbType="NVarChar(50)")]
 		public string AccountName
 		{
 			get
@@ -2968,7 +2700,7 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarChar(30)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(30)")]
 		public string Password
 		{
 			get
@@ -2988,26 +2720,26 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GroupUser", DbType="NVarChar(30)")]
-		public string GroupUser
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GroupUserID", DbType="NChar(10)")]
+		public string GroupUserID
 		{
 			get
 			{
-				return this._GroupUser;
+				return this._GroupUserID;
 			}
 			set
 			{
-				if ((this._GroupUser != value))
+				if ((this._GroupUserID != value))
 				{
-					if (this._GroupUser1.HasLoadedOrAssignedValue)
+					if (this._GroupUser.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnGroupUserChanging(value);
+					this.OnGroupUserIDChanging(value);
 					this.SendPropertyChanging();
-					this._GroupUser = value;
-					this.SendPropertyChanged("GroupUser");
-					this.OnGroupUserChanged();
+					this._GroupUserID = value;
+					this.SendPropertyChanged("GroupUserID");
+					this.OnGroupUserIDChanged();
 				}
 			}
 		}
@@ -3052,8 +2784,8 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StatusAccount", DbType="NVarChar(30)")]
-		public string StatusAccount
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StatusAccount", DbType="Bit")]
+		public System.Nullable<bool> StatusAccount
 		{
 			get
 			{
@@ -3072,7 +2804,7 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Member_LoginMember", Storage="_LoginMembers", ThisKey="MemberID", OtherKey="memberID")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Member_LoginMember", Storage="_LoginMembers", ThisKey="PhoneNumber", OtherKey="MemberID")]
 		public EntitySet<LoginMember> LoginMembers
 		{
 			get
@@ -3085,7 +2817,7 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Member_MemberInformation", Storage="_MemberInformation", ThisKey="MemberID", OtherKey="memberID", IsUnique=true, IsForeignKey=false)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Member_MemberInformation", Storage="_MemberInformation", ThisKey="PhoneNumber", OtherKey="PhoneNumber", IsUnique=true, IsForeignKey=false)]
 		public MemberInformation MemberInformation
 		{
 			get
@@ -3114,36 +2846,36 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GroupUser_Member", Storage="_GroupUser1", ThisKey="GroupUser", OtherKey="GroupName", IsForeignKey=true)]
-		public GroupUser GroupUser1
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GroupUser_Member", Storage="_GroupUser", ThisKey="GroupUserID", OtherKey="GroupUserID", IsForeignKey=true)]
+		public GroupUser GroupUser
 		{
 			get
 			{
-				return this._GroupUser1.Entity;
+				return this._GroupUser.Entity;
 			}
 			set
 			{
-				GroupUser previousValue = this._GroupUser1.Entity;
+				GroupUser previousValue = this._GroupUser.Entity;
 				if (((previousValue != value) 
-							|| (this._GroupUser1.HasLoadedOrAssignedValue == false)))
+							|| (this._GroupUser.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._GroupUser1.Entity = null;
+						this._GroupUser.Entity = null;
 						previousValue.Members.Remove(this);
 					}
-					this._GroupUser1.Entity = value;
+					this._GroupUser.Entity = value;
 					if ((value != null))
 					{
 						value.Members.Add(this);
-						this._GroupUser = value.GroupName;
+						this._GroupUserID = value.GroupUserID;
 					}
 					else
 					{
-						this._GroupUser = default(string);
+						this._GroupUserID = default(string);
 					}
-					this.SendPropertyChanged("GroupUser1");
+					this.SendPropertyChanged("GroupUser");
 				}
 			}
 		}
@@ -3187,13 +2919,11 @@ namespace QuanLyPhongNet.DAL
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _memberID;
+		private string _PhoneNumber;
 		
 		private string _MemberName;
 		
 		private System.Nullable<System.DateTime> _FoundedDate;
-		
-		private string _PhoneNumber;
 		
 		private string _MemberAddress;
 		
@@ -3205,14 +2935,12 @@ namespace QuanLyPhongNet.DAL
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnmemberIDChanging(int value);
-    partial void OnmemberIDChanged();
+    partial void OnPhoneNumberChanging(string value);
+    partial void OnPhoneNumberChanged();
     partial void OnMemberNameChanging(string value);
     partial void OnMemberNameChanged();
     partial void OnFoundedDateChanging(System.Nullable<System.DateTime> value);
     partial void OnFoundedDateChanged();
-    partial void OnPhoneNumberChanging(string value);
-    partial void OnPhoneNumberChanged();
     partial void OnMemberAddressChanging(string value);
     partial void OnMemberAddressChanged();
     partial void OnEmailChanging(string value);
@@ -3225,26 +2953,26 @@ namespace QuanLyPhongNet.DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_memberID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int memberID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string PhoneNumber
 		{
 			get
 			{
-				return this._memberID;
+				return this._PhoneNumber;
 			}
 			set
 			{
-				if ((this._memberID != value))
+				if ((this._PhoneNumber != value))
 				{
 					if (this._Member.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnmemberIDChanging(value);
+					this.OnPhoneNumberChanging(value);
 					this.SendPropertyChanging();
-					this._memberID = value;
-					this.SendPropertyChanged("memberID");
-					this.OnmemberIDChanged();
+					this._PhoneNumber = value;
+					this.SendPropertyChanged("PhoneNumber");
+					this.OnPhoneNumberChanged();
 				}
 			}
 		}
@@ -3289,27 +3017,7 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="VarChar(11)")]
-		public string PhoneNumber
-		{
-			get
-			{
-				return this._PhoneNumber;
-			}
-			set
-			{
-				if ((this._PhoneNumber != value))
-				{
-					this.OnPhoneNumberChanging(value);
-					this.SendPropertyChanging();
-					this._PhoneNumber = value;
-					this.SendPropertyChanged("PhoneNumber");
-					this.OnPhoneNumberChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MemberAddress", DbType="NVarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MemberAddress", DbType="VarChar(100)")]
 		public string MemberAddress
 		{
 			get
@@ -3349,7 +3057,7 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Member_MemberInformation", Storage="_Member", ThisKey="memberID", OtherKey="MemberID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Member_MemberInformation", Storage="_Member", ThisKey="PhoneNumber", OtherKey="PhoneNumber", IsForeignKey=true)]
 		public Member Member
 		{
 			get
@@ -3372,11 +3080,11 @@ namespace QuanLyPhongNet.DAL
 					if ((value != null))
 					{
 						value.MemberInformation = this;
-						this._memberID = value.MemberID;
+						this._PhoneNumber = value.PhoneNumber;
 					}
 					else
 					{
-						this._memberID = default(int);
+						this._PhoneNumber = default(string);
 					}
 					this.SendPropertyChanged("Member");
 				}
@@ -3410,9 +3118,9 @@ namespace QuanLyPhongNet.DAL
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _ClientName;
+		private string _Clientid;
 		
-		private int _CardID;
+		private string _CardID;
 		
 		private System.Nullable<int> _Quantity;
 		
@@ -3426,9 +3134,9 @@ namespace QuanLyPhongNet.DAL
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnClientNameChanging(string value);
-    partial void OnClientNameChanged();
-    partial void OnCardIDChanging(int value);
+    partial void OnClientidChanging(string value);
+    partial void OnClientidChanged();
+    partial void OnCardIDChanging(string value);
     partial void OnCardIDChanged();
     partial void OnQuantityChanging(System.Nullable<int> value);
     partial void OnQuantityChanged();
@@ -3443,32 +3151,32 @@ namespace QuanLyPhongNet.DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClientName", DbType="VarChar(30) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string ClientName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Clientid", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Clientid
 		{
 			get
 			{
-				return this._ClientName;
+				return this._Clientid;
 			}
 			set
 			{
-				if ((this._ClientName != value))
+				if ((this._Clientid != value))
 				{
 					if (this._Client.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnClientNameChanging(value);
+					this.OnClientidChanging(value);
 					this.SendPropertyChanging();
-					this._ClientName = value;
-					this.SendPropertyChanged("ClientName");
-					this.OnClientNameChanged();
+					this._Clientid = value;
+					this.SendPropertyChanged("Clientid");
+					this.OnClientidChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CardID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int CardID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CardID", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string CardID
 		{
 			get
 			{
@@ -3531,7 +3239,7 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_OrderCard", Storage="_Client", ThisKey="ClientName", OtherKey="ClientName", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_OrderCard", Storage="_Client", ThisKey="Clientid", OtherKey="ClientID", IsForeignKey=true)]
 		public Client Client
 		{
 			get
@@ -3554,11 +3262,11 @@ namespace QuanLyPhongNet.DAL
 					if ((value != null))
 					{
 						value.OrderCards.Add(this);
-						this._ClientName = value.ClientName;
+						this._Clientid = value.ClientID;
 					}
 					else
 					{
-						this._ClientName = default(string);
+						this._Clientid = default(string);
 					}
 					this.SendPropertyChanged("Client");
 				}
@@ -3592,7 +3300,7 @@ namespace QuanLyPhongNet.DAL
 					}
 					else
 					{
-						this._CardID = default(int);
+						this._CardID = default(string);
 					}
 					this.SendPropertyChanged("TheCard");
 				}
@@ -3626,9 +3334,9 @@ namespace QuanLyPhongNet.DAL
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _ClientName;
+		private string _ClientID;
 		
-		private int _DrinkID;
+		private string _DrinkID;
 		
 		private System.Nullable<int> _Quantity;
 		
@@ -3642,9 +3350,9 @@ namespace QuanLyPhongNet.DAL
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnClientNameChanging(string value);
-    partial void OnClientNameChanged();
-    partial void OnDrinkIDChanging(int value);
+    partial void OnClientIDChanging(string value);
+    partial void OnClientIDChanged();
+    partial void OnDrinkIDChanging(string value);
     partial void OnDrinkIDChanged();
     partial void OnQuantityChanging(System.Nullable<int> value);
     partial void OnQuantityChanged();
@@ -3659,32 +3367,32 @@ namespace QuanLyPhongNet.DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClientName", DbType="VarChar(30) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string ClientName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClientID", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string ClientID
 		{
 			get
 			{
-				return this._ClientName;
+				return this._ClientID;
 			}
 			set
 			{
-				if ((this._ClientName != value))
+				if ((this._ClientID != value))
 				{
 					if (this._Client.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnClientNameChanging(value);
+					this.OnClientIDChanging(value);
 					this.SendPropertyChanging();
-					this._ClientName = value;
-					this.SendPropertyChanged("ClientName");
-					this.OnClientNameChanged();
+					this._ClientID = value;
+					this.SendPropertyChanged("ClientID");
+					this.OnClientIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DrinkID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int DrinkID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DrinkID", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string DrinkID
 		{
 			get
 			{
@@ -3747,7 +3455,7 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_OrderDrink", Storage="_Client", ThisKey="ClientName", OtherKey="ClientName", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_OrderDrink", Storage="_Client", ThisKey="ClientID", OtherKey="ClientID", IsForeignKey=true)]
 		public Client Client
 		{
 			get
@@ -3770,11 +3478,11 @@ namespace QuanLyPhongNet.DAL
 					if ((value != null))
 					{
 						value.OrderDrinks.Add(this);
-						this._ClientName = value.ClientName;
+						this._ClientID = value.ClientID;
 					}
 					else
 					{
-						this._ClientName = default(string);
+						this._ClientID = default(string);
 					}
 					this.SendPropertyChanged("Client");
 				}
@@ -3808,7 +3516,7 @@ namespace QuanLyPhongNet.DAL
 					}
 					else
 					{
-						this._DrinkID = default(int);
+						this._DrinkID = default(string);
 					}
 					this.SendPropertyChanged("Drink");
 				}
@@ -3842,9 +3550,9 @@ namespace QuanLyPhongNet.DAL
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _ClientName;
+		private string _ClientID;
 		
-		private int _FoodID;
+		private string _FoodID;
 		
 		private System.Nullable<int> _Quantity;
 		
@@ -3858,9 +3566,9 @@ namespace QuanLyPhongNet.DAL
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnClientNameChanging(string value);
-    partial void OnClientNameChanged();
-    partial void OnFoodIDChanging(int value);
+    partial void OnClientIDChanging(string value);
+    partial void OnClientIDChanged();
+    partial void OnFoodIDChanging(string value);
     partial void OnFoodIDChanged();
     partial void OnQuantityChanging(System.Nullable<int> value);
     partial void OnQuantityChanged();
@@ -3875,32 +3583,32 @@ namespace QuanLyPhongNet.DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClientName", DbType="VarChar(30) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string ClientName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClientID", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string ClientID
 		{
 			get
 			{
-				return this._ClientName;
+				return this._ClientID;
 			}
 			set
 			{
-				if ((this._ClientName != value))
+				if ((this._ClientID != value))
 				{
 					if (this._Client.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnClientNameChanging(value);
+					this.OnClientIDChanging(value);
 					this.SendPropertyChanging();
-					this._ClientName = value;
-					this.SendPropertyChanged("ClientName");
-					this.OnClientNameChanged();
+					this._ClientID = value;
+					this.SendPropertyChanged("ClientID");
+					this.OnClientIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FoodID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int FoodID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FoodID", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string FoodID
 		{
 			get
 			{
@@ -3963,7 +3671,7 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_OrderFood", Storage="_Client", ThisKey="ClientName", OtherKey="ClientName", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_OrderFood", Storage="_Client", ThisKey="ClientID", OtherKey="ClientID", IsForeignKey=true)]
 		public Client Client
 		{
 			get
@@ -3986,11 +3694,11 @@ namespace QuanLyPhongNet.DAL
 					if ((value != null))
 					{
 						value.OrderFoods.Add(this);
-						this._ClientName = value.ClientName;
+						this._ClientID = value.ClientID;
 					}
 					else
 					{
-						this._ClientName = default(string);
+						this._ClientID = default(string);
 					}
 					this.SendPropertyChanged("Client");
 				}
@@ -4024,7 +3732,7 @@ namespace QuanLyPhongNet.DAL
 					}
 					else
 					{
-						this._FoodID = default(int);
+						this._FoodID = default(string);
 					}
 					this.SendPropertyChanged("Food");
 				}
@@ -4052,13 +3760,330 @@ namespace QuanLyPhongNet.DAL
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Room")]
+	public partial class Room : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _RoomID;
+		
+		private string _RoomName;
+		
+		private string _Note;
+		
+		private string _GroupClientID;
+		
+		private EntitySet<Client> _Clients;
+		
+		private EntityRef<GroupClient> _GroupClient;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnRoomIDChanging(string value);
+    partial void OnRoomIDChanged();
+    partial void OnRoomNameChanging(string value);
+    partial void OnRoomNameChanged();
+    partial void OnNoteChanging(string value);
+    partial void OnNoteChanged();
+    partial void OnGroupClientIDChanging(string value);
+    partial void OnGroupClientIDChanged();
+    #endregion
+		
+		public Room()
+		{
+			this._Clients = new EntitySet<Client>(new Action<Client>(this.attach_Clients), new Action<Client>(this.detach_Clients));
+			this._GroupClient = default(EntityRef<GroupClient>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoomID", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string RoomID
+		{
+			get
+			{
+				return this._RoomID;
+			}
+			set
+			{
+				if ((this._RoomID != value))
+				{
+					this.OnRoomIDChanging(value);
+					this.SendPropertyChanging();
+					this._RoomID = value;
+					this.SendPropertyChanged("RoomID");
+					this.OnRoomIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoomName", DbType="NVarChar(50)")]
+		public string RoomName
+		{
+			get
+			{
+				return this._RoomName;
+			}
+			set
+			{
+				if ((this._RoomName != value))
+				{
+					this.OnRoomNameChanging(value);
+					this.SendPropertyChanging();
+					this._RoomName = value;
+					this.SendPropertyChanged("RoomName");
+					this.OnRoomNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(100)")]
+		public string Note
+		{
+			get
+			{
+				return this._Note;
+			}
+			set
+			{
+				if ((this._Note != value))
+				{
+					this.OnNoteChanging(value);
+					this.SendPropertyChanging();
+					this._Note = value;
+					this.SendPropertyChanged("Note");
+					this.OnNoteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GroupClientID", DbType="NChar(10)")]
+		public string GroupClientID
+		{
+			get
+			{
+				return this._GroupClientID;
+			}
+			set
+			{
+				if ((this._GroupClientID != value))
+				{
+					if (this._GroupClient.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnGroupClientIDChanging(value);
+					this.SendPropertyChanging();
+					this._GroupClientID = value;
+					this.SendPropertyChanged("GroupClientID");
+					this.OnGroupClientIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Room_Client", Storage="_Clients", ThisKey="RoomID", OtherKey="RoomID")]
+		public EntitySet<Client> Clients
+		{
+			get
+			{
+				return this._Clients;
+			}
+			set
+			{
+				this._Clients.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GroupClient_Room", Storage="_GroupClient", ThisKey="GroupClientID", OtherKey="GroupClientID", IsForeignKey=true)]
+		public GroupClient GroupClient
+		{
+			get
+			{
+				return this._GroupClient.Entity;
+			}
+			set
+			{
+				GroupClient previousValue = this._GroupClient.Entity;
+				if (((previousValue != value) 
+							|| (this._GroupClient.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._GroupClient.Entity = null;
+						previousValue.Rooms.Remove(this);
+					}
+					this._GroupClient.Entity = value;
+					if ((value != null))
+					{
+						value.Rooms.Add(this);
+						this._GroupClientID = value.GroupClientID;
+					}
+					else
+					{
+						this._GroupClientID = default(string);
+					}
+					this.SendPropertyChanged("GroupClient");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Clients(Client entity)
+		{
+			this.SendPropertyChanging();
+			entity.Room = this;
+		}
+		
+		private void detach_Clients(Client entity)
+		{
+			this.SendPropertyChanging();
+			entity.Room = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.StatusClient")]
+	public partial class StatusClient : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _StatusClient1;
+		
+		private string _Note;
+		
+		private EntitySet<Client> _Clients;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnStatusClient1Changing(string value);
+    partial void OnStatusClient1Changed();
+    partial void OnNoteChanging(string value);
+    partial void OnNoteChanged();
+    #endregion
+		
+		public StatusClient()
+		{
+			this._Clients = new EntitySet<Client>(new Action<Client>(this.attach_Clients), new Action<Client>(this.detach_Clients));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="StatusClient", Storage="_StatusClient1", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string StatusClient1
+		{
+			get
+			{
+				return this._StatusClient1;
+			}
+			set
+			{
+				if ((this._StatusClient1 != value))
+				{
+					this.OnStatusClient1Changing(value);
+					this.SendPropertyChanging();
+					this._StatusClient1 = value;
+					this.SendPropertyChanged("StatusClient1");
+					this.OnStatusClient1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(100)")]
+		public string Note
+		{
+			get
+			{
+				return this._Note;
+			}
+			set
+			{
+				if ((this._Note != value))
+				{
+					this.OnNoteChanging(value);
+					this.SendPropertyChanging();
+					this._Note = value;
+					this.SendPropertyChanged("Note");
+					this.OnNoteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="StatusClient_Client", Storage="_Clients", ThisKey="StatusClient1", OtherKey="StatusClient")]
+		public EntitySet<Client> Clients
+		{
+			get
+			{
+				return this._Clients;
+			}
+			set
+			{
+				this._Clients.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Clients(Client entity)
+		{
+			this.SendPropertyChanging();
+			entity.StatusClient1 = this;
+		}
+		
+		private void detach_Clients(Client entity)
+		{
+			this.SendPropertyChanging();
+			entity.StatusClient1 = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TheCard")]
 	public partial class TheCard : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _CardID;
+		private string _CardID;
 		
 		private string _CardName;
 		
@@ -4078,7 +4103,7 @@ namespace QuanLyPhongNet.DAL
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnCardIDChanging(int value);
+    partial void OnCardIDChanging(string value);
     partial void OnCardIDChanged();
     partial void OnCardNameChanging(string value);
     partial void OnCardNameChanged();
@@ -4099,8 +4124,8 @@ namespace QuanLyPhongNet.DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CardID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int CardID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CardID", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string CardID
 		{
 			get
 			{
@@ -4139,7 +4164,7 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryName", DbType="NVarChar(60)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryName", DbType="NVarChar(50)")]
 		public string CategoryName
 		{
 			get
@@ -4309,11 +4334,11 @@ namespace QuanLyPhongNet.DAL
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
+		private string _UserID;
+		
 		private string _UserName;
 		
-		private string _Type;
-		
-		private string _GroupUser;
+		private string _GroupUserID;
 		
 		private string _PhoneNumber;
 		
@@ -4321,18 +4346,18 @@ namespace QuanLyPhongNet.DAL
 		
 		private EntitySet<Bill> _Bills;
 		
-		private EntityRef<GroupUser> _GroupUser1;
+		private EntityRef<GroupUser> _GroupUser;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
+    partial void OnUserIDChanging(string value);
+    partial void OnUserIDChanged();
     partial void OnUserNameChanging(string value);
     partial void OnUserNameChanged();
-    partial void OnTypeChanging(string value);
-    partial void OnTypeChanged();
-    partial void OnGroupUserChanging(string value);
-    partial void OnGroupUserChanged();
+    partial void OnGroupUserIDChanging(string value);
+    partial void OnGroupUserIDChanged();
     partial void OnPhoneNumberChanging(string value);
     partial void OnPhoneNumberChanged();
     partial void OnEmailChanging(string value);
@@ -4342,11 +4367,31 @@ namespace QuanLyPhongNet.DAL
 		public TheUser()
 		{
 			this._Bills = new EntitySet<Bill>(new Action<Bill>(this.attach_Bills), new Action<Bill>(this.detach_Bills));
-			this._GroupUser1 = default(EntityRef<GroupUser>);
+			this._GroupUser = default(EntityRef<GroupUser>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(60) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(50)")]
 		public string UserName
 		{
 			get
@@ -4366,51 +4411,31 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="VarChar(30)")]
-		public string Type
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GroupUserID", DbType="NChar(10)")]
+		public string GroupUserID
 		{
 			get
 			{
-				return this._Type;
+				return this._GroupUserID;
 			}
 			set
 			{
-				if ((this._Type != value))
+				if ((this._GroupUserID != value))
 				{
-					this.OnTypeChanging(value);
-					this.SendPropertyChanging();
-					this._Type = value;
-					this.SendPropertyChanged("Type");
-					this.OnTypeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GroupUser", DbType="NVarChar(30)")]
-		public string GroupUser
-		{
-			get
-			{
-				return this._GroupUser;
-			}
-			set
-			{
-				if ((this._GroupUser != value))
-				{
-					if (this._GroupUser1.HasLoadedOrAssignedValue)
+					if (this._GroupUser.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnGroupUserChanging(value);
+					this.OnGroupUserIDChanging(value);
 					this.SendPropertyChanging();
-					this._GroupUser = value;
-					this.SendPropertyChanged("GroupUser");
-					this.OnGroupUserChanged();
+					this._GroupUserID = value;
+					this.SendPropertyChanged("GroupUserID");
+					this.OnGroupUserIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="VarChar(11)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="VarChar(10)")]
 		public string PhoneNumber
 		{
 			get
@@ -4450,7 +4475,7 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TheUser_Bill", Storage="_Bills", ThisKey="UserName", OtherKey="FoundedUser")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TheUser_Bill", Storage="_Bills", ThisKey="UserID", OtherKey="FoundedUserID")]
 		public EntitySet<Bill> Bills
 		{
 			get
@@ -4463,36 +4488,36 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GroupUser_TheUser", Storage="_GroupUser1", ThisKey="GroupUser", OtherKey="GroupName", IsForeignKey=true)]
-		public GroupUser GroupUser1
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GroupUser_TheUser", Storage="_GroupUser", ThisKey="GroupUserID", OtherKey="GroupUserID", IsForeignKey=true)]
+		public GroupUser GroupUser
 		{
 			get
 			{
-				return this._GroupUser1.Entity;
+				return this._GroupUser.Entity;
 			}
 			set
 			{
-				GroupUser previousValue = this._GroupUser1.Entity;
+				GroupUser previousValue = this._GroupUser.Entity;
 				if (((previousValue != value) 
-							|| (this._GroupUser1.HasLoadedOrAssignedValue == false)))
+							|| (this._GroupUser.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._GroupUser1.Entity = null;
+						this._GroupUser.Entity = null;
 						previousValue.TheUsers.Remove(this);
 					}
-					this._GroupUser1.Entity = value;
+					this._GroupUser.Entity = value;
 					if ((value != null))
 					{
 						value.TheUsers.Add(this);
-						this._GroupUser = value.GroupName;
+						this._GroupUserID = value.GroupUserID;
 					}
 					else
 					{
-						this._GroupUser = default(string);
+						this._GroupUserID = default(string);
 					}
-					this.SendPropertyChanged("GroupUser1");
+					this.SendPropertyChanged("GroupUser");
 				}
 			}
 		}

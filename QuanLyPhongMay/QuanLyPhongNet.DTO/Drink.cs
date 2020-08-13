@@ -8,89 +8,18 @@
 
     public class Drink
     {
-        private int drinkID;
-        private string name;
-        private string categoryName;
-        private float priceUnit;
-        private string unitLot;
-        private int inventoryNumber;
+        private string _drinkID;
+        private string _drinkName;
+        private string _categoryName;
+        private double _priceUnit;
+        private string _unitLot;
+        private int _inventoryNumber;
 
-        public int DrinkID
-        {
-            get
-            {
-                return drinkID;
-            }
-
-            set
-            {
-                drinkID = value;
-            }
-        }
-
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-
-            set
-            {
-                name = value;
-            }
-        }
-
-        public string CategoryName
-        {
-            get
-            {
-                return categoryName;
-            }
-
-            set
-            {
-                categoryName = value;
-            }
-        }
-
-        public float PriceUnit
-        {
-            get
-            {
-                return priceUnit;
-            }
-
-            set
-            {
-                priceUnit = value;
-            }
-        }
-
-        public string UnitLot
-        {
-            get
-            {
-                return unitLot;
-            }
-
-            set
-            {
-                unitLot = value;
-            }
-        }
-
-        public int InventoryNumber
-        {
-            get
-            {
-                return inventoryNumber;
-            }
-
-            set
-            {
-                inventoryNumber = value;
-            }
-        }
+        public string DrinkID { get => _drinkID; set => _drinkID = value; }
+        public string DrinkName { get => _drinkName; set => _drinkName = value; }
+        public string CategoryName { get => _categoryName; set => _categoryName = value; }
+        public double PriceUnit { get => _priceUnit; set => _priceUnit = value; }
+        public string UnitLot { get => _unitLot; set => _unitLot = value; }
+        public int InventoryNumber { get => _inventoryNumber; set => _inventoryNumber = value; }
     }
 }

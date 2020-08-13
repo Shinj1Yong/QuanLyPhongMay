@@ -8,61 +8,14 @@
 
     public class Bill
     {
-        private int billID;
-        private string userName;
-        private DateTime foundedDate;
-        private float priceTotal;
+        private string _billID;
+        private string _foundedUserID;
+        private DateTime _foundedDate;
+        private double _priceTotal;
 
-        public int BillID
-        {
-            get
-            {
-                return billID;
-            }
-
-            set
-            {
-                billID = value;
-            }
-        }
-
-        public string UserName
-        {
-            get
-            {
-                return userName;
-            }
-
-            set
-            {
-                userName = value;
-            }
-        }
-
-        public DateTime FoundedDate
-        {
-            get
-            {
-                return foundedDate;
-            }
-
-            set
-            {
-                foundedDate = value;
-            }
-        }
-
-        public float PriceTotal
-        {
-            get
-            {
-                return priceTotal;
-            }
-
-            set
-            {
-                priceTotal = value;
-            }
-        }
+        public string BillID { get => _billID; set => _billID = value; }
+        public string FoundedUserID { get => _foundedUserID; set => _foundedUserID = value; }
+        public DateTime FoundedDate { get => _foundedDate; set => _foundedDate = value; }
+        public double PriceTotal { get => _priceTotal; set => _priceTotal = value; }
     }
 }

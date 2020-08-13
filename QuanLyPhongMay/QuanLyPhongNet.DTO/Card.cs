@@ -8,89 +8,18 @@
 
     public class Card
     {
-        private int cardID;
-        private string name;
-        private string categoryName;
-        private float priceUnit;
-        private string unitLot;
-        private int inventoryNumber;
+        private string _cardID;
+        private string _cardName;
+        private string _categoryName;
+        private double _priceUnit;
+        private string _unitLot;
+        private int _inventoryNumber;
 
-        public int CardID
-        {
-            get
-            {
-                return cardID;
-            }
-
-            set
-            {
-                cardID = value;
-            }
-        }
-
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-
-            set
-            {
-                name = value;
-            }
-        }
-
-        public string CategoryName
-        {
-            get
-            {
-                return categoryName;
-            }
-
-            set
-            {
-                categoryName = value;
-            }
-        }
-
-        public float PriceUnit
-        {
-            get
-            {
-                return priceUnit;
-            }
-
-            set
-            {
-                priceUnit = value;
-            }
-        }
-
-        public string UnitLot
-        {
-            get
-            {
-                return unitLot;
-            }
-
-            set
-            {
-                unitLot = value;
-            }
-        }
-
-        public int InventoryNumber
-        {
-            get
-            {
-                return inventoryNumber;
-            }
-
-            set
-            {
-                inventoryNumber = value;
-            }
-        }
+        public string CardID { get => _cardID; set => _cardID = value; }
+        public string CardName { get => _cardName; set => _cardName = value; }
+        public string CategoryName { get => _categoryName; set => _categoryName = value; }
+        public double PriceUnit { get => _priceUnit; set => _priceUnit = value; }
+        public string UnitLot { get => _unitLot; set => _unitLot = value; }
+        public int InventoryNumber { get => _inventoryNumber; set => _inventoryNumber = value; }
     }
 }

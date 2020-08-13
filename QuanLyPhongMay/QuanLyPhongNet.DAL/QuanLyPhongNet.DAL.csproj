@@ -46,7 +46,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoryDAL.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="NhomNguoiDungDAL.cs" />
     <Compile Include="NuocUongDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

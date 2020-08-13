@@ -15,11 +15,8 @@ namespace QuanLyPhongNet.DAL
         }
         public List<QuanLyPhongNet.DTO.Card> getTheCao()
         {
-            return (from kh in qlpn.TheCards select new QuanLyPhongNet.DTO.Card { CardID = kh.CardID,Name=kh.CardName,CategoryName=kh.CategoryName,PriceUnit=(float)kh.PriceUnit.GetValueOrDefault(),UnitLot=kh.UnitLot,InventoryNumber=kh.InventoryNumber.GetValueOrDefault() }).ToList();
+            return (from card in qlpn.TheCards select new QuanLyPhongNet.DTO.Card { CardID = card.CardID,CardName = card.CardName,CategoryName=card.CategoryName,PriceUnit=(double)card.PriceUnit.GetValueOrDefault(),UnitLot=card.UnitLot,InventoryNumber=card.InventoryNumber.GetValueOrDefault() }).ToList();
         }
-        public List<QuanLyPhongNet.DTO.Card> getCategoryTheCao()
-        {
-            return (from kh in qlpn.TheCards select new QuanLyPhongNet.DTO.Card { CategoryName = kh.CategoryName.First().ToString() }).ToList();
-        }
+       
     }
 }

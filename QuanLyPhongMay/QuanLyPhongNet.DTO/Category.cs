@@ -8,19 +8,8 @@
 
     public class Category
     {
-        private string categoryName;
+        private string _categoryName;
 
-        public string CategoryName
-        {
-            get
-            {
-                return categoryName;
-            }
-
-            set
-            {
-                categoryName = value;
-            }
-        }
+        public string CategoryName { get => _categoryName; set => _categoryName = value; }
     }
 }
