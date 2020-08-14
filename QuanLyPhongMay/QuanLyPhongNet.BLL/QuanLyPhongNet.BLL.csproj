@@ -48,8 +48,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoryBLL.cs" />
+    <Compile Include="MayKhachBLL.cs" />
+    <Compile Include="NhanSuBLL.cs" />
+    <Compile Include="NhomMayKhachBLL.cs" />
+    <Compile Include="NhomNguoiDungBLL.cs" />
     <Compile Include="NuocUongBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThanhVienBLL.cs" />
     <Compile Include="TheCaoBLL.cs" />
     <Compile Include="ThucAnBLL.cs" />
   </ItemGroup>

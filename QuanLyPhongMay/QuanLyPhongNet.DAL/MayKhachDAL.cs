@@ -13,44 +13,45 @@ namespace QuanLyPhongNet.DAL
         {
 
         }
+        //Lấy Mã tự động
+        //public string MaTuDong()
+        //{
+        //    List<QuanLyPhongNet.DTO.Client> dr = getMayKhach();
+        //    int dem = 1;
+        //    string ma = "MAY0" + dem;
+        //    foreach (DTO.Client it in dr)
+        //    {
+
+        //        if (it.ClientName.Trim() == ma)
+        //        {
+
+        //            dem++;
+        //            if (dem < 10)
+        //            {
+        //                ma = "MAY0" + dem;
+        //            }
+        //            else
+        //            {
+        //                ma = "MAY" + dem;
+        //            }
+        //        }
+        //    }
+        //    if (dem < 10)
+        //    {
+        //        return "MAY0" + dem;
+        //    }
+        //    return "MAY" + dem;
+        //}
         public List<QuanLyPhongNet.DTO.Client> getMayKhach()
         {
             return (from food in qlpn.Clients
                     select new QuanLyPhongNet.DTO.Client
                     {
-                        ClientName = MaTuDong(),
+                        ClientName = food.ClientID,
                         StatusClient = food.StatusClient,
                         RoomID = food.RoomID
                     }).ToList();
         }
-        //Lấy Mã tự động
-        public string MaTuDong()
-        {
-            List<QuanLyPhongNet.DTO.Client> dr = getMayKhach();
-            int dem = 1;
-            string ma = "MAY0" + dem;
-            foreach (DTO.Client it in dr)
-            {
-
-                if (it.ClientName.Trim() == ma)
-                {
-
-                    dem++;
-                    if (dem < 10)
-                    {
-                        ma = "MAY0" + dem;
-                    }
-                    else
-                    {
-                        ma = "MAY" + dem;
-                    }
-                }
-            }
-            if (dem < 10)
-            {
-                return "MAY0" + dem;
-            }
-            return "MAY" + dem;
-        }
+        
     }
 }

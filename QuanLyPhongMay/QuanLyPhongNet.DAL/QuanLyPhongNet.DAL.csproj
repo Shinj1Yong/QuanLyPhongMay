@@ -47,6 +47,10 @@
   <ItemGroup>
     <Compile Include="CategoryDAL.cs" />
     <Compile Include="MayKhachDAL.cs" />
+    <Compile Include="NhanSuDAL.cs" />
+    <Compile Include="NhatKyGiaoDichDAL.cs" />
+    <Compile Include="NhatKyHeThongDAL.cs" />
+    <Compile Include="NhomMayKhachDAL.cs" />
     <Compile Include="NhomNguoiDungDAL.cs" />
     <Compile Include="NuocUongDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -60,6 +64,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyPhongNet.dbml</DependentUpon>
     </Compile>
+    <Compile Include="ThanhVienDAL.cs" />
     <Compile Include="TheCaoDAL.cs" />
     <Compile Include="ThucAnDAL.cs" />
   </ItemGroup>

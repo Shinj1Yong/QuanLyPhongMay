@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GiaoDienChinh));
-            this.tabControl = new System.Windows.Forms.TabControl();
+            this.tabMenu = new System.Windows.Forms.TabControl();
             this.tabClient = new System.Windows.Forms.TabPage();
             this.txtTotalPrice = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -43,14 +43,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.drgvClient = new System.Windows.Forms.DataGridView();
             this.tabAccount = new System.Windows.Forms.TabPage();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabTaiKhoan = new System.Windows.Forms.TabControl();
             this.tabMember = new System.Windows.Forms.TabPage();
             this.drgvMember = new System.Windows.Forms.DataGridView();
             this.picAddMember = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.picSearchMember = new System.Windows.Forms.PictureBox();
             this.picDeleteMember = new System.Windows.Forms.PictureBox();
             this.picUpdateMember = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSearchOfMember = new System.Windows.Forms.TextBox();
             this.cboSearchType = new System.Windows.Forms.ComboBox();
             this.tabStaff = new System.Windows.Forms.TabPage();
             this.drgvStaff = new System.Windows.Forms.DataGridView();
@@ -107,16 +107,16 @@
             this.tabCard = new System.Windows.Forms.TabPage();
             this.drgvCard = new System.Windows.Forms.DataGridView();
             this.txtSearchService = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.cboDichVu = new System.Windows.Forms.ComboBox();
+            this.picSearchOfDichVu = new System.Windows.Forms.PictureBox();
             this.picOrder = new System.Windows.Forms.PictureBox();
             this.tabGroupUsers = new System.Windows.Forms.TabPage();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.picDeleteNhomUser = new System.Windows.Forms.PictureBox();
+            this.picUpdateNhomUser = new System.Windows.Forms.PictureBox();
+            this.picAddNhomUser = new System.Windows.Forms.PictureBox();
             this.drgvUserGroup = new System.Windows.Forms.DataGridView();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.tabControl.SuspendLayout();
+            this.lblLogOut = new System.Windows.Forms.LinkLabel();
+            this.tabMenu.SuspendLayout();
             this.tabClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShutdownClient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLockClient)).BeginInit();
@@ -124,11 +124,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.picOpenClient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drgvClient)).BeginInit();
             this.tabAccount.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.tabTaiKhoan.SuspendLayout();
             this.tabMember.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drgvMember)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAddMember)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearchMember)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDeleteMember)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUpdateMember)).BeginInit();
             this.tabStaff.SuspendLayout();
@@ -158,30 +158,30 @@
             ((System.ComponentModel.ISupportInitialize)(this.drgvDrink)).BeginInit();
             this.tabCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drgvCard)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearchOfDichVu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOrder)).BeginInit();
             this.tabGroupUsers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeleteNhomUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUpdateNhomUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAddNhomUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drgvUserGroup)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl
+            // tabMenu
             // 
-            this.tabControl.Controls.Add(this.tabClient);
-            this.tabControl.Controls.Add(this.tabAccount);
-            this.tabControl.Controls.Add(this.tabSystemDiary);
-            this.tabControl.Controls.Add(this.tabTransactionDiary);
-            this.tabControl.Controls.Add(this.tabGroupClient);
-            this.tabControl.Controls.Add(this.tabService);
-            this.tabControl.Controls.Add(this.tabGroupUsers);
-            this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl.Location = new System.Drawing.Point(12, 41);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1181, 676);
-            this.tabControl.TabIndex = 1;
+            this.tabMenu.Controls.Add(this.tabClient);
+            this.tabMenu.Controls.Add(this.tabAccount);
+            this.tabMenu.Controls.Add(this.tabSystemDiary);
+            this.tabMenu.Controls.Add(this.tabTransactionDiary);
+            this.tabMenu.Controls.Add(this.tabGroupClient);
+            this.tabMenu.Controls.Add(this.tabService);
+            this.tabMenu.Controls.Add(this.tabGroupUsers);
+            this.tabMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabMenu.Location = new System.Drawing.Point(12, 41);
+            this.tabMenu.Name = "tabMenu";
+            this.tabMenu.SelectedIndex = 0;
+            this.tabMenu.Size = new System.Drawing.Size(1181, 676);
+            this.tabMenu.TabIndex = 1;
             // 
             // tabClient
             // 
@@ -200,7 +200,7 @@
             this.tabClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabClient.Location = new System.Drawing.Point(4, 29);
             this.tabClient.Name = "tabClient";
-            this.tabClient.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabClient.Padding = new System.Windows.Forms.Padding(3);
             this.tabClient.Size = new System.Drawing.Size(1173, 643);
             this.tabClient.TabIndex = 0;
             this.tabClient.Text = "Các Máy Trạm";
@@ -323,34 +323,34 @@
             // tabAccount
             // 
             this.tabAccount.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.tabAccount.Controls.Add(this.tabControl1);
+            this.tabAccount.Controls.Add(this.tabTaiKhoan);
             this.tabAccount.Location = new System.Drawing.Point(4, 29);
             this.tabAccount.Name = "tabAccount";
-            this.tabAccount.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabAccount.Padding = new System.Windows.Forms.Padding(3);
             this.tabAccount.Size = new System.Drawing.Size(1173, 643);
             this.tabAccount.TabIndex = 1;
             this.tabAccount.Text = "Tài Khoản";
             // 
-            // tabControl1
+            // tabTaiKhoan
             // 
-            this.tabControl1.Alignment = System.Windows.Forms.TabAlignment.Bottom;
-            this.tabControl1.Controls.Add(this.tabMember);
-            this.tabControl1.Controls.Add(this.tabStaff);
-            this.tabControl1.Location = new System.Drawing.Point(9, 6);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1161, 631);
-            this.tabControl1.TabIndex = 7;
+            this.tabTaiKhoan.Alignment = System.Windows.Forms.TabAlignment.Bottom;
+            this.tabTaiKhoan.Controls.Add(this.tabMember);
+            this.tabTaiKhoan.Controls.Add(this.tabStaff);
+            this.tabTaiKhoan.Location = new System.Drawing.Point(9, 6);
+            this.tabTaiKhoan.Name = "tabTaiKhoan";
+            this.tabTaiKhoan.SelectedIndex = 0;
+            this.tabTaiKhoan.Size = new System.Drawing.Size(1161, 631);
+            this.tabTaiKhoan.TabIndex = 7;
             // 
             // tabMember
             // 
             this.tabMember.BackColor = System.Drawing.Color.PaleTurquoise;
             this.tabMember.Controls.Add(this.drgvMember);
             this.tabMember.Controls.Add(this.picAddMember);
-            this.tabMember.Controls.Add(this.pictureBox3);
+            this.tabMember.Controls.Add(this.picSearchMember);
             this.tabMember.Controls.Add(this.picDeleteMember);
             this.tabMember.Controls.Add(this.picUpdateMember);
-            this.tabMember.Controls.Add(this.textBox1);
+            this.tabMember.Controls.Add(this.txtSearchOfMember);
             this.tabMember.Controls.Add(this.cboSearchType);
             this.tabMember.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabMember.ForeColor = System.Drawing.Color.Red;
@@ -383,14 +383,15 @@
             this.picAddMember.TabIndex = 1;
             this.picAddMember.TabStop = false;
             // 
-            // pictureBox3
+            // picSearchMember
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(878, 20);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(51, 44);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 6;
-            this.pictureBox3.TabStop = false;
+            this.picSearchMember.Image = ((System.Drawing.Image)(resources.GetObject("picSearchMember.Image")));
+            this.picSearchMember.Location = new System.Drawing.Point(878, 20);
+            this.picSearchMember.Name = "picSearchMember";
+            this.picSearchMember.Size = new System.Drawing.Size(51, 44);
+            this.picSearchMember.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSearchMember.TabIndex = 6;
+            this.picSearchMember.TabStop = false;
             // 
             // picDeleteMember
             // 
@@ -412,13 +413,13 @@
             this.picUpdateMember.TabIndex = 3;
             this.picUpdateMember.TabStop = false;
             // 
-            // textBox1
+            // txtSearchOfMember
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(605, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(254, 29);
-            this.textBox1.TabIndex = 5;
+            this.txtSearchOfMember.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchOfMember.Location = new System.Drawing.Point(605, 23);
+            this.txtSearchOfMember.Name = "txtSearchOfMember";
+            this.txtSearchOfMember.Size = new System.Drawing.Size(254, 29);
+            this.txtSearchOfMember.TabIndex = 5;
             // 
             // cboSearchType
             // 
@@ -888,8 +889,8 @@
             this.tabService.Controls.Add(this.label7);
             this.tabService.Controls.Add(this.tabCategory);
             this.tabService.Controls.Add(this.txtSearchService);
-            this.tabService.Controls.Add(this.comboBox1);
-            this.tabService.Controls.Add(this.pictureBox11);
+            this.tabService.Controls.Add(this.cboDichVu);
+            this.tabService.Controls.Add(this.picSearchOfDichVu);
             this.tabService.Controls.Add(this.picOrder);
             this.tabService.Location = new System.Drawing.Point(4, 29);
             this.tabService.Name = "tabService";
@@ -928,7 +929,7 @@
             this.tabFood.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.tabFood.Location = new System.Drawing.Point(4, 4);
             this.tabFood.Name = "tabFood";
-            this.tabFood.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabFood.Padding = new System.Windows.Forms.Padding(3);
             this.tabFood.Size = new System.Drawing.Size(1140, 548);
             this.tabFood.TabIndex = 0;
             this.tabFood.Text = "Thức Ăn";
@@ -954,7 +955,7 @@
             this.tabDrink.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.tabDrink.Location = new System.Drawing.Point(4, 4);
             this.tabDrink.Name = "tabDrink";
-            this.tabDrink.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabDrink.Padding = new System.Windows.Forms.Padding(3);
             this.tabDrink.Size = new System.Drawing.Size(1140, 548);
             this.tabDrink.TabIndex = 1;
             this.tabDrink.Text = "Nước Uống";
@@ -1006,29 +1007,29 @@
             this.txtSearchService.Size = new System.Drawing.Size(243, 29);
             this.txtSearchService.TabIndex = 7;
             // 
-            // comboBox1
+            // cboDichVu
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.ForeColor = System.Drawing.Color.Blue;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cboDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboDichVu.ForeColor = System.Drawing.Color.Blue;
+            this.cboDichVu.FormattingEnabled = true;
+            this.cboDichVu.Items.AddRange(new object[] {
             "Tên ",
             "Danh Mục"});
-            this.comboBox1.Location = new System.Drawing.Point(355, 18);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(262, 32);
-            this.comboBox1.TabIndex = 6;
-            this.comboBox1.Text = "--Lựa chọn--";
+            this.cboDichVu.Location = new System.Drawing.Point(355, 18);
+            this.cboDichVu.Name = "cboDichVu";
+            this.cboDichVu.Size = new System.Drawing.Size(262, 32);
+            this.cboDichVu.TabIndex = 6;
+            this.cboDichVu.Text = "--Lựa chọn--";
             // 
-            // pictureBox11
+            // picSearchOfDichVu
             // 
-            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(909, 9);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(51, 44);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox11.TabIndex = 8;
-            this.pictureBox11.TabStop = false;
+            this.picSearchOfDichVu.Image = ((System.Drawing.Image)(resources.GetObject("picSearchOfDichVu.Image")));
+            this.picSearchOfDichVu.Location = new System.Drawing.Point(909, 9);
+            this.picSearchOfDichVu.Name = "picSearchOfDichVu";
+            this.picSearchOfDichVu.Size = new System.Drawing.Size(51, 44);
+            this.picSearchOfDichVu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSearchOfDichVu.TabIndex = 8;
+            this.picSearchOfDichVu.TabStop = false;
             // 
             // picOrder
             // 
@@ -1044,9 +1045,9 @@
             // tabGroupUsers
             // 
             this.tabGroupUsers.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.tabGroupUsers.Controls.Add(this.pictureBox12);
-            this.tabGroupUsers.Controls.Add(this.pictureBox13);
-            this.tabGroupUsers.Controls.Add(this.pictureBox14);
+            this.tabGroupUsers.Controls.Add(this.picDeleteNhomUser);
+            this.tabGroupUsers.Controls.Add(this.picUpdateNhomUser);
+            this.tabGroupUsers.Controls.Add(this.picAddNhomUser);
             this.tabGroupUsers.Controls.Add(this.drgvUserGroup);
             this.tabGroupUsers.ForeColor = System.Drawing.Color.Blue;
             this.tabGroupUsers.Location = new System.Drawing.Point(4, 29);
@@ -1055,35 +1056,35 @@
             this.tabGroupUsers.TabIndex = 6;
             this.tabGroupUsers.Text = "Nhóm Người Sử Dụng";
             // 
-            // pictureBox12
+            // picDeleteNhomUser
             // 
-            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-            this.pictureBox12.Location = new System.Drawing.Point(163, 4);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(52, 50);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox12.TabIndex = 8;
-            this.pictureBox12.TabStop = false;
+            this.picDeleteNhomUser.Image = ((System.Drawing.Image)(resources.GetObject("picDeleteNhomUser.Image")));
+            this.picDeleteNhomUser.Location = new System.Drawing.Point(163, 4);
+            this.picDeleteNhomUser.Name = "picDeleteNhomUser";
+            this.picDeleteNhomUser.Size = new System.Drawing.Size(52, 50);
+            this.picDeleteNhomUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picDeleteNhomUser.TabIndex = 8;
+            this.picDeleteNhomUser.TabStop = false;
             // 
-            // pictureBox13
+            // picUpdateNhomUser
             // 
-            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
-            this.pictureBox13.Location = new System.Drawing.Point(86, 4);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(52, 50);
-            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox13.TabIndex = 7;
-            this.pictureBox13.TabStop = false;
+            this.picUpdateNhomUser.Image = ((System.Drawing.Image)(resources.GetObject("picUpdateNhomUser.Image")));
+            this.picUpdateNhomUser.Location = new System.Drawing.Point(86, 4);
+            this.picUpdateNhomUser.Name = "picUpdateNhomUser";
+            this.picUpdateNhomUser.Size = new System.Drawing.Size(52, 50);
+            this.picUpdateNhomUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picUpdateNhomUser.TabIndex = 7;
+            this.picUpdateNhomUser.TabStop = false;
             // 
-            // pictureBox14
+            // picAddNhomUser
             // 
-            this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
-            this.pictureBox14.Location = new System.Drawing.Point(15, 4);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(52, 50);
-            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox14.TabIndex = 6;
-            this.pictureBox14.TabStop = false;
+            this.picAddNhomUser.Image = ((System.Drawing.Image)(resources.GetObject("picAddNhomUser.Image")));
+            this.picAddNhomUser.Location = new System.Drawing.Point(15, 4);
+            this.picAddNhomUser.Name = "picAddNhomUser";
+            this.picAddNhomUser.Size = new System.Drawing.Size(52, 50);
+            this.picAddNhomUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picAddNhomUser.TabIndex = 6;
+            this.picAddNhomUser.TabStop = false;
             // 
             // drgvUserGroup
             // 
@@ -1098,17 +1099,17 @@
             this.drgvUserGroup.Size = new System.Drawing.Size(1155, 567);
             this.drgvUserGroup.TabIndex = 0;
             // 
-            // linkLabel1
+            // lblLogOut
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.LinkColor = System.Drawing.Color.Red;
-            this.linkLabel1.Location = new System.Drawing.Point(1058, 9);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(125, 29);
-            this.linkLabel1.TabIndex = 2;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Đăng Xuất";
+            this.lblLogOut.AutoSize = true;
+            this.lblLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogOut.LinkColor = System.Drawing.Color.Red;
+            this.lblLogOut.Location = new System.Drawing.Point(1058, 9);
+            this.lblLogOut.Name = "lblLogOut";
+            this.lblLogOut.Size = new System.Drawing.Size(125, 29);
+            this.lblLogOut.TabIndex = 2;
+            this.lblLogOut.TabStop = true;
+            this.lblLogOut.Text = "Đăng Xuất";
             // 
             // GiaoDienChinh
             // 
@@ -1116,12 +1117,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(1205, 723);
-            this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.tabControl);
+            this.Controls.Add(this.lblLogOut);
+            this.Controls.Add(this.tabMenu);
             this.Name = "GiaoDienChinh";
             this.Text = "GiaoDienChinh";
             this.Load += new System.EventHandler(this.GiaoDienChinh_Load);
-            this.tabControl.ResumeLayout(false);
+            this.tabMenu.ResumeLayout(false);
             this.tabClient.ResumeLayout(false);
             this.tabClient.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShutdownClient)).EndInit();
@@ -1130,12 +1131,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.picOpenClient)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drgvClient)).EndInit();
             this.tabAccount.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
+            this.tabTaiKhoan.ResumeLayout(false);
             this.tabMember.ResumeLayout(false);
             this.tabMember.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drgvMember)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAddMember)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearchMember)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDeleteMember)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUpdateMember)).EndInit();
             this.tabStaff.ResumeLayout(false);
@@ -1168,12 +1169,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.drgvDrink)).EndInit();
             this.tabCard.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.drgvCard)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearchOfDichVu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOrder)).EndInit();
             this.tabGroupUsers.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeleteNhomUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUpdateNhomUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAddNhomUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drgvUserGroup)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1182,7 +1183,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.TabControl tabMenu;
         private System.Windows.Forms.TabPage tabClient;
         private System.Windows.Forms.TextBox txtTotalPrice;
         private System.Windows.Forms.Label label10;
@@ -1196,14 +1197,14 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView drgvClient;
         private System.Windows.Forms.TabPage tabAccount;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabTaiKhoan;
         private System.Windows.Forms.TabPage tabMember;
         private System.Windows.Forms.DataGridView drgvMember;
         private System.Windows.Forms.PictureBox picAddMember;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox picSearchMember;
         private System.Windows.Forms.PictureBox picDeleteMember;
         private System.Windows.Forms.PictureBox picUpdateMember;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSearchOfMember;
         private System.Windows.Forms.ComboBox cboSearchType;
         private System.Windows.Forms.TabPage tabStaff;
         private System.Windows.Forms.DataGridView drgvStaff;
@@ -1260,14 +1261,14 @@
         private System.Windows.Forms.TabPage tabCard;
         private System.Windows.Forms.DataGridView drgvCard;
         private System.Windows.Forms.TextBox txtSearchService;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.ComboBox cboDichVu;
+        private System.Windows.Forms.PictureBox picSearchOfDichVu;
         private System.Windows.Forms.PictureBox picOrder;
         private System.Windows.Forms.TabPage tabGroupUsers;
-        private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.PictureBox pictureBox13;
-        private System.Windows.Forms.PictureBox pictureBox14;
+        private System.Windows.Forms.PictureBox picDeleteNhomUser;
+        private System.Windows.Forms.PictureBox picUpdateNhomUser;
+        private System.Windows.Forms.PictureBox picAddNhomUser;
         private System.Windows.Forms.DataGridView drgvUserGroup;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel lblLogOut;
     }
 }

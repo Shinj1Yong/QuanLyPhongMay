@@ -84,6 +84,12 @@
     <Compile Include="GiaoDienGoiDichVu.Designer.cs">
       <DependentUpon>GiaoDienGoiDichVu.cs</DependentUpon>
     </Compile>
+    <Compile Include="GiaoDienThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaoDienThongKe.Designer.cs">
+      <DependentUpon>GiaoDienThongKe.cs</DependentUpon>
+    </Compile>
     <Compile Include="GiaoDienTuyChon.cs">
       <SubType>Form</SubType>
     </Compile>

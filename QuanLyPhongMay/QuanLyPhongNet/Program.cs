@@ -16,7 +16,7 @@ namespace QuanLyPhongNet
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new QuanLyMenuDichVu());
+            Application.Run(new GiaoDienChinh());
         }
     }
 }

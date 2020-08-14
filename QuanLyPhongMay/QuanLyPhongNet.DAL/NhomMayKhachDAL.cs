@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 using QuanLyPhongNet.DTO;
 namespace QuanLyPhongNet.DAL
 {
-    public class NhomMayKhackDAL
+    public class NhomMayKhachDAL
     {
         QuanLyPhongNetDataContext qlpn = new QuanLyPhongNetDataContext();
-        public NhomMayKhackDAL()
+        public NhomMayKhachDAL()
         {
 
         }
