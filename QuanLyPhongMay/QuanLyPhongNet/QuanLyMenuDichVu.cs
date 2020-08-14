@@ -77,9 +77,10 @@ namespace QuanLyPhongNet
                     drgvInformation.Columns[0].HeaderText = "Tên Loại Danh Mục";
                     break;
             }
+            drgvInformation.ClearSelection();
             drgvInformation.Refresh();
             Load_ComboBox();
-            drgvInformation.ClearSelection();
+           
         }
         private bool CheckValidInput(TabPage currentTAB)
         {
@@ -144,13 +145,13 @@ namespace QuanLyPhongNet
                     _thucAnBll.InsertToThucAn(txtFoodName.Text, cboFoodCategory.SelectedValue.ToString(), txtPriceUnitOfFood.Text, txtUnitLotOfFood.Text, txtInventoryNumberOfFood.Text);
                     break;
                 case TAB_DRINK:
-                    //objWriter.InsertDrink(txtDrinkName.Text, cboDrinkCategory.Text, float.Parse(txtPriceUnitOfDrink.Text), txtUnitLotOfDrink.Text, int.Parse(txtInventoryNumberOfDrink.Text));
+                    _nuocUongBll.InsertToNuocUong(txtDrinkName.Text, cboDrinkCategory.Text, txtPriceUnitOfDrink.Text, txtUnitLotOfDrink.Text, txtInventoryNumberOfDrink.Text);
                     break;
                 case TAB_CARD:
-                    //objWriter.InsertCard(txtCardName.Text, cboCardCategory.Text, float.Parse(txtPriceUnitOfCard.Text), txtUnitLotOfCard.Text, int.Parse(txtInventoryNumberOfCard.Text));
+                    _theCaoBll.InsertToCard(txtCardName.Text, cboCardCategory.Text, txtPriceUnitOfCard.Text, txtUnitLotOfCard.Text, txtInventoryNumberOfCard.Text);
                     break;
                 case TAB_CATEGORY:
-                    //objWriter.InsertCategory(txtCategoryName.Text);
+                    _category.InsertCategory(txtCategoryName.Text);
                     break;
             }
             ResetControl(tp);
@@ -168,13 +169,13 @@ namespace QuanLyPhongNet
                     _thucAnBll.UpdateThucAnOf(_ID, txtFoodName.Text, cboFoodCategory.SelectedValue.ToString(), txtPriceUnitOfFood.Text, txtUnitLotOfFood.Text, txtInventoryNumberOfFood.Text);
                     break;
                 case TAB_DRINK:
-                    
+                    _nuocUongBll.UpdateNuocUongOf(_ID, txtDrinkName.Text, cboDrinkCategory.SelectedValue.ToString(), txtPriceUnitOfDrink.Text, txtUnitLotOfDrink.Text, txtInventoryNumberOfDrink.Text);
                     break;
                 case TAB_CARD:
-                    
+                    _theCaoBll.UpdateCardOf(_ID, txtCardName.Text, cboCardCategory.SelectedValue.ToString(), txtPriceUnitOfCard.Text, txtUnitLotOfCard.Text, txtInventoryNumberOfCard.Text);
                     break;
                 case TAB_CATEGORY:
-                    
+                    _category.UpdateCategory(_ID, txtCategoryName.Text);
                     break;
             }
             ResetControl(tp);
@@ -194,13 +195,13 @@ namespace QuanLyPhongNet
                         _thucAnBll.DeleteThucAnOf(_ID);
                         break;
                     case TAB_DRINK:
-
+                        _nuocUongBll.DeleteNuocUongOf(_ID);
                         break;
                     case TAB_CARD:
-
+                        _theCaoBll.DeleteCardOf(_ID);
                         break;
                     case TAB_CATEGORY:
-
+                        _category.DeleteCategory(_ID);
                         break;
                 }
                 ResetControl(tp);
@@ -228,10 +229,28 @@ namespace QuanLyPhongNet
                     }
                     break;
                 case TAB_DRINK:
-
+                    {
+                        if (cboSearch.Text.ToString() == "Tên Sản Phẩm")
+                        {
+                            drgvInformation.DataSource = _nuocUongBll.getNuocUongOfName(_ID);
+                        }
+                        else if (cboSearch.Text.ToString() == "Mã")
+                        {
+                            drgvInformation.DataSource = _nuocUongBll.getNuocUongOfName(_ID);
+                        }
+                    }
                     break;
                 case TAB_CARD:
-
+                    {
+                        if (cboSearch.Text.ToString() == "Tên Sản Phẩm")
+                        {
+                            drgvInformation.DataSource = _theCaoBll.getTheCaoOfID(_ID);
+                        }
+                        else if (cboSearch.Text.ToString() == "Mã")
+                        {
+                            drgvInformation.DataSource = _theCaoBll.getTheCaoOfName(_ID);
+                        }
+                    }
                     break;
                 case TAB_CATEGORY:
 
@@ -257,7 +276,7 @@ namespace QuanLyPhongNet
 
         private void picExit_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         public void OnlyNumber(object sender, KeyPressEventArgs e)

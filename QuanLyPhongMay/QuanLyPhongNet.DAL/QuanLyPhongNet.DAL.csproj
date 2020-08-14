@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoryDAL.cs" />
+    <Compile Include="MayKhachDAL.cs" />
     <Compile Include="NhomNguoiDungDAL.cs" />
     <Compile Include="NuocUongDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

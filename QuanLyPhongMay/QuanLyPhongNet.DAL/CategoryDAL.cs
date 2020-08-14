@@ -17,5 +17,36 @@ namespace QuanLyPhongNet.DAL
         {
             return (from category in qlpn.Categories select new QuanLyPhongNet.DTO.Category { CategoryName = category.CategoryName }).ToList();
         }
+        //hàm Insert 
+        public void InsertCategory(string _categoryName)
+        {
+            qlpn.Categories.InsertOnSubmit(new Category
+            {
+                CategoryName = _categoryName
+            });
+            qlpn.SubmitChanges();
+        }
+
+        //hàm Update
+        public void UpdateCategory(string _oldName,string _Name)
+        {
+            Category _UPDATE = qlpn.Categories.Where(food => food.CategoryName == _oldName).FirstOrDefault();
+            if (_UPDATE != null)
+            {
+                _UPDATE.CategoryName = _Name;
+                qlpn.SubmitChanges();
+            }
+        }
+
+        //hàm Delete
+        public void DeleteThucAn(string _ID)
+        {
+            Category _DELETE = qlpn.Categories.Where(food => food.CategoryName == _ID).SingleOrDefault();
+            if (_DELETE != null)
+            {
+                qlpn.Categories.DeleteOnSubmit(_DELETE);
+                qlpn.SubmitChanges();
+            }
+        }
     }
 }
