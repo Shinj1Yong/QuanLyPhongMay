@@ -88,6 +88,7 @@
             this.btnOK.Text = "Đồng Ý";
             this.btnOK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnOK.UseVisualStyleBackColor = false;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // grbServiceManager
             // 
@@ -307,18 +308,18 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtUnit;
-        private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtGroupName;
-        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblName;
+        public System.Windows.Forms.TextBox txtUnit;
+        public System.Windows.Forms.TextBox txtPrice;
+        public System.Windows.Forms.TextBox txtName;
+        public System.Windows.Forms.TextBox textBox5;
+        public System.Windows.Forms.TextBox txtGroupName;
     }
 }

@@ -45,6 +45,7 @@
             this.tabAccount = new System.Windows.Forms.TabPage();
             this.tabTaiKhoan = new System.Windows.Forms.TabControl();
             this.tabMember = new System.Windows.Forms.TabPage();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.drgvMember = new System.Windows.Forms.DataGridView();
             this.picAddMember = new System.Windows.Forms.PictureBox();
             this.picSearchMember = new System.Windows.Forms.PictureBox();
@@ -116,7 +117,6 @@
             this.picAddNhomUser = new System.Windows.Forms.PictureBox();
             this.drgvUserGroup = new System.Windows.Forms.DataGridView();
             this.llblBack = new System.Windows.Forms.LinkLabel();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.tabMenu.SuspendLayout();
             this.tabClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShutdownClient)).BeginInit();
@@ -361,6 +361,16 @@
             this.tabMember.Size = new System.Drawing.Size(1153, 598);
             this.tabMember.TabIndex = 0;
             this.tabMember.Text = "Hội Viên";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(935, 20);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(120, 44);
+            this.btnSearch.TabIndex = 8;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // drgvMember
             // 
@@ -920,6 +930,7 @@
             // tabCategory
             // 
             this.tabCategory.Alignment = System.Windows.Forms.TabAlignment.Bottom;
+            this.tabCategory.AllowDrop = true;
             this.tabCategory.Controls.Add(this.tabFood);
             this.tabCategory.Controls.Add(this.tabDrink);
             this.tabCategory.Controls.Add(this.tabCard);
@@ -1049,6 +1060,7 @@
             this.picOrder.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picOrder.TabIndex = 4;
             this.picOrder.TabStop = false;
+            this.picOrder.Click += new System.EventHandler(this.picOrder_Click_1);
             // 
             // tabGroupUsers
             // 
@@ -1119,16 +1131,6 @@
             this.llblBack.TabStop = true;
             this.llblBack.Text = "Trở về giao diện tùy chọn";
             this.llblBack.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblBack_LinkClicked);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(935, 20);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(120, 44);
-            this.btnSearch.TabIndex = 8;
-            this.btnSearch.Text = "Tìm kiếm";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // GiaoDienChinh
             // 
@@ -1275,7 +1277,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TabControl tabCategory;
         private System.Windows.Forms.TabPage tabFood;
-        private System.Windows.Forms.DataGridView drgvFood;
         private System.Windows.Forms.TabPage tabDrink;
         private System.Windows.Forms.DataGridView drgvDrink;
         private System.Windows.Forms.TabPage tabCard;
@@ -1291,5 +1292,6 @@
         private System.Windows.Forms.DataGridView drgvUserGroup;
         private System.Windows.Forms.LinkLabel llblBack;
         private System.Windows.Forms.Button btnSearch;
+        public System.Windows.Forms.DataGridView drgvFood;
     }
 }

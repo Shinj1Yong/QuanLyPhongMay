@@ -219,5 +219,38 @@ namespace QuanLyPhongNet
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void picOrder_Click_1(object sender, EventArgs e)
+        {
+            GiaoDienGoiDichVu goidv = new GiaoDienGoiDichVu();
+            switch (tabCategory.SelectedIndex)
+            {
+                case 0:
+                    goidv.txtName.Text = drgvFood.CurrentRow.Cells[0].Value.ToString();
+                    goidv.txtPrice.Text = drgvFood.CurrentRow.Cells[3].Value.ToString();
+                    goidv.txtUnit.Text = drgvFood.CurrentRow.Cells[4].Value.ToString();
+                    goidv.txtGroupName.Text = drgvFood.CurrentRow.Cells[2].Value.ToString();
+                    goidv.textBox5.Text = drgvFood.CurrentRow.Cells[5].Value.ToString();
+                    goidv.ShowDialog();
+                    break;
+                case 1:
+                    goidv.txtName.Text = drgvDrink.CurrentRow.Cells[0].Value.ToString();
+                    goidv.txtPrice.Text = drgvDrink.CurrentRow.Cells[3].Value.ToString();
+                    goidv.txtUnit.Text = drgvDrink.CurrentRow.Cells[4].Value.ToString();
+                    goidv.txtGroupName.Text = drgvDrink.CurrentRow.Cells[2].Value.ToString();
+                    goidv.textBox5.Text = drgvDrink.CurrentRow.Cells[5].Value.ToString();
+                    goidv.ShowDialog();
+                    break;
+                case 2:
+                    goidv.txtName.Text = drgvCard.CurrentRow.Cells[0].Value.ToString();
+                    goidv.txtPrice.Text = drgvCard.CurrentRow.Cells[3].Value.ToString();
+                    goidv.txtUnit.Text = drgvCard.CurrentRow.Cells[4].Value.ToString();
+                    goidv.txtGroupName.Text = drgvCard.CurrentRow.Cells[2].Value.ToString();
+                    goidv.textBox5.Text = drgvCard.CurrentRow.Cells[5].Value.ToString();
+                    goidv.ShowDialog();
+                    break;
+            }
+            
+        }
     }
 }
