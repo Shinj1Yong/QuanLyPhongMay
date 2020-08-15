@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuanLyPhongMay" Class="QuanLyPhongNetDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-UCLG3AIH\SQLEXPRESS;Initial Catalog=QuanLyPhongMay;Integrated Security=True" SettingsObjectName="QuanLyPhongNet.DAL.Properties.Settings" SettingsPropertyName="QuanLyPhongMayConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-UCLG3AIH\SQLEXPRESS;Initial Catalog=QuanLyPhongMay;Integrated Security=True" SettingsObjectName="QuanLyPhongNet.DAL.Properties.Settings" SettingsPropertyName="QuanLyPhongMayConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.BeforePayClient" Member="BeforePayClients">
     <Type Name="BeforePayClient">
       <Column Name="ClientID" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -84,7 +84,7 @@
     <Type Name="GroupClient">
       <Column Name="GroupClientID" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="GroupClientName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Discription" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Association Name="GroupClient_GroupClientAndGroupUser" Member="GroupClientAndGroupUsers" ThisKey="GroupClientID" OtherKey="GroupClientID" Type="GroupClientAndGroupUser" />
       <Association Name="GroupClient_Room" Member="Rooms" ThisKey="GroupClientID" OtherKey="GroupClientID" Type="Room" />
     </Type>

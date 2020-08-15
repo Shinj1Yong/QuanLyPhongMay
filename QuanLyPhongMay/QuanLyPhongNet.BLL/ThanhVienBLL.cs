@@ -23,19 +23,24 @@ namespace QuanLyPhongNet.BLL
         //Hàm Insert
         public void InsertToMember(string _PhoneNumber, string _Account, string _Password, string _groupUser, string _currentTime, string _currentMoney, string _statusAcc)
         {
-            _thanhVien.InsertMember(_PhoneNumber,_Account,_Password,_groupUser,TimeSpan.Parse(_currentTime),float.Parse(_currentMoney),Convert.ToBoolean(_statusAcc));
+            _thanhVien.InsertMember(_PhoneNumber,_Account,_Password,_groupUser,_currentTime,_currentMoney,Convert.ToBoolean(_statusAcc));
         }
 
         //Hàm Update
-        public void UpdateMember(string _PhoneNumber, string _Account, string _Password, string _groupUser, string _currentTime, string _currentMoney, string _statusAcc)
+        public void UpdateMember(string _PhoneNumber, string _Password, string _groupUser, string _currentTime, string _currentMoney, string _statusAcc)
         {
-            _thanhVien.UpdateMember(_PhoneNumber, _Account, _Password, _groupUser, TimeSpan.Parse(_currentTime), float.Parse(_currentMoney), Convert.ToBoolean(_statusAcc));
+            _thanhVien.UpdateMember(_PhoneNumber,_Password, _groupUser, _currentTime, _currentMoney, Convert.ToBoolean(_statusAcc));
         }
 
         //Hàm Delete
         public void DeleteMember(string _PhoneNumber)
         {
             _thanhVien.DeleteMember(_PhoneNumber);
+        }
+
+        public bool KT_TK(string _sdt)
+        {
+            return _thanhVien.KT_TK(_sdt);
         }
     }
 }

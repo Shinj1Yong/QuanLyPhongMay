@@ -8,11 +8,11 @@
 
     public class Client
     {
-        private string _clientName;
+        private string _clientID;
         private string _statusClient;
         private string _roomID;
 
-        public string ClientName { get => _clientName; set => _clientName = value; }
+        public string ClientID { get => _clientID; set => _clientID = value; }
         public string StatusClient { get => _statusClient; set => _statusClient = value; }
         public string RoomID { get => _roomID; set => _roomID = value; }
     }

@@ -47,7 +47,7 @@ namespace QuanLyPhongNet.DAL
             return (from food in qlpn.Clients
                     select new QuanLyPhongNet.DTO.Client
                     {
-                        ClientName = food.ClientID,
+                        ClientID = food.ClientID,
                         StatusClient = food.StatusClient,
                         RoomID = food.RoomID
                     }).ToList();

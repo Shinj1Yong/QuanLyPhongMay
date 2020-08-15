@@ -20,7 +20,7 @@ namespace QuanLyPhongNet.DAL
                     {
                         GroupClientID = food.GroupClientID,
                         GroupClientName = food.GroupClientName,
-                        Description=food.Discription
+                        Description=food.Description
                     }).ToList();
         }
     }

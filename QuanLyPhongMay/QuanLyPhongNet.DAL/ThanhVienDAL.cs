@@ -27,7 +27,7 @@ namespace QuanLyPhongNet.DAL
             }).ToList();
         }
         //hàm Insert 
-        public void InsertMember(string _PhoneNumber, string _Account, string _Password, string _groupUser, TimeSpan _currentTime,float _currentMoney,bool _statusAcc)
+        public void InsertMember(string _PhoneNumber, string _Account, string _Password, string _groupUser, string _currentTime, string _currentMoney,bool _statusAcc)
         {
             qlpn.Members.InsertOnSubmit(new Member
             {
@@ -35,24 +35,24 @@ namespace QuanLyPhongNet.DAL
                 AccountName = _Account,
                 Password = _Password,
                 GroupUserID = _groupUser,
-                CurrentTime =_currentTime,
-                CurrentMoney = _currentMoney,
+                CurrentTime = TimeSpan.Parse(_currentTime),
+                CurrentMoney = float.Parse(_currentMoney),
                 StatusAccount=_statusAcc
              });
             qlpn.SubmitChanges();
         }
 
         //hàm Update
-        public void UpdateMember(string _PhoneNumber, string _Account, string _Password, string _groupUser, TimeSpan _currentTime, float _currentMoney, bool _statusAcc)
+        public void UpdateMember(string _PhoneNumber, string _Password, string _groupUser, string _currentTime, string _currentMoney, bool _statusAcc)
         {
             Member _UPDATE = qlpn.Members.Where(food => food.PhoneNumber == _PhoneNumber).FirstOrDefault();
             if (_UPDATE != null)
             {
-                _UPDATE.AccountName = _Account;
+                
                 _UPDATE.Password = _Password;
                 _UPDATE.GroupUserID = _groupUser;
-                _UPDATE.CurrentTime = _currentTime;
-                _UPDATE.CurrentMoney = _currentMoney;
+                _UPDATE.CurrentTime = TimeSpan.Parse(_currentTime);
+                _UPDATE.CurrentMoney = float.Parse(_currentMoney);
                 _UPDATE.StatusAccount = _statusAcc;
                 qlpn.SubmitChanges();
             }
@@ -67,6 +67,17 @@ namespace QuanLyPhongNet.DAL
                 qlpn.Members.DeleteOnSubmit(_DELETE);
                 qlpn.SubmitChanges();
             }
+        }
+
+        //Hàm check tồn tại
+        public bool KT_TK(string _sdt)
+        {
+            List<QuanLyPhongNet.DTO.Member> lst = (from tk in qlpn.Members where tk.PhoneNumber == _sdt select new QuanLyPhongNet.DTO.Member {PhoneNumber = tk.PhoneNumber, AccountName = tk.AccountName }).ToList();
+            if(lst.Count > 0)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

@@ -90,7 +90,7 @@ namespace QuanLyPhongNet.DAL
     #endregion
 		
 		public QuanLyPhongNetDataContext() : 
-				base(global::QuanLyPhongNet.DAL.Properties.Settings.Default.QuanLyPhongMayConnectionString, mappingSource)
+				base(global::QuanLyPhongNet.DAL.Properties.Settings.Default.QuanLyPhongMayConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -1848,7 +1848,7 @@ namespace QuanLyPhongNet.DAL
 		
 		private string _GroupClientName;
 		
-		private string _Discription;
+		private string _Description;
 		
 		private EntitySet<GroupClientAndGroupUser> _GroupClientAndGroupUsers;
 		
@@ -1862,8 +1862,8 @@ namespace QuanLyPhongNet.DAL
     partial void OnGroupClientIDChanged();
     partial void OnGroupClientNameChanging(string value);
     partial void OnGroupClientNameChanged();
-    partial void OnDiscriptionChanging(string value);
-    partial void OnDiscriptionChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
     #endregion
 		
 		public GroupClient()
@@ -1913,22 +1913,22 @@ namespace QuanLyPhongNet.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Discription", DbType="NVarChar(100)")]
-		public string Discription
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(100)")]
+		public string Description
 		{
 			get
 			{
-				return this._Discription;
+				return this._Description;
 			}
 			set
 			{
-				if ((this._Discription != value))
+				if ((this._Description != value))
 				{
-					this.OnDiscriptionChanging(value);
+					this.OnDescriptionChanging(value);
 					this.SendPropertyChanging();
-					this._Discription = value;
-					this.SendPropertyChanged("Discription");
-					this.OnDiscriptionChanged();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
 				}
 			}
 		}
