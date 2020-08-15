@@ -65,6 +65,7 @@
             this.llblSignOut.TabIndex = 14;
             this.llblSignOut.TabStop = true;
             this.llblSignOut.Text = "Đăng Xuất";
+            this.llblSignOut.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblSignOut_LinkClicked);
             // 
             // label3
             // 
@@ -108,6 +109,7 @@
             this.picReport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picReport.TabIndex = 10;
             this.picReport.TabStop = false;
+            this.picReport.Click += new System.EventHandler(this.picReport_Click);
             // 
             // picHome
             // 
@@ -119,6 +121,7 @@
             this.picHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picHome.TabIndex = 9;
             this.picHome.TabStop = false;
+            this.picHome.Click += new System.EventHandler(this.picHome_Click);
             // 
             // picCategory
             // 
@@ -129,6 +132,7 @@
             this.picCategory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picCategory.TabIndex = 8;
             this.picCategory.TabStop = false;
+            this.picCategory.Click += new System.EventHandler(this.picCategory_Click);
             // 
             // GiaoDienTuyChon
             // 
@@ -145,6 +149,7 @@
             this.Controls.Add(this.picCategory);
             this.Name = "GiaoDienTuyChon";
             this.Text = "GiaoDienTuyChon";
+            this.Load += new System.EventHandler(this.GiaoDienTuyChon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picReport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCategory)).EndInit();
