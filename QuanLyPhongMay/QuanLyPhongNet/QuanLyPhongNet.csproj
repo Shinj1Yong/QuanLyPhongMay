@@ -54,6 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNhomMay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNhomMay.Designer.cs">
+      <DependentUpon>AddNhomMay.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChinhSuaDataBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     <Compile Include="ThemThanhVien.Designer.cs">
       <DependentUpon>ThemThanhVien.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddNhomMay.resx">
+      <DependentUpon>AddNhomMay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChinhSuaDataBase.resx">
       <DependentUpon>ChinhSuaDataBase.cs</DependentUpon>
     </EmbeddedResource>

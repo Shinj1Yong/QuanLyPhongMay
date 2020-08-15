@@ -161,5 +161,63 @@ namespace QuanLyPhongNet
         {
 
         }
+
+        private void picAddMember_Click_1(object sender, EventArgs e)
+        {
+            ThemThanhVien addMem = new ThemThanhVien();
+            addMem.ShowDialog();
+        }
+
+        private void picDeleteMember_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                _thanhvien.DeleteMember(drgvMember.CurrentRow.Cells[0].Value.ToString());
+                MessageBox.Show("Xóa thành công");
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void picUpdateMember_Click_1(object sender, EventArgs e)
+        {
+            ThemThanhVien addMem = new ThemThanhVien();
+            addMem.ShowDialog();
+        }
+
+        private void picSearchMember_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            switch (cboSearchType.SelectedIndex)
+            {
+                case 0:
+                  drgvMember.DataSource=_thanhvien.timTheoTen(txtSearchOfMember.Text);
+                    break;
+               
+            }
+        }
+
+        private void pSuaNhomMay_Click(object sender, EventArgs e)
+        {
+            AddNhomMay nm = new AddNhomMay();
+            nm.ShowDialog();
+        }
+
+        private void pXoaNhomMay_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _nhomMay.DeleteNhomMay(drgvClientGroup.CurrentRow.Cells[0].Value.ToString());
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

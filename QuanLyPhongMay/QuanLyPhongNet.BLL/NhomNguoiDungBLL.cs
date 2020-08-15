@@ -19,5 +19,6 @@ namespace QuanLyPhongNet.BLL
         {
             return _nhomNguoiDung.getNhomNguoiDung() ;
         }
+        
     }
 }

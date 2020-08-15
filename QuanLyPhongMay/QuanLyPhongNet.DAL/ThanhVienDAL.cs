@@ -79,5 +79,21 @@ namespace QuanLyPhongNet.DAL
             }
             return false;
         }
+        //tim theo ten tai khoan
+        public List<QuanLyPhongNet.DTO.Member> getMemBerOfID(string _tenTK)
+        {
+            return (from food in qlpn.Members
+                    where food.AccountName==_tenTK
+                    select new QuanLyPhongNet.DTO.Member
+                    {
+                        PhoneNumber = food.PhoneNumber,
+                        AccountName = food.AccountName,
+                        Password = food.Password,
+                        GroupUserID = food.GroupUserID,
+                        CurrentTime = (TimeSpan)food.CurrentTime,
+                        CurrentMoney = (float)food.CurrentMoney,
+                        StatusAccount = (bool)food.StatusAccount
+                    }).ToList();
+        }
     }
 }

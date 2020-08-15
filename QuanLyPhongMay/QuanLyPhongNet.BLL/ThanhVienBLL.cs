@@ -42,5 +42,9 @@ namespace QuanLyPhongNet.BLL
         {
             return _thanhVien.KT_TK(_sdt);
         }
+        public List<DTO.Member>timTheoTen(string _tenMember)
+        {
+           return _thanhVien.getMemBerOfID(_tenMember);
+        }
     }
 }

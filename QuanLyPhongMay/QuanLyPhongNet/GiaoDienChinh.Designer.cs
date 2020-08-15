@@ -93,9 +93,9 @@
             this.pictureBox21 = new System.Windows.Forms.PictureBox();
             this.pictureBox22 = new System.Windows.Forms.PictureBox();
             this.tabGroupClient = new System.Windows.Forms.TabPage();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pXoaNhomMay = new System.Windows.Forms.PictureBox();
+            this.pSuaNhomMay = new System.Windows.Forms.PictureBox();
+            this.pThemNhomMay = new System.Windows.Forms.PictureBox();
             this.drgvClientGroup = new System.Windows.Forms.DataGridView();
             this.tabService = new System.Windows.Forms.TabPage();
             this.label7 = new System.Windows.Forms.Label();
@@ -115,8 +115,8 @@
             this.picUpdateNhomUser = new System.Windows.Forms.PictureBox();
             this.picAddNhomUser = new System.Windows.Forms.PictureBox();
             this.drgvUserGroup = new System.Windows.Forms.DataGridView();
-            this.lblLogOut = new System.Windows.Forms.LinkLabel();
             this.llblBack = new System.Windows.Forms.LinkLabel();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.tabMenu.SuspendLayout();
             this.tabClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShutdownClient)).BeginInit();
@@ -147,9 +147,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
             this.tabGroupClient.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pXoaNhomMay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pSuaNhomMay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pThemNhomMay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drgvClientGroup)).BeginInit();
             this.tabService.SuspendLayout();
             this.tabCategory.SuspendLayout();
@@ -346,6 +346,7 @@
             // tabMember
             // 
             this.tabMember.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.tabMember.Controls.Add(this.btnSearch);
             this.tabMember.Controls.Add(this.drgvMember);
             this.tabMember.Controls.Add(this.picAddMember);
             this.tabMember.Controls.Add(this.picSearchMember);
@@ -383,6 +384,7 @@
             this.picAddMember.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picAddMember.TabIndex = 1;
             this.picAddMember.TabStop = false;
+            this.picAddMember.Click += new System.EventHandler(this.picAddMember_Click_1);
             // 
             // picSearchMember
             // 
@@ -393,6 +395,7 @@
             this.picSearchMember.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picSearchMember.TabIndex = 6;
             this.picSearchMember.TabStop = false;
+            this.picSearchMember.Click += new System.EventHandler(this.picSearchMember_Click);
             // 
             // picDeleteMember
             // 
@@ -403,6 +406,7 @@
             this.picDeleteMember.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picDeleteMember.TabIndex = 2;
             this.picDeleteMember.TabStop = false;
+            this.picDeleteMember.Click += new System.EventHandler(this.picDeleteMember_Click_1);
             // 
             // picUpdateMember
             // 
@@ -413,6 +417,7 @@
             this.picUpdateMember.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picUpdateMember.TabIndex = 3;
             this.picUpdateMember.TabStop = false;
+            this.picUpdateMember.Click += new System.EventHandler(this.picUpdateMember_Click_1);
             // 
             // txtSearchOfMember
             // 
@@ -828,9 +833,9 @@
             // tabGroupClient
             // 
             this.tabGroupClient.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.tabGroupClient.Controls.Add(this.pictureBox7);
-            this.tabGroupClient.Controls.Add(this.pictureBox6);
-            this.tabGroupClient.Controls.Add(this.pictureBox5);
+            this.tabGroupClient.Controls.Add(this.pXoaNhomMay);
+            this.tabGroupClient.Controls.Add(this.pSuaNhomMay);
+            this.tabGroupClient.Controls.Add(this.pThemNhomMay);
             this.tabGroupClient.Controls.Add(this.drgvClientGroup);
             this.tabGroupClient.ForeColor = System.Drawing.Color.Blue;
             this.tabGroupClient.Location = new System.Drawing.Point(4, 29);
@@ -839,36 +844,38 @@
             this.tabGroupClient.TabIndex = 4;
             this.tabGroupClient.Text = "Nhóm Máy";
             // 
-            // pictureBox7
+            // pXoaNhomMay
             // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(163, 6);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(52, 50);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 3;
-            this.pictureBox7.TabStop = false;
+            this.pXoaNhomMay.Image = ((System.Drawing.Image)(resources.GetObject("pXoaNhomMay.Image")));
+            this.pXoaNhomMay.Location = new System.Drawing.Point(163, 6);
+            this.pXoaNhomMay.Name = "pXoaNhomMay";
+            this.pXoaNhomMay.Size = new System.Drawing.Size(52, 50);
+            this.pXoaNhomMay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pXoaNhomMay.TabIndex = 3;
+            this.pXoaNhomMay.TabStop = false;
+            this.pXoaNhomMay.Click += new System.EventHandler(this.pXoaNhomMay_Click);
             // 
-            // pictureBox6
+            // pSuaNhomMay
             // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(86, 6);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(52, 50);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 2;
-            this.pictureBox6.TabStop = false;
+            this.pSuaNhomMay.Image = ((System.Drawing.Image)(resources.GetObject("pSuaNhomMay.Image")));
+            this.pSuaNhomMay.Location = new System.Drawing.Point(86, 6);
+            this.pSuaNhomMay.Name = "pSuaNhomMay";
+            this.pSuaNhomMay.Size = new System.Drawing.Size(52, 50);
+            this.pSuaNhomMay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pSuaNhomMay.TabIndex = 2;
+            this.pSuaNhomMay.TabStop = false;
+            this.pSuaNhomMay.Click += new System.EventHandler(this.pSuaNhomMay_Click);
             // 
-            // pictureBox5
+            // pThemNhomMay
             // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(14, 6);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(52, 50);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 1;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            this.pThemNhomMay.Image = ((System.Drawing.Image)(resources.GetObject("pThemNhomMay.Image")));
+            this.pThemNhomMay.Location = new System.Drawing.Point(14, 6);
+            this.pThemNhomMay.Name = "pThemNhomMay";
+            this.pThemNhomMay.Size = new System.Drawing.Size(52, 50);
+            this.pThemNhomMay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pThemNhomMay.TabIndex = 1;
+            this.pThemNhomMay.TabStop = false;
+            this.pThemNhomMay.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // drgvClientGroup
             // 
@@ -1100,19 +1107,6 @@
             this.drgvUserGroup.Size = new System.Drawing.Size(1155, 567);
             this.drgvUserGroup.TabIndex = 0;
             // 
-            // lblLogOut
-            // 
-            this.lblLogOut.AutoSize = true;
-            this.lblLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogOut.LinkColor = System.Drawing.Color.Red;
-            this.lblLogOut.Location = new System.Drawing.Point(1058, 9);
-            this.lblLogOut.Name = "lblLogOut";
-            this.lblLogOut.Size = new System.Drawing.Size(125, 29);
-            this.lblLogOut.TabIndex = 2;
-            this.lblLogOut.TabStop = true;
-            this.lblLogOut.Text = "Đăng Xuất";
-            this.lblLogOut.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblLogOut_LinkClicked);
-            // 
             // llblBack
             // 
             this.llblBack.AutoSize = true;
@@ -1126,6 +1120,16 @@
             this.llblBack.Text = "Trở về giao diện tùy chọn";
             this.llblBack.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblBack_LinkClicked);
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(935, 20);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(120, 44);
+            this.btnSearch.TabIndex = 8;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // GiaoDienChinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1133,7 +1137,6 @@
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(1205, 723);
             this.Controls.Add(this.llblBack);
-            this.Controls.Add(this.lblLogOut);
             this.Controls.Add(this.tabMenu);
             this.Name = "GiaoDienChinh";
             this.Text = "GiaoDienChinh";
@@ -1173,9 +1176,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
             this.tabGroupClient.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pXoaNhomMay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pSuaNhomMay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pThemNhomMay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drgvClientGroup)).EndInit();
             this.tabService.ResumeLayout(false);
             this.tabService.PerformLayout();
@@ -1264,9 +1267,9 @@
         private System.Windows.Forms.PictureBox pictureBox21;
         private System.Windows.Forms.PictureBox pictureBox22;
         private System.Windows.Forms.TabPage tabGroupClient;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pXoaNhomMay;
+        private System.Windows.Forms.PictureBox pSuaNhomMay;
+        private System.Windows.Forms.PictureBox pThemNhomMay;
         private System.Windows.Forms.DataGridView drgvClientGroup;
         private System.Windows.Forms.TabPage tabService;
         private System.Windows.Forms.Label label7;
@@ -1286,7 +1289,7 @@
         private System.Windows.Forms.PictureBox picUpdateNhomUser;
         private System.Windows.Forms.PictureBox picAddNhomUser;
         private System.Windows.Forms.DataGridView drgvUserGroup;
-        private System.Windows.Forms.LinkLabel lblLogOut;
         private System.Windows.Forms.LinkLabel llblBack;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

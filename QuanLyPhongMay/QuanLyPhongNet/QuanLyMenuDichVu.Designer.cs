@@ -94,7 +94,6 @@
             this.grbInformation = new System.Windows.Forms.GroupBox();
             this.drgvInformation = new System.Windows.Forms.DataGridView();
             this.llblBack = new System.Windows.Forms.LinkLabel();
-            this.lblLogOut = new System.Windows.Forms.LinkLabel();
             this.tabMenu.SuspendLayout();
             this.tadFoods.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -843,26 +842,12 @@
             this.llblBack.Text = "Trở về giao diện tùy chọn";
             this.llblBack.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblBack_LinkClicked);
             // 
-            // lblLogOut
-            // 
-            this.lblLogOut.AutoSize = true;
-            this.lblLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogOut.LinkColor = System.Drawing.Color.Red;
-            this.lblLogOut.Location = new System.Drawing.Point(1063, 9);
-            this.lblLogOut.Name = "lblLogOut";
-            this.lblLogOut.Size = new System.Drawing.Size(125, 29);
-            this.lblLogOut.TabIndex = 71;
-            this.lblLogOut.TabStop = true;
-            this.lblLogOut.Text = "Đăng Xuất";
-            this.lblLogOut.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblLogOut_LinkClicked);
-            // 
             // QuanLyMenuDichVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(1216, 797);
-            this.Controls.Add(this.lblLogOut);
             this.Controls.Add(this.llblBack);
             this.Controls.Add(this.grbInformation);
             this.Controls.Add(this.label37);
@@ -973,6 +958,5 @@
         private System.Windows.Forms.GroupBox grbInformation;
         private System.Windows.Forms.DataGridView drgvInformation;
         private System.Windows.Forms.LinkLabel llblBack;
-        private System.Windows.Forms.LinkLabel lblLogOut;
     }
 }
