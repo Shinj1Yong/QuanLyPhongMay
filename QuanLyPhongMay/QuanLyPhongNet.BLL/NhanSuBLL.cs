@@ -23,5 +23,9 @@ namespace QuanLyPhongNet.BLL
         {
             return _nhanSu.MaTuDong();
         }
+        public bool kiemTraDangNhap(string _userID,string _sdt)
+        {
+            return _nhanSu.checkNhanVien(_userID,_sdt);
+        }
     }
 }

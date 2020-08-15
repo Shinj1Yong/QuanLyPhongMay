@@ -38,6 +38,31 @@ namespace QuanLyPhongNet
             drgvUserGroup.DataSource = _nhomNguoiDung.getALLNhomNguoiDung();
             drgvStaff.DataSource = _nhanSu.getALLNhanSu();
         }
+        public void closeGiaoDien(string formname)
+        {
+            FormCollection fc = Application.OpenForms;
+            foreach (Form frm in fc)
+            {
+                if (frm.Name == formname)
+                {
+                    frm.Visible = false;
+                }
+            }
+
+        }
+        public void openGiaoDien(string formname)
+        {
+            FormCollection fc = Application.OpenForms;
+            foreach (Form frm in fc)
+            {
+                if (frm.Name == formname)
+                {
+                    frm.Visible = true;
+                   
+                }
+            }
+
+        }
         private void picOpenClient_Click(object sender, EventArgs e)
         {
 
@@ -51,6 +76,37 @@ namespace QuanLyPhongNet
         private void GiaoDienChinh_Load(object sender, EventArgs e)
         {
             Load_GridView();
+            closeGiaoDien("GiaoDienTuyChon");
+        }
+
+        private void GiaoDienChinh_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            openGiaoDien("GiaoDienTuyChon");
+        }
+
+        private void lblLogOut_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
+           // exitGiaoDien("GiaoDienTuyChon");
+            openGiaoDien("GiaoDienDangNhap");
+        }
+
+        private void llblBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
+            openGiaoDien("GiaoDienTuyChon");
+        }
+        public void exitGiaoDien(string formname)
+        {
+            FormCollection fc = Application.OpenForms;
+            foreach (Form frm in fc)
+            {
+                if (frm.Name == formname)
+                {
+                    frm.Close();
+                }
+            }
+
         }
     }
 }

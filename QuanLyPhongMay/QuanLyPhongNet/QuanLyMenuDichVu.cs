@@ -115,7 +115,8 @@ namespace QuanLyPhongNet
             //cboSearch.DisplayMember = "CategoryName";
             Load_ComboBox();
             Load_GridView();
-            
+            closeGiaoDien("GiaoDienTuyChon");
+
         }
 
         private void picSearch_Click(object sender, EventArgs e)
@@ -361,6 +362,61 @@ namespace QuanLyPhongNet
                     }
                     
             }
+        }
+        public void closeGiaoDien(string formname)
+        {
+            FormCollection fc = Application.OpenForms;
+            foreach (Form frm in fc)
+            {
+                if (frm.Name == formname)
+                {
+                    frm.Visible = false;
+                }
+            }
+
+        }
+        public void openGiaoDien(string formname)
+        {
+            FormCollection fc = Application.OpenForms;
+            foreach (Form frm in fc)
+            {
+                if (frm.Name == formname)
+                {
+                    frm.Visible = true;
+                   
+                }
+            }
+
+        }
+
+        private void llblBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
+            openGiaoDien("GiaoDienTuyChon");
+        }
+
+        private void lblLogOut_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
+           // exitGiaoDien("GiaoDienTuyChon");
+            openGiaoDien("GiaoDienDangNhap");
+        }
+
+        private void QuanLyMenuDichVu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            openGiaoDien("GiaoDienTuyChon");
+        }
+        public void exitGiaoDien(string formname)
+        {
+            FormCollection fc = Application.OpenForms;
+            foreach (Form frm in fc)
+            {
+                if (frm.Name == formname)
+                {
+                    frm.Close();
+                }
+            }
+
         }
     }
 }

@@ -24,6 +24,15 @@ namespace QuanLyPhongNet.DAL
                 Email=food.Email
             }).ToList();
         }
+        public bool checkNhanVien(string _userID,string _pass)
+        {
+            int check=qlpn.TheUsers.Where(t => t.UserID == _userID && t.PhoneNumber == _pass).Count();
+            if (check > 0)
+            {
+                return true;
+            }
+            return false;
+        }
         //Lấy Mã tự động
         public string MaTuDong()
         {

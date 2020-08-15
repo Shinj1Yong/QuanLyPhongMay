@@ -85,7 +85,7 @@
             this.cboUser.Items.AddRange(new object[] {
             "Manager",
             "Staff"});
-            this.cboUser.Location = new System.Drawing.Point(216, 121);
+            this.cboUser.Location = new System.Drawing.Point(263, 121);
             this.cboUser.Name = "cboUser";
             this.cboUser.Size = new System.Drawing.Size(255, 32);
             this.cboUser.TabIndex = 21;
@@ -94,7 +94,7 @@
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(216, 183);
+            this.txtPassword.Location = new System.Drawing.Point(263, 186);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(255, 29);
@@ -112,6 +112,7 @@
             this.btnLogin.TabIndex = 19;
             this.btnLogin.Text = "Đăng Nhập";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // label2
             // 
@@ -122,9 +123,9 @@
             this.label2.Location = new System.Drawing.Point(90, 186);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 26);
+            this.label2.Size = new System.Drawing.Size(164, 26);
             this.label2.TabIndex = 17;
-            this.label2.Text = "Mật khẩu:";
+            this.label2.Text = "Mật khẩu(SDT):";
             // 
             // label1
             // 
@@ -155,6 +156,8 @@
             this.Controls.Add(this.label1);
             this.Name = "GiaoDienDangNhap";
             this.Text = "GiaoDienDangNhap";
+            this.Load += new System.EventHandler(this.GiaoDienDangNhap_Load);
+            this.VisibleChanged += new System.EventHandler(this.GiaoDienDangNhap_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

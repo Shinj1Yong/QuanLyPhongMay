@@ -116,6 +116,7 @@
             this.picAddNhomUser = new System.Windows.Forms.PictureBox();
             this.drgvUserGroup = new System.Windows.Forms.DataGridView();
             this.lblLogOut = new System.Windows.Forms.LinkLabel();
+            this.llblBack = new System.Windows.Forms.LinkLabel();
             this.tabMenu.SuspendLayout();
             this.tabClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShutdownClient)).BeginInit();
@@ -1110,6 +1111,20 @@
             this.lblLogOut.TabIndex = 2;
             this.lblLogOut.TabStop = true;
             this.lblLogOut.Text = "Đăng Xuất";
+            this.lblLogOut.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblLogOut_LinkClicked);
+            // 
+            // llblBack
+            // 
+            this.llblBack.AutoSize = true;
+            this.llblBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.llblBack.LinkColor = System.Drawing.Color.Lime;
+            this.llblBack.Location = new System.Drawing.Point(12, 9);
+            this.llblBack.Name = "llblBack";
+            this.llblBack.Size = new System.Drawing.Size(282, 29);
+            this.llblBack.TabIndex = 3;
+            this.llblBack.TabStop = true;
+            this.llblBack.Text = "Trở về giao diện tùy chọn";
+            this.llblBack.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblBack_LinkClicked);
             // 
             // GiaoDienChinh
             // 
@@ -1117,10 +1132,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(1205, 723);
+            this.Controls.Add(this.llblBack);
             this.Controls.Add(this.lblLogOut);
             this.Controls.Add(this.tabMenu);
             this.Name = "GiaoDienChinh";
             this.Text = "GiaoDienChinh";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GiaoDienChinh_FormClosing);
             this.Load += new System.EventHandler(this.GiaoDienChinh_Load);
             this.tabMenu.ResumeLayout(false);
             this.tabClient.ResumeLayout(false);
@@ -1270,5 +1287,6 @@
         private System.Windows.Forms.PictureBox picAddNhomUser;
         private System.Windows.Forms.DataGridView drgvUserGroup;
         private System.Windows.Forms.LinkLabel lblLogOut;
+        private System.Windows.Forms.LinkLabel llblBack;
     }
 }
